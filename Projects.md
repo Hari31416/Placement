@@ -1,3 +1,4 @@
+# Projects
 # ML
 1. **Titanic - Machine Learning from Disaster**
    - Using the Titanic dataset, trained a model to **predict** whether a passenger survived the Titanic disaster.

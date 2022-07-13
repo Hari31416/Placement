@@ -40,6 +40,7 @@
    - Learning about the various types of **joins** and how to use them to join tables. 
    - Learned about **subqueries**, the **CASE** statement. Used **Common Table Expressions** and **window functions** for **complex** and **nested** queries.
 ___
+
 - Introduction to SQL on *DataCamp*
     - Learned basic SQL queries. We get to learn about **selecting**, **filtering**, **aggregation**, **sorting** and **grouping**. 
 - Joining Data in SQL on *DataCamp*

@@ -1,5 +1,4 @@
 # Roles in Analytics
-___
 Here are some job titles in the Analytics department:
 
 ## Data Analyst

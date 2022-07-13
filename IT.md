@@ -1,5 +1,4 @@
 # Roles in IT
-___
 Here are some job titles in the IT department:
 
 ## Cloud Computing Engineer
