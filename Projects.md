@@ -6,14 +6,13 @@
    
 2. **House Prices - Advanced Regression Techniques**
    - Used about **80** different features to predict the price of a house.
-   - Trained a wide range of **Machine Learning** as well as **Deep Learning** models.
+   - Did **data visualization**, **feature engineering**, **data imputation** and trained **dozens** of models. Used **grid search** for each to find the best parameters.
    - Secured a place in the top **15%** on kaggle leaderboard. 
 3. **Natural Language Processing with Disaster Tweets**
    - Built **NLP** models that predicts which Tweets are about real disasters and which one’s aren’t.
    - Used **text vectorization** and different **word embeddings** to transform the Tweets into a **vector**.
-   - Bulit **LSTM**, **GRU** and their **bidirectional** variants as well as 1D **CNNs**.
-   - Finally, used the pretrained the **Universal Sentence Encoder** to make an embedding on both **character level** and **word level**.
-   -  Created a **Multivariate** model using the **functional API** of **TensorFlow**.
+   - Built and trained **LSTM**, **GRU** and their **bidirectional** variants as well as 1D **CNNs**.
+   - Generated both **character level** and **word level** **embeddings** with the pretrained **Universal Sentence Encoder** and used them as input to create a **Multivariate** model with the **functional API** of **TensorFlow**. 
 4. **DataCamp Projects**
    - Did about **9** real world projects.
 5. **Final Capstone Project: Summer Analytics 2022**

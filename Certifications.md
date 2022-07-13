@@ -1,6 +1,6 @@
 # Certificates
 1. Deep Learning Specialization by *Andrew Ng* on *Coursera* 
-   - Built a **neural network** **from scratch** using numpy and python with arbitrary **number of layers** and **number of neurons**.
+   - Built  **neural network** **from scratch** using numpy and python with arbitrary **number of layers** and **number of neurons**.
    - Built neural network architectures such as **CNN**, **LSTM**, **GRU** and **RNN**.
    - Learned and used **Batchnormalization**, **Dropout**, **L2** and other regularization techniques.
    - Implement and apply a variety of optimization algorithms, such as **mini-batch gradient descent**, **Momentum**, **RMSprop** and **Adam**.
@@ -35,13 +35,17 @@
    - Learned about **VSC** and their importance.
    - Learning concepts like **staging area**, **diff**, **patch**, **commits**, **branches**, **merging**, **rollbacks**.
    - Became familiar with **git** and **github** to manage code and collaborate with other developers.
-  
-9.  Introduction to SQL on *DataCamp*
+9. 3 Courses from SQL Fundamentals on *DataCamp*
+   - Learned basic to intermediate level SQL queries.
+   - Learning about the various types of **joins** and how to use them to join tables. 
+   - Learned about **subqueries**, the **CASE** statement. Used **Common Table Expressions** and **window functions** for **complex** and **nested** queries.
+___
+- Introduction to SQL on *DataCamp*
     - Learned basic SQL queries. We get to learn about **selecting**, **filtering**, **aggregation**, **sorting** and **grouping**. 
-10. Joining Data in SQL on *DataCamp*
+- Joining Data in SQL on *DataCamp*
     - Learned about joining two different tables together.
     - Familiar with the **ON** clause. Different types of like **inner**, **left outer**, **right outer**, **full outer**, **cross**. Also about subqueries.
-11. Intermediate SQL on *DataCamp*
+- Intermediate SQL on *DataCamp*
     - Using the **CASE** statement, **Correlated Queries**, **Nested Queries**, and **Common Table Expressions** and **window functions**.
-12. MATLAB Onramp on *MathWorks*
+- MATLAB Onramp on *MathWorks*
     - Learning very basics but essential of MATLAB concepts like **Metrics**, **Vectors**, **indexing**, **functions**, **importing data** etc.
