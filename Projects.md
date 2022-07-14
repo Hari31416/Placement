@@ -1,7 +1,11 @@
 # Projects
-# ML
+## Course Projects
+1. **Drop on Thin Film**
+   - Used 
+## ML
 1. **Titanic - Machine Learning from Disaster**
-   - Using the Titanic dataset, trained a model to **predict** whether a passenger survived the Titanic disaster.
+   - Using the Titanic dataset, trained a model to **predict** whether a passenger survived the Titanic dis
+   - aster.
    - Did **data visualization**, **feature engineering**, **data imputation** and trained **dozens** of models. Used **grid search** for each to find the best parameters.
    - Secured a place in the top **15%** on kaggle leaderboard.
    
@@ -10,7 +14,7 @@
    - Did **data visualization**, **feature engineering**, **data imputation** and trained **dozens** of models. Used **grid search** for each to find the best parameters.
    - Secured a place in the top **15%** on kaggle leaderboard. 
 3. **Natural Language Processing with Disaster Tweets**
-   - Built **NLP** models that predicts which Tweets are about real disasters and which one’s aren’t.
+   - Built **NLP** models that predict which Tweets are about real disasters and which one’s aren’t.
    - Used **text vectorization** and different **word embeddings** to transform the Tweets into a **vector**.
    - Built and trained **LSTM**, **GRU** and their **bidirectional** variants as well as 1D **CNNs**.
    - Generated both **character level** and **word level** **embeddings** with the pretrained **Universal Sentence Encoder** and used them as input to create a **Multivariate** model with the **functional API** of **TensorFlow**. 
@@ -22,20 +26,19 @@
 6. **MLS**
    - Implemented a linear **classification** as well as **regression** model **from scratch** using numpy and python.
    - Implemented **Gradient Descent**.
-# DL
+  
+## DL
 1. **Digit Recognizer**
    - Trained a very deep **convolutional neural network** with **dropout** and **batch normalization**.
-   - Got an **accuracy of 99.48%** of the **test set**.
-   - Secured a place in the top **15%** on kaggle leaderboard. 
+   - Got an **accuracy of 99.48%** of the **test set** securing a place in the top **15%** on kaggle leaderboard. 
 2. **Food Vision**
    - Trained deep **neural network** to *recognize* **101 categories of food**.
-   - Used pretrained **EfficientNet** model to extract the **features**.
-   - **Fine tuned** the **EfficientNet** model to get an accuracy of **80%** on the **test set**.
-   - **Deployed** the model on web using **django** and **heroku**
+   - Used pretrained **EfficientNet** model to extract the **features**. Then **Fine tuned** it resulting in an accuracy of **80%** on the **test set**.
+   - **Deployed** the model on web using **django** and **heroku**.
 3. **Natural Language Processing with Disaster Tweets**
-   - Built **NLP** models that predicts which Tweets are about real disasters and which one’s aren’t.
+   - Built **NLP** models that predict which Tweets are about real disasters and which one’s aren’t.
    - Used **text vectorization** and different **word embeddings** to transform the Tweets into a **vector**.
-   - Bulit **LSTM**, **GRU** and their **bidirectional** variants as well as 1D **CNNs**.
+   - Built **LSTM**, **GRU** and their **bidirectional** variants as well as 1D **CNNs**.
    - Finally, used the pretrained the **Universal Sentence Encoder** to make an embedding on both **character level** and **word level**.
    -  Created a **Multivariate** model using the **functional API** of **TensorFlow**.
 4. **TensorFlow Speech Recognition Challenge**
@@ -46,11 +49,10 @@
    - Implemnted a **nueral network** **from scratch** using numpy and python with arbitrary **number of layers** and **number of neurons**.
    - Used **forward propagation** and **backpropagation** to train the **neural network**.
 
-# Visualization
-
+## Visualization
 1. **Tableau**
    - Created a **tableau** viz with multiple **dashboards** and **stories** featuring my streaming history of Spotify for year 2021.
-   - Created a viz using data **crawled** from Goodreads to show info about the books I'd read in 2020 and 2021.
+   - Created a viz with data **crawled** from Goodreads to show info about the books I'd read in 2020 and 2021.
 2. **Titanic**
 3. **Songs**
 
@@ -61,9 +63,9 @@
    - The website contains apps like **Language Detector**, **PDF Tools** and **Youtube Song Downloader**.
 2. **Book Gallery**
    - Created a **responsive** website using **nodejs**, **express**, **ejs**, **JavaScript** and **Bootstrap** to feature a *gallery* of books.
-   - Used **Pyhton** to **scrap data** from Amazon and Goodreads.
+   - Used **Python** to **scrap data** from Amazon and Goodreads.
    - Used **restful** routes and implemented **query parameters** to filter the data on based of the **genre**, **author** and **series**.
-   - Used **MonogoDB** as database and **heroku** as deployment platform.
+   - Used **MonogoDB** as database, **heroku** as deployment platform and **Amazon S3** as storage.
 3. **Portfolio**
    - My portfolio website featuring almost all the projects I've done.
    - Used **HTML**, **CSS**, **Bootstrap** and **jQuery** to create the website and used **Github Pages** to deploy the website.
