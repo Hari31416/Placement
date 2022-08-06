@@ -1,4 +1,4 @@
-name: internship
+name: placement
 
 dependencies:
   - python=3.9
