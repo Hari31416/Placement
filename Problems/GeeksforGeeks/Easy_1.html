@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Easy 2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Easy 1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <style type="text/css">
   pre { line-height: 125%; }
@@ -13089,319 +13089,83 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="1.-Merge-Sorted-Array">1. Merge Sorted Array<a class="anchor-link" href="#1.-Merge-Sorted-Array">&#182;</a></h1>
+<h1 id="1.-Subarray-with-given-sum"><em>1. Subarray with given sum</em><a class="anchor-link" href="#1.-Subarray-with-given-sum">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div><p>You are given two integer arrays <code>nums1</code> and <code>nums2</code>, sorted in <strong>non-decreasing order</strong>, and two integers <code>m</code> and <code>n</code>, representing the number of elements in <code>nums1</code> and <code>nums2</code> respectively.</p>
+<div><p><span style="font-size:18px">Given an unsorted array <strong>A </strong>of size <strong>N</strong> that contains only&nbsp;non-negative integers, find a continuous sub-array which adds to a given number <strong>S</strong>.</span></p>
 
-<p><strong>Merge</strong> <code>nums1</code> and <code>nums2</code> into a single array sorted in <strong>non-decreasing order</strong>.</p>
-
-<p>The final sorted array should not be returned by the function, but instead be <em>stored inside the array </em><code>nums1</code>. To accommodate this, <code>nums1</code> has a length of <code>m + n</code>, where the first <code>m</code> elements denote the elements that should be merged, and the last <code>n</code> elements are set to <code>0</code> and should be ignored. <code>nums2</code> has a length of <code>n</code>.</p>
+<p><span style="font-size:18px">In case of multiple subarrays, return the subarray which comes first on moving from left to right.</span></p>
 
 <p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
 
-<pre><strong>Input:</strong> nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
-<strong>Output:</strong> [1,2,2,3,5,6]
-<strong>Explanation:</strong> The arrays we are merging are [1,2,3] and [2,5,6].
-The result of the merge is [<u>1</u>,<u>2</u>,2,<u>3</u>,5,6] with the underlined elements coming from nums1.
-</pre>
+<p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
-<p><strong>Example 2:</strong></p>
+<pre><span style="font-size:18px"><strong>Input:
+</strong>N = 5, S = 12
+A[] = {1,2,3,7,5}
+<strong>Output: </strong>2 4<strong>
+Explanation: </strong>The sum of elements 
+from 2nd position to 4th position 
+is 12.</span></pre>
 
-<pre><strong>Input:</strong> nums1 = [1], m = 1, nums2 = [], n = 0
-<strong>Output:</strong> [1]
-<strong>Explanation:</strong> The arrays we are merging are [1] and [].
-The result of the merge is [1].
-</pre>
+<p>&nbsp;</p>
 
-<p><strong>Example 3:</strong></p>
+<p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
-<pre><strong>Input:</strong> nums1 = [0], m = 0, nums2 = [1], n = 1
-<strong>Output:</strong> [1]
-<strong>Explanation:</strong> The arrays we are merging are [] and [1].
-The result of the merge is [1].
-Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
+<pre><span style="font-size:18px"><strong>Input:
+</strong>N = 10, S = 15
+A[] = {1,2,3,4,5,6,7,8,9,10}
+<strong>Output: </strong>1 5<strong>
+Explanation: </strong>The sum of elements 
+from 1st position to 5th position
+is 15.</span>
 </pre>
 
 <p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
 
-<ul>
-    <li><code>nums1.length == m + n</code></li>
-    <li><code>nums2.length == n</code></li>
-    <li><code>0 &lt;= m, n &lt;= 200</code></li>
-    <li><code>1 &lt;= m + n &lt;= 200</code></li>
-    <li><code>-10<sup>9</sup> &lt;= nums1[i], nums2[j] &lt;= 10<sup>9</sup></code></li>
-</ul>
+<p><span style="font-size:18px"><strong>Your Task:</strong><br>
+You don't need to read input or print anything. The task is to complete the function <strong>subarraySum</strong>() which takes arr, N and S as input parameters and returns an <strong>arraylist&nbsp;</strong>containing the&nbsp;<strong>starting </strong>and <strong>ending </strong>positions&nbsp;of the&nbsp;first such occurring subarray from the left where sum equals to S. The two indexes in the array should be according to 1-based indexing. If no such subarray is found, return an array consisting only one element that is -1.</span></p>
 
 <p>&nbsp;</p>
-<p><strong>Follow up: </strong>Can you come up with an algorithm that runs in <code>O(m + n)</code> time?</p>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">nums1</span><span class="p">,</span> <span class="n">nums2</span><span class="p">,):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    :type nums1: List[int]</span>
-<span class="sd">    :type m: int</span>
-<span class="sd">    :type nums2: List[int]</span>
-<span class="sd">    :type n: int</span>
-<span class="sd">    :rtype: None Do not return anything, modify nums1 in-place instead.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums2</span><span class="p">)</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums1</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">nums1</span><span class="p">[</span><span class="n">m</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">nums1</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nums1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">nums2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
-<span class="n">merge</span><span class="p">(</span><span class="n">nums1</span><span class="p">,</span> <span class="n">nums2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">nums1</span><span class="p">,</span> <span class="n">nums2</span><span class="p">):</span>
-    
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="2.-Pascal's-Triangle">2. Pascal's Triangle<a class="anchor-link" href="#2.-Pascal's-Triangle">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div><p>Given an integer <code>numRows</code>, return the first numRows of <strong>Pascal's triangle</strong>.</p>
-
-<p>In <strong>Pascal's triangle</strong>, each number is the sum of the two numbers directly above it as shown:</p>
-<img alt="" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" style="height:240px; width:260px">
-<p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
-<pre><strong>Input:</strong> numRows = 5
-<strong>Output:</strong> [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
-</pre><p><strong>Example 2:</strong></p>
-<pre><strong>Input:</strong> numRows = 1
-<strong>Output:</strong> [[1]]
-</pre>
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-    <li><code>1 &lt;= numRows &lt;= 30</code></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sum_list</span><span class="p">(</span><span class="n">list_</span><span class="p">):</span>
-    <span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">list_</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
-    <span class="k">return</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span> <span class="n">new_list</span><span class="o">+</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sum_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[35]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[1, 2, 1]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">numRows</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">numRows</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">[[</span><span class="mi">1</span><span class="p">]]</span>
-    <span class="k">if</span> <span class="n">numRows</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
-    <span class="k">def</span> <span class="nf">sum_list_</span><span class="p">(</span><span class="n">list_</span><span class="p">):</span>
-        <span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-            <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">list_</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
-        <span class="k">return</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span> <span class="n">new_list</span><span class="o">+</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">the_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numRows</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
-        <span class="n">the_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sum_list_</span><span class="p">(</span><span class="n">the_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-    <span class="k">return</span> <span class="n">the_list</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">generate</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[43]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="3.-Valid-Palindrome">3. Valid Palindrome<a class="anchor-link" href="#3.-Valid-Palindrome">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div><p>A phrase is a <strong>palindrome</strong> if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.</p>
-
-<p>Given a string <code>s</code>, return <code>true</code><em> if it is a <strong>palindrome</strong>, or </em><code>false</code><em> otherwise</em>.</p>
+<p><span style="font-size:18px"><strong>Expected Time Complexity:&nbsp;</strong>O(N)<br>
+<strong>Expected Auxiliary Space:&nbsp;</strong>O(1)</span></p>
 
 <p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
 
-<pre><strong>Input:</strong> s = "A man, a plan, a canal: Panama"
-<strong>Output:</strong> true
-<strong>Explanation:</strong> "amanaplanacanalpanama" is a palindrome.
-</pre>
-
-<p><strong>Example 2:</strong></p>
-
-<pre><strong>Input:</strong> s = "race a car"
-<strong>Output:</strong> false
-<strong>Explanation:</strong> "raceacar" is not a palindrome.
-</pre>
-
-<p><strong>Example 3:</strong></p>
-
-<pre><strong>Input:</strong> s = " "
-<strong>Output:</strong> true
-<strong>Explanation:</strong> s is an empty string "" after removing non-alphanumeric characters.
-Since an empty string reads the same forward and backward, it is a palindrome.
-</pre>
+<p><span style="font-size:18px"><strong>Constraints:</strong><br>
+1 &lt;= N &lt;= 10<sup>5</sup></span><br>
+<span style="font-size:18px">1 &lt;= A</span><sub>i</sub><span style="font-size:18px"> &lt;= 10<sup>9</sup></span></p>
 
 <p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-    <li><code>1 &lt;= s.length &lt;= 2 * 10<sup>5</sup></code></li>
-    <li><code>s</code> consists only of printable ASCII characters.</li>
-</ul>
 </div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">is_palindrom</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="n">valids</span> <span class="o">=</span> <span class="s2">&quot;0123456789abcdefghijklmnopqrstuvwxyz&quot;</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">valids</span><span class="p">:</span>
-            <span class="n">string</span><span class="o">+=</span><span class="n">letter</span>
-    <span class="k">return</span> <span class="n">string</span> <span class="o">==</span> <span class="n">string</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">subarray_sum</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">sum_</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">sum_</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sum_</span><span class="o">==</span><span class="n">s</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">end</span><span class="o">&gt;</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">sum_</span><span class="o">&lt;</span><span class="n">s</span><span class="p">:</span>
+            <span class="n">sum_</span> <span class="o">+=</span><span class="n">arr</span><span class="p">[</span><span class="n">end</span><span class="p">]</span>
+            <span class="n">end</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">sum_</span><span class="o">&gt;</span><span class="n">s</span><span class="p">:</span>
+            <span class="n">sum_</span> <span class="o">-=</span> <span class="n">arr</span><span class="p">[</span><span class="n">start</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">start</span> <span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 </pre></div>
 
     </div>
@@ -13411,12 +13175,13 @@ Since an empty string reads the same forward and backward, it is a palindrome.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">time</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;A man, a plan, a canal: Panama&quot;</span>
-<span class="n">is_palindrom</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">subarray_sum</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13433,123 +13198,41 @@ Since an empty string reads the same forward and backward, it is a palindrome.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 6 µs, sys: 0 ns, total: 6 µs
-Wall time: 13.6 µs
+<pre>1
+3
+6
+13
+12
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
+<pre>[2, 4]</pre>
 </div>
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="4.-Best-Time-to-Buy-and-Sell-Stock">4. Best Time to Buy and Sell Stock<a class="anchor-link" href="#4.-Best-Time-to-Buy-and-Sell-Stock">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div><p>You are given an array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the <code>i<sup>th</sup></code> day.</p>
-
-<p>You want to maximize your profit by choosing a <strong>single day</strong> to buy one stock and choosing a <strong>different day in the future</strong> to sell that stock.</p>
-
-<p>Return <em>the maximum profit you can achieve from this transaction</em>. If you cannot achieve any profit, return <code>0</code>.</p>
-
-<p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
-
-<pre><strong>Input:</strong> prices = [7,1,5,3,6,4]
-<strong>Output:</strong> 5
-<strong>Explanation:</strong> Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
-Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
-</pre>
-
-<p><strong>Example 2:</strong></p>
-
-<pre><strong>Input:</strong> prices = [7,6,4,3,1]
-<strong>Output:</strong> 0
-<strong>Explanation:</strong> In this case, no transactions are done and the max profit = 0.
-</pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-    <li><code>1 &lt;= prices.length &lt;= 10<sup>5</sup></code></li>
-    <li><code>0 &lt;= prices[i] &lt;= 10<sup>4</sup></code></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">max_profit</span><span class="p">(</span><span class="n">prices</span><span class="p">):</span>
-    <span class="n">minimum</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
-    <span class="n">min_pos</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">minimum</span><span class="p">)</span>
-    <span class="n">maximum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="n">min_pos</span><span class="p">:])</span>
-    <span class="k">if</span> <span class="n">maximum</span><span class="o">&lt;</span><span class="n">minimum</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-    <span class="k">return</span> <span class="n">maximum</span><span class="o">-</span><span class="n">minimum</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">max_profit</span><span class="p">(</span><span class="n">prices</span><span class="p">):</span>
-    <span class="n">maximum</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">minimum</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">profit</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">maximum</span><span class="o">-</span><span class="n">minimum</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="n">minimum</span><span class="p">:</span>
-            <span class="n">maximum</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;</span><span class="n">minimum</span><span class="p">:</span>
-            <span class="n">minimum</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-            <span class="n">maximum</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">maximum</span><span class="o">-</span><span class="n">minimum</span><span class="p">)</span><span class="o">&gt;</span><span class="n">profit</span><span class="p">:</span>
-            <span class="n">profit</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">maximum</span><span class="o">-</span><span class="n">minimum</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">profit</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
-<span class="n">max_profit</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">subarray_sum</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13562,7 +13245,319 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[27]:</div>
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+3
+6
+10
+15
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1, 5]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">59</span>
+<span class="n">subarray_sum</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+3
+6
+10
+15
+21
+28
+36
+45
+55
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-1</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="2.-Check-for-BST"><em>2. Check for BST</em><a class="anchor-link" href="#2.-Check-for-BST">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div><p><span style="font-size:18px">Given the root of a&nbsp;binary tree. Check whether it is a BST or not.<br>
+<strong>Note: </strong>We are considering that BSTs can not contain duplicate Nodes.</span><br>
+<span style="font-size:18px">A&nbsp;<strong>BST</strong>&nbsp;is defined as follows:</span></p>
+
+<ul>
+    <li>
+    <div><span style="font-size:18px">The left subtree of a node contains only nodes with keys <strong>less than</strong> the node's key.</span></div>
+    </li>
+    <li>
+    <div><span style="font-size:18px">The right subtree of a node contains only nodes with keys <strong>greater than</strong> the node's key.</span></div>
+    </li>
+    <li>
+    <div><span style="font-size:18px">Both the left and right subtrees must also be binary search trees.</span></div>
+    </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
+
+<pre><span style="font-size:18px"><strong>Input:
+</strong>&nbsp; &nbsp;2
+ /&nbsp; &nbsp; \
+1&nbsp; &nbsp; &nbsp; 3
+<strong>Output: </strong>1 
+<strong>Explanation: </strong></span>
+<span style="font-size:18px">The left subtree of root node contains node
+with key lesser than the root nodes key and 
+the right subtree of root node contains node 
+with key greater than the root nodes key.
+Hence, the tree is a BST.</span>
+</pre>
+
+<p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
+
+<pre><span style="font-size:18px"><strong>Input:
+</strong>  2
+&nbsp;  \
+&nbsp;   7
+&nbsp;    \
+&nbsp;     6
+&nbsp;      \
+&nbsp;       5
+&nbsp;        \
+&nbsp;         9
+&nbsp;          \
+&nbsp;           2
+&nbsp;            \
+&nbsp;             6
+<strong>Output: </strong>0 
+<strong>Explanation: </strong>
+Since the node with value 7 has right subtree 
+nodes with keys less than 7, this is not a BST.
+</span></pre>
+
+<p><span style="font-size:18px"><strong>Your Task:</strong><br>
+You don't need to read input or print anything. Your task is to complete the function&nbsp;</span><span style="font-size:18px"><strong>isBST()</strong> which takes the root of the tree as a parameter and returns <strong>true</strong>&nbsp;if the given binary tree is BST, else returns <strong>false</strong>.&nbsp;</span></p>
+
+<p><span style="font-size:18px"><strong>Expected Time Complexity:</strong>&nbsp;O(N).<br>
+<strong>Expected Auxiliary Space:</strong>&nbsp;O(Height of the BST).</span></p>
+
+<p><span style="font-size:18px"><strong>Constraints:</strong><br>
+0 &lt;= Number of edges &lt;= 100000</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="3.-Missing-number-in-array">3. Missing number in array<a class="anchor-link" href="#3.-Missing-number-in-array">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div><p><span style="font-size:18px">Given an array of size&nbsp;<strong>N-1</strong>&nbsp;such that it only contains distinct integers in the range of&nbsp;<strong>1&nbsp;to N</strong>. Find the missing element.</span></p>
+
+<p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
+
+<pre><span style="font-size:18px"><strong>Input:
+</strong>N = 5
+A[] = {1,2,3,5}
+<strong>Output: </strong>4</span>
+</pre>
+
+<p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
+
+<pre><span style="font-size:18px"><strong>Input:
+</strong>N = 10
+A[] = {6,1,2,8,3,4,7,10,5}
+<strong>Output: </strong>9</span></pre>
+
+<p><br>
+<span style="font-size:18px"><strong>Your Task :</strong><br>
+You don't need to read input or print anything.&nbsp;Complete the function&nbsp;<strong>MissingNumber()&nbsp;</strong>that takes array and N as input &nbsp;parameters and returns the value of the missing number.</span></p>
+
+<p><br>
+<span style="font-size:18px"><strong>Expected Time Complexity:</strong>&nbsp;O(N)<br>
+<strong>Expected Auxiliary Space:</strong>&nbsp;O(1)</span></p>
+
+<p><br>
+<span style="font-size:18px"><strong>Constraints:</strong><br>
+1 ≤ N ≤ 10<sup>6</sup><br>
+1 ≤ A[i] ≤ 10<sup>6</sup></span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">missing_number</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="n">arr_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="k">if</span> <span class="mi">1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">arr_set</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">i</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">missing_number</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[51]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>9</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">missing_number</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[52]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">missing_number</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[53]:</div>
 
 
 
@@ -13579,11 +13574,11 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">max_profit</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">missing_number</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13596,47 +13591,13 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[54]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">max_profit</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[29]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
+<pre>1</pre>
 </div>
 
 </div>
@@ -13648,146 +13609,120 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="5.-Single-Number">5. Single Number<a class="anchor-link" href="#5.-Single-Number">&#182;</a></h1>
+<h1 id="4.-Left-View-of-Binary-Tree"><em>4. Left View of Binary Tree</em><a class="anchor-link" href="#4.-Left-View-of-Binary-Tree">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div><p>Given a <strong>non-empty</strong>&nbsp;array of integers <code>nums</code>, every element appears <em>twice</em> except for one. Find that single one.</p>
+<div><p><span style="font-size:18px">Given a Binary Tree, print Left view of it. Left view of a Binary Tree is set of nodes visible when tree is visited from Left side. The task is to complete the function <strong>leftView()</strong>, which accepts root of the tree as argument.</span></p>
 
-<p>You must&nbsp;implement a solution with a linear runtime complexity and use&nbsp;only constant&nbsp;extra space.</p>
+<p><span style="font-size:18px">Left view of following tree is 1 2 4 8.</span></p>
 
-<p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
-<pre><strong>Input:</strong> nums = [2,2,1]
-<strong>Output:</strong> 1
-</pre><p><strong>Example 2:</strong></p>
-<pre><strong>Input:</strong> nums = [4,1,2,1,2]
-<strong>Output:</strong> 4
-</pre><p><strong>Example 3:</strong></p>
-<pre><strong>Input:</strong> nums = [1]
-<strong>Output:</strong> 1
+<p><span style="font-size:18px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /&nbsp;&nbsp;&nbsp;&nbsp; \<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3<br>
+&nbsp;&nbsp; /&nbsp;&nbsp; &nbsp; \ &nbsp;&nbsp; /&nbsp;&nbsp;&nbsp; \<br>
+&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp; 5&nbsp;&nbsp; 6&nbsp;&nbsp;&nbsp; 7<br>
+&nbsp;&nbsp; \<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 8&nbsp; &nbsp;</span></p>
+
+<p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
+
+<pre><span style="font-size:18px"><strong>Input:
+</strong>&nbsp;  1
+&nbsp;/&nbsp; \
+3&nbsp; &nbsp; 2
+<strong>Output: </strong>1 3<strong>
+</strong></span>
 </pre>
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
 
-<ul>
-    <li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>
-    <li><code>-3 * 10<sup>4</sup> &lt;= nums[i] &lt;= 3 * 10<sup>4</sup></code></li>
-    <li>Each element in the array appears twice except for one element which appears only once.</li>
-</ul>
+<p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
+
+<pre><span style="font-size:18px"><strong>Input:
+</strong><img alt="" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190221103723/leftview.jpg" style="height:272px; width:285px">
+<strong>Output: </strong>10 20 40
+</span></pre>
+
+<p><span style="font-size:18px"><strong>Your Task:</strong><br>
+You just have to <strong>complete </strong>the function <strong>leftView() </strong>that returns an array containing the nodes that are in&nbsp;the left view. The newline is automatically appended by the driver code.</span><br>
+<span style="font-size:18px"><strong>Expected Time Complexity:&nbsp;</strong>O(N).<br>
+<strong>Expected Auxiliary Space:&nbsp;</strong>O(N).</span></p>
+
+<p><span style="font-size:18px"><strong>Constraints:</strong><br>
+0 &lt;= Number of nodes &lt;= 100<br>
+1 &lt;= Data of a node &lt;= 1000</span></p>
 </div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">single_number</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-        <span class="n">num</span> <span class="o">=</span> <span class="n">num</span><span class="o">^</span><span class="n">i</span>
-    <span class="k">return</span> <span class="n">num</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">single_number</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>4</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="6.-Majority-Element">6. Majority Element<a class="anchor-link" href="#6.-Majority-Element">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div><p>Given an array <code>nums</code> of size <code>n</code>, return <em>the majority element</em>.</p>
+<h1 id="5.-Detect-Loop-in-linked-list">5. Detect Loop in linked list<a class="anchor-link" href="#5.-Detect-Loop-in-linked-list">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div><p><span style="font-size:18px">Given a linked list of <strong>N</strong> nodes. The task is to check if the&nbsp;linked list has a loop. Linked list can contain&nbsp;self loop.</span></p>
 
-<p>The majority element is the element that appears more than <code>⌊n / 2⌋</code> times. You may assume that the majority element always exists in the array.</p>
+<p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
-<p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
-<pre><strong>Input:</strong> nums = [3,2,3]
-<strong>Output:</strong> 3
-</pre><p><strong>Example 2:</strong></p>
-<pre><strong>Input:</strong> nums = [2,2,1,1,1,2,2]
-<strong>Output:</strong> 2
-</pre>
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+<pre><span style="font-size:18px"><strong>Input:
+</strong>N = 3
+value[] = {1,3,4}
+x(position at which tail is connected) = 2
+<strong>Output: </strong>True<strong>
+Explanation: </strong>In above test case N = 3.
+</span><span style="font-size:18px">The linked list with nodes N = 3 is
+given. Then value of&nbsp;x=2 is given which
+means last node is connected with xth
+node of linked list. Therefore, there
+exists a loop.</span></pre>
 
-<ul>
-    <li><code>n == nums.length</code></li>
-    <li><code>1 &lt;= n &lt;= 5 * 10<sup>4</sup></code></li>
-    <li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
-</ul>
+<p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
-<p>&nbsp;</p>
-<strong>Follow-up:</strong> Could you solve the problem in linear time and in <code>O(1)</code> space?</div>
+<pre><span style="font-size:18px"><strong>Input:
+</strong>N = 4
+value[] = {1,8,3,4}
+x = 0
+<strong>Output: </strong>False<strong>
+Explanation: </strong>For N = 4 ,x = 0 means
+then lastNode-&gt;next = NULL, then
+the&nbsp;Linked list does not contains
+any loop.</span></pre>
+
+<p><span style="font-size:18px"><strong>Your Task:</strong><br>
+The task is to complete the function <strong>detectloop</strong>() which contains reference to the head as only argument. This function should return <strong>true</strong>&nbsp;if linked list contains loop, else return <strong>false</strong>.</span></p>
+
+<p><span style="font-size:18px"><strong>Expected Time Complexity:</strong>&nbsp;O(N)<br>
+<strong>Expected Auxiliary Space:</strong>&nbsp;O(1)</span></p>
+
+<p><span style="font-size:18px"><strong>Constraints:</strong></span><br>
+<span style="font-size:18px">1 ≤ N ≤ 10<sup>4</sup><br>
+1 ≤ Data on Node ≤ 10<sup>3</sup></span></p>
+</div>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">majority</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
-    <span class="n">nums</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-    <span class="n">el_c</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">cnt</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">el_c</span><span class="p">:</span>
-            <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">detect_loop</span><span class="p">(</span><span class="n">head</span><span class="p">):</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">head</span>
+    <span class="k">while</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">current</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">cnt</span> <span class="o">=</span> <span class="mi">1</span>
-            <span class="n">el_c</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-
-        <span class="k">if</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">el_c</span>
-    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="kc">False</span>
 </pre></div>
 
     </div>
@@ -13795,300 +13730,83 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">majority</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[45]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">majority</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[46]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>3</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="7.-Binary-Tree-Inorder-Traversal"><em>7. Binary Tree Inorder Traversal</em><a class="anchor-link" href="#7.-Binary-Tree-Inorder-Traversal">&#182;</a></h1>
+<h1 id="6.-Find-duplicates-in-an-array">6. Find duplicates in an array<a class="anchor-link" href="#6.-Find-duplicates-in-an-array">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div><p>Given the <code>root</code> of a binary tree, return <em>the inorder traversal of its nodes' values</em>.</p>
+<div><p><span style="font-size:18px">Given an array a[] of size N which contains elements from 0 to N-1, you need to find all the elements occurring more than once in the given array.</span></p>
 
-<p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
-<img alt="" src="https://assets.leetcode.com/uploads/2020/09/15/inorder_1.jpg" style="width: 125px; height: 200px;">
-<pre><strong>Input:</strong> root = [1,null,2,3]
-<strong>Output:</strong> [1,3,2]
+<p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
+
+<pre><span style="font-size:18px"><strong>Input:
+</strong>N = 4
+a[] = {0,3,1,2}
+<strong>Output: </strong>-1<strong>
+Explanation: </strong>N=4 and all elements from 0
+to (N-1 = 3) are present in the given
+array. Therefore output is -1.</span>
 </pre>
 
-<p><strong>Example 2:</strong></p>
+<p><span style="font-size:18px"><strong>Example 2:</strong></span></p>
 
-<pre><strong>Input:</strong> root = []
-<strong>Output:</strong> []
-</pre>
+<pre><span style="font-size:18px"><strong>Input:
+</strong>N = 5
+a[] = {2,3,1,2,3}
+<strong>Output: </strong>2 3&nbsp;<strong>
+Explanation: </strong>2 and 3 occur more than once
+in the given array.</span></pre>
 
-<p><strong>Example 3:</strong></p>
+<p><span style="font-size:18px"><strong>Your Task:</strong><br>
+Complete the function <strong>duplicates()</strong>&nbsp;which takes array a[] and n as input as parameters and returns a list of elements that occur more than once in the given array in sorted manner. If no such element is found, return list containing [-1].&nbsp;</span></p>
 
-<pre><strong>Input:</strong> root = [1]
-<strong>Output:</strong> [1]
-</pre>
+<p><span style="font-size:18px"><strong>Expected Time Complexity:</strong> O(n).<br>
+<strong>Expected Auxiliary Space:</strong> O(n).<br>
+Note : The extra space is only for the array to be returned.<br>
+Try and perform all operation withing the provided array.&nbsp;</span></p>
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-    <li>The number of nodes in the tree is in the range <code>[0, 100]</code>.</li>
-    <li><code>-100 &lt;= Node.val &lt;= 100</code></li>
-</ul>
-
-<p>&nbsp;</p>
-<strong>Follow up:</strong> Recursive solution is trivial, could you do it iteratively?</div>
+<p><span style="font-size:18px"><strong>Constraints:</strong><br>
+1 &lt;= N &lt;= 10<sup>5</sup><br>
+0 &lt;= A[i] &lt;= N-1, for each valid i</span></p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="8.-Excel-Sheet-Column-Number">8. Excel Sheet Column Number<a class="anchor-link" href="#8.-Excel-Sheet-Column-Number">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div><p>Given a string <code>columnTitle</code> that represents the column title as appears in an Excel sheet, return <em>its corresponding column number</em>.</p>
-
-<p>For example:</p>
-
-<pre>A -&gt; 1
-B -&gt; 2
-C -&gt; 3
-...
-Z -&gt; 26
-AA -&gt; 27
-AB -&gt; 28 
-...
-</pre>
-
-<p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
-
-<pre><strong>Input:</strong> columnTitle = "A"
-<strong>Output:</strong> 1
-</pre>
-
-<p><strong>Example 2:</strong></p>
-
-<pre><strong>Input:</strong> columnTitle = "AB"
-<strong>Output:</strong> 28
-</pre>
-
-<p><strong>Example 3:</strong></p>
-
-<pre><strong>Input:</strong> columnTitle = "ZY"
-<strong>Output:</strong> 701
-</pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-    <li><code>1 &lt;= columnTitle.length &lt;= 7</code></li>
-    <li><code>columnTitle</code> consists only of uppercase English letters.</li>
-    <li><code>columnTitle</code> is in the range <code>["A", "FXSHRXW"]</code>.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">title_to_number</span><span class="p">(</span><span class="n">columnTitle</span><span class="p">):</span>
-    <span class="n">alphabate</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
-    <span class="n">alphabate_to_num</span> <span class="o">=</span> <span class="p">{</span><span class="n">alphabate</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alphabate</span><span class="p">))}</span>
-    <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">columnTitle</span> <span class="o">=</span> <span class="n">columnTitle</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">columnTitle</span><span class="p">)):</span>
-        <span class="n">num</span><span class="o">+=</span> <span class="mi">26</span><span class="o">**</span><span class="n">i</span><span class="o">*</span><span class="n">alphabate_to_num</span><span class="p">[</span><span class="n">a</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">num</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title_to_number</span><span class="p">(</span><span class="s2">&quot;ZY&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[36]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>701</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="9.-Reverse-Bits">9. Reverse Bits<a class="anchor-link" href="#9.-Reverse-Bits">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div><p>Reverse bits of a given 32 bits unsigned integer.</p>
-
-<p><strong>Note:</strong></p>
-
-<ul>
-    <li>Note that in some languages, such as Java, there is no unsigned integer type. In this case, both input and output will be given as a signed integer type. They should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.</li>
-    <li>In Java, the compiler represents the signed integers using <a href="https://en.wikipedia.org/wiki/Two%27s_complement" target="_blank">2's complement notation</a>. Therefore, in <strong>Example 2</strong> above, the input represents the signed integer <code>-3</code> and the output represents the signed integer <code>-1073741825</code>.</li>
-</ul>
-
-<p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
-
-<pre><strong>Input:</strong> n = 00000010100101000001111010011100
-<strong>Output:</strong>    964176192 (00111001011110000010100101000000)
-<strong>Explanation: </strong>The input binary string <strong>00000010100101000001111010011100</strong> represents the unsigned integer 43261596, so return 964176192 which its binary representation is <strong>00111001011110000010100101000000</strong>.
-</pre>
-
-<p><strong>Example 2:</strong></p>
-
-<pre><strong>Input:</strong> n = 11111111111111111111111111111101
-<strong>Output:</strong>   3221225471 (10111111111111111111111111111111)
-<strong>Explanation: </strong>The input binary string <strong>11111111111111111111111111111101</strong> represents the unsigned integer 4294967293, so return 3221225471 which its binary representation is <strong>10111111111111111111111111111111</strong>.
-</pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-    <li>The input must be a <strong>binary string</strong> of length <code>32</code></li>
-</ul>
-
-<p>&nbsp;</p>
-<p><strong>Follow up:</strong> If this function is called many times, how would you optimize it?</p>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">reverse_bits</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">str_n</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">b</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">str_n</span><span class="p">),</span> <span class="mi">32</span><span class="p">):</span>
-        <span class="n">str_n</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span><span class="o">+</span><span class="n">str_n</span>
-    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">bit</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">str_n</span><span class="p">):</span>
-        <span class="nb">sum</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="o">*</span><span class="nb">int</span><span class="p">(</span><span class="n">bit</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nb">sum</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">43261596</span>
-<span class="n">reverse_bits</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">duplicates</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="n">duplis</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">already_in</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">already_in</span><span class="p">:</span>
+            <span class="n">duplis</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">already_in</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">duplis</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">duplis</span><span class="p">)</span>
+    <span class="n">duplis</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">duplis</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">duplis</span><span class="p">)</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="k">else</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">duplicates</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> 
 </pre></div>
 
     </div>
@@ -14101,95 +13819,28 @@ AB -&gt; 28
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[30]:</div>
+    <div class="prompt output_prompt">Out[31]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>964176192</pre>
+<pre>[2, 3]</pre>
 </div>
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="10.-Number-of-1-Bits">10. Number of 1 Bits<a class="anchor-link" href="#10.-Number-of-1-Bits">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div><p>Write a function that takes an unsigned integer and returns the number of '1' bits it has (also known as the <a href="http://en.wikipedia.org/wiki/Hamming_weight" target="_blank">Hamming weight</a>).</p>
-
-<p><strong>Note:</strong></p>
-
-<ul>
-    <li>Note that in some languages, such as Java, there is no unsigned integer type. In this case, the input will be given as a signed integer type. It should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.</li>
-    <li>In Java, the compiler represents the signed integers using <a href="https://en.wikipedia.org/wiki/Two%27s_complement" target="_blank">2's complement notation</a>. Therefore, in <strong>Example 3</strong>, the input represents the signed integer. <code>-3</code>.</li>
-</ul>
-
-<p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
-
-<pre><strong>Input:</strong> n = 00000000000000000000000000001011
-<strong>Output:</strong> 3
-<strong>Explanation:</strong> The input binary string <strong>00000000000000000000000000001011</strong> has a total of three '1' bits.
-</pre>
-
-<p><strong>Example 2:</strong></p>
-
-<pre><strong>Input:</strong> n = 00000000000000000000000010000000
-<strong>Output:</strong> 1
-<strong>Explanation:</strong> The input binary string <strong>00000000000000000000000010000000</strong> has a total of one '1' bit.
-</pre>
-
-<p><strong>Example 3:</strong></p>
-
-<pre><strong>Input:</strong> n = 11111111111111111111111111111101
-<strong>Output:</strong> 31
-<strong>Explanation:</strong> The input binary string <strong>11111111111111111111111111111101</strong> has a total of thirty one '1' bits.
-</pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-    <li>The input must be a <strong>binary string</strong> of length <code>32</code>.</li>
-</ul>
-
-<p>&nbsp;</p>
-<strong>Follow up:</strong> If this function is called many times, how would you optimize it?</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">hamming_weight</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">str_n</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">b</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="k">return</span> <span class="n">str_n</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hamming_weight</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">duplicates</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14202,17 +13853,384 @@ AB -&gt; 28
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[38]:</div>
+    <div class="prompt output_prompt">Out[32]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>2</pre>
+<pre>[-1]</pre>
 </div>
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">duplicates</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[33]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[-1]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="7.-Sort-an-array-of-0s,-1s-and-2s">7. Sort an array of 0s, 1s and 2s<a class="anchor-link" href="#7.-Sort-an-array-of-0s,-1s-and-2s">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div><p><span style="font-size:18px">Given an array of size N containing only 0s, 1s, and 2s; sort the array in ascending order.</span></p>
+
+<p><br>
+<span style="font-size:18px"><strong>Example 1:</strong></span></p>
+
+<pre><span style="font-size:18px"><strong>Input: </strong>
+N = 5
+arr[]= {0 2 1 2 0}
+<strong>Output:</strong>
+0 0 1 2 2
+<strong>Explanation:</strong>
+0s 1s and 2s are segregated 
+into ascending order.</span></pre>
+
+<p><strong><span style="font-size:18px">Example 2:</span></strong></p>
+
+<pre><span style="font-size:18px"><strong>Input: </strong>
+N = 3
+arr[] = {0 1 0}
+<strong>Output:</strong>
+0 0 1
+<strong>Explanation:</strong>
+0s 1s and 2s are segregated 
+into ascending order.</span></pre>
+
+<p><br>
+<span style="font-size:18px"><strong>Your Task:</strong><br>
+You don't need to read input or print anything. Your task is to complete the function <strong>sort012() </strong>that takes an array arr and N as input parameters and <strong>sorts the array in-place. </strong></span></p>
+
+<p><br>
+<span style="font-size:18px"><strong>Expected Time Complexity: </strong>O(N)<br>
+<strong>Expected Auxiliary Space:</strong> O(1)</span></p>
+
+<p><br>
+<span style="font-size:18px"><strong>Constraints:</strong><br>
+1 &lt;= N &lt;= 10^6<br>
+0 &lt;= A[i] &lt;= 2</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sort012</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+        <span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+        <span class="mi">2</span><span class="p">:</span><span class="mi">0</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+        <span class="n">counts</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">counts</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">elif</span> <span class="n">counts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">i</span><span class="o">&lt;</span><span class="n">counts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">counts</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+        
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">sort012</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{0: 2, 1: 1, 2: 2}
+[0, 0, 1, 2, 2]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="8.-Nth-node-from-end-of-linked-list">8. Nth node from end of linked list<a class="anchor-link" href="#8.-Nth-node-from-end-of-linked-list">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div><p><span style="font-size:18px">Given a linked list consisting of <strong>L</strong> nodes and given a number <strong>N</strong>. The task is to find the <strong>N</strong><sup>th</sup> node from the end of the linked list.</span></p>
+
+<p><strong><span style="font-size:18px">Example 1:</span></strong></p>
+
+<pre><strong><span style="font-size:18px">Input:
+</span></strong><span style="font-size:18px">N = 2
+LinkedList: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;6-&gt;7-&gt;8-&gt;9
+<strong>Output: </strong>8<strong>
+Explanation: </strong>In the first example, there
+are 9 nodes in linked list and we need
+to find 2nd node from end.&nbsp;2nd node
+from end os 8.&nbsp;&nbsp;</span>
+</pre>
+
+<p><strong><span style="font-size:18px">Example 2:</span></strong></p>
+
+<pre><strong><span style="font-size:18px">Input:
+</span></strong><span style="font-size:18px">N = 5
+LinkedList: 10-&gt;5-&gt;100-&gt;5
+<strong>Output: </strong>-1<strong>
+Explanation: </strong>In the second example, there
+are 4 nodes in the linked list and we
+need to find 5th from the end.&nbsp;Since 'n'
+is more than the number of nodes in the
+linked list, the output is -1.</span></pre>
+
+<p><span style="font-size:18px"><strong>Your Task:</strong><br>
+The task is to complete the function <strong>getNthFromLast</strong>() which takes two <strong>arguments</strong>: <strong>reference </strong>to <strong>head and N</strong> and you need to<strong> return N<sup>th</sup> </strong>from the end or -1 in case node doesn't exist..</span></p>
+
+<p><span style="font-size:18px"><strong>Note:</strong><br>
+Try to solve in single traversal.</span></p>
+
+<p><span style="font-size:18px"><strong>Expected Time Complexity:&nbsp;</strong>O(N).<br>
+<strong>Expected Auxiliary Space:&nbsp;</strong>O(1).</span></p>
+
+<p><span style="font-size:18px"><strong>Constraints:</strong><br>
+1 &lt;= L &lt;= 10<sup>6</sup><br>
+1 &lt;= N &lt;= 10<sup>6</sup></span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_nth_from_last</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">head</span><span class="p">,</span> <span class="n">head</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">while</span> <span class="n">left</span><span class="p">:</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="n">right</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">right</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="9.-Finding-middle-element-in-a-linked-list">9. Finding middle element in a linked list<a class="anchor-link" href="#9.-Finding-middle-element-in-a-linked-list">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div><p><span style="font-size:18px">Given a singly linked list of <strong>N</strong> nodes.<br>
+The task is to find the <strong>middle</strong>&nbsp;of the linked list. For example, if the&nbsp;linked list is<br>
+<strong>1-&gt; 2-&gt;3-&gt;4-&gt;5</strong>,<strong>&nbsp;</strong>then the middle node of the list is&nbsp;<strong>3</strong>.<br>
+If there are&nbsp;two middle nodes(in case, when&nbsp;<strong>N</strong>&nbsp;is even),&nbsp;print the <strong>second middle</strong> element.<br>
+For example, if the linked list given is <strong>1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;6</strong>, then the middle node of the list is <strong>4</strong>.</span></p>
+
+<p><strong><span style="font-size:18px">Example 1:</span></strong></p>
+
+<pre><strong><span style="font-size:18px">Input:</span></strong><strong><span style="font-size:18px">
+</span></strong><span style="font-size:18px">LinkedList: 1-&gt;2-&gt;3-&gt;4-&gt;5
+<strong>Output: </strong>3 
+<strong>Explanation:</strong> 
+Middle of linked list is 3.</span>
+</pre>
+
+<p><strong><span style="font-size:18px">Example 2:&nbsp;</span></strong></p>
+
+<pre><strong><span style="font-size:18px">Input:</span></strong><strong><span style="font-size:18px">
+</span></strong><span style="font-size:18px">LinkedList: 2-&gt;4-&gt;6-&gt;7-&gt;5-&gt;1
+<strong>Output: </strong>7 
+<strong>Explanation:</strong> 
+Middle of linked list is 7.</span>
+</pre>
+
+<p><span style="font-size:18px"><strong>Your Task:</strong><br>
+The task is to complete the function<span style="font-size:18px"> </span><strong>getMiddle</strong>() which takes a head reference as the only argument and should return the data at the middle node of the linked list.</span></p>
+
+<p><span style="font-size:18px"><strong>Expected Time Complexity:&nbsp;</strong>O(N).<br>
+<strong>Expected Auxiliary Space:&nbsp;</strong>O(1).</span></p>
+
+<p><span style="font-size:18px"><strong>Constraints:</strong><br>
+1 &lt;= N &lt;= 5000</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_middle</span><span class="p">(</span><span class="n">head</span><span class="p">):</span>
+    <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">head</span><span class="p">,</span> <span class="n">head</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">left</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span>:
+            <span class="n">right</span> <span class="o">=</span> <span class="n">right</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">right</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="10.-Reverse-a-linked-list">10. Reverse a linked list<a class="anchor-link" href="#10.-Reverse-a-linked-list">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div><p><span style="font-size:18px">Given a linked list of <strong>N </strong>nodes. The task is to reverse this list.</span></p>
+
+<p><strong><span style="font-size:18px">Example 1:</span></strong></p>
+
+<pre><strong><span style="font-size:18px">Input:
+</span></strong><span style="font-size:18px">LinkedList: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;6
+<strong>Output: </strong>6 5 4 3 2 1<strong>
+Explanation: </strong>After reversing the list, 
+elements are 6-&gt;5-&gt;4-&gt;3-&gt;2-&gt;1.</span>
+</pre>
+
+<p><strong><span style="font-size:18px">Example 2:</span></strong></p>
+
+<pre><strong><span style="font-size:18px">Input:
+</span></strong><span style="font-size:18px">LinkedList: 2-&gt;7-&gt;8-&gt;9-&gt;10
+<strong>Output: </strong>10 9 8 7 2<strong>
+Explanation: </strong>After reversing the list,
+elements are&nbsp;10-&gt;9-&gt;8-&gt;7-&gt;2.</span></pre>
+
+<p><span style="font-size:18px"><strong>Your&nbsp;Task:</strong><br>
+The task is to complete the function <strong>reverseList</strong>() with&nbsp;head reference as the only argument and should return new head after reversing the list.</span></p>
+
+<p><span style="font-size:18px"><strong>Expected Time Complexity:&nbsp;</strong>O(N).<br>
+<strong>Expected Auxiliary Space:&nbsp;</strong>O(1).</span></p>
+
+<p><span style="font-size:18px"><strong>Constraints:</strong><br>
+1 &lt;= N &lt;= 10<sup>4</sup></span></p>
+
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">reverse_list</span><span class="p">(</span><span class="n">head</span><span class="p">):</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">head</span>
+    <span class="n">next_</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">while</span> <span class="n">current</span><span class="p">:</span>
+        <span class="n">next_</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span>
+        <span class="n">prev</span> <span class="o">=</span> <span class="n">current</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">next_</span>
+    <span class="k">return</span> <span class="n">prev</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 

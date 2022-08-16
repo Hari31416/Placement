@@ -13128,6 +13128,203 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">export_directory</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Exporting notebooks...: 100%|██████████| 7/7 [00:05&lt;00:00,  1.32it/s]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">files</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;.\\.\\Easy_1.html&#39;,
+ &#39;.\\.\\Easy_2.html&#39;,
+ &#39;.\\.\\Easy_3.html&#39;,
+ &#39;.\\.\\Hard_1.html&#39;,
+ &#39;.\\.\\Medium_1.html&#39;,
+ &#39;.\\.\\Medium_2.html&#39;,
+ &#39;.\\.\\temp.html&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="s2">&quot;&lt;ul&gt;&quot;</span>
+<span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;&lt;/ul&gt;&quot;</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="n">start</span><span class="o">+=</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;li&gt;</span>
+<span class="s2">            &lt;a href=&quot;Problems/LeetCode/</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot; target=&quot;blank&quot; class=&quot;links&quot;&gt;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&lt;/a&gt;</span>
+<span class="s2">          &lt;/li&gt;&quot;&quot;&quot;</span>
+<span class="n">start</span><span class="o">+=</span><span class="n">end</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;ul&gt;&lt;li&gt;
+            &lt;a href=&#34;Problems/LeetCode/Easy_1.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;Easy 1&lt;/a&gt;
+          &lt;/li&gt;&lt;li&gt;
+            &lt;a href=&#34;Problems/LeetCode/Easy_2.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;Easy 2&lt;/a&gt;
+          &lt;/li&gt;&lt;li&gt;
+            &lt;a href=&#34;Problems/LeetCode/Easy_3.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;Easy 3&lt;/a&gt;
+          &lt;/li&gt;&lt;li&gt;
+            &lt;a href=&#34;Problems/LeetCode/Hard_1.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;Hard 1&lt;/a&gt;
+          &lt;/li&gt;&lt;li&gt;
+            &lt;a href=&#34;Problems/LeetCode/Medium_1.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;Medium 1&lt;/a&gt;
+          &lt;/li&gt;&lt;li&gt;
+            &lt;a href=&#34;Problems/LeetCode/Medium_2.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;Medium 2&lt;/a&gt;
+          &lt;/li&gt;&lt;li&gt;
+            &lt;a href=&#34;Problems/LeetCode/temp.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;temp&lt;/a&gt;
+          &lt;/li&gt;&lt;/ul&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nb</span><span class="o">.</span><span class="n">notebooks</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;.\\Easy_1.ipynb&#39;,
+ &#39;.\\Easy_2.ipynb&#39;,
+ &#39;.\\Easy_3.ipynb&#39;,
+ &#39;.\\Hard_1.ipynb&#39;,
+ &#39;.\\Medium_1.ipynb&#39;,
+ &#39;.\\Medium_2.ipynb&#39;,
+ &#39;.\\temp.ipynb&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nb</span><span class="o">.</span><span class="n">export_notebook</span><span class="p">(</span><span class="n">nb</span><span class="o">.</span><span class="n">notebooks</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;.\\Easy_3.html&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
