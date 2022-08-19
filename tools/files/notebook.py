@@ -7,6 +7,9 @@ import re
 import tqdm
 
 
+def vprint(text, verbose=1, **kwargs):
+    if verbose:
+        print(text, **kwargs)
 class Notebook:
     """
     Tools for Jupyter Notebooks. Available methods are:
@@ -86,7 +89,7 @@ class Notebook:
             file_paths.append(path)
         return file_paths
 
-    def create_content(self, notebook_path, return_string=False):
+    def create_content(self, notebook_path, return_string=False, verbose=1):
         """
         Creates a table of contents for a notebook using the headers defined in the notebook.
 
@@ -102,13 +105,13 @@ class Notebook:
         table_of_contents : str
             Table of contents as a string.
         """
-        print("Converting the Notebook to HTML.")
+        vprint("Converting the Notebook to HTML.", verbose=verbose)
         notebook = nbformat.read(notebook_path, as_version=4)
         html_exporter = HTMLExporter(template_name="classic")
         (body, _) = html_exporter.from_notebook_node(notebook)
         soup = bs4.BeautifulSoup(body, "lxml")
 
-        print("Looking for the Headers and their positions.")
+        vprint("Looking for the Headers and their positions.", verbose=verbose)
         headers = {"h1": [], "h2": [], "h3": [], "h4": [], "h5": [], "h6": []}
 
         for hs in headers.keys():
@@ -122,7 +125,7 @@ class Notebook:
         all.sort()
         positions["all"] = all
 
-        print("Getting correct order of the Headers.")
+        vprint("Getting correct order of the Headers.", verbose=verbose)
         correct_order = []
         for i in positions["all"]:
             for keys in positions.keys():
@@ -135,7 +138,7 @@ class Notebook:
             index.append(headers[order][0])
             headers[order].pop(0)
 
-        print("Creating the Contents.")
+        vprint("Creating the Contents.", verbose=verbose)
         start = "<ol>"
         end = "</ol>"
         string = f"""<h2 id="Contents">Contents<a href="#Contents"></a></h2>
@@ -161,7 +164,7 @@ class Notebook:
                 string += to_add
         string += end
         pyperclip.copy(string)
-        print("Content copied to clipboard.")
+        vprint("Content copied to clipboard.", verbose=verbose)
         if return_string:
             return string
         else:
