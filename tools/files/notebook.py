@@ -145,7 +145,10 @@ class Notebook:
         for i, order in enumerate(correct_order):
             previous_header = current_header
             current_header = order
-            to_add = f"""<li>{str(index[i].select('a')[0]).replace("¶", index[i].get_text()[:-1]).replace("anchor-link", "")}</li>\n"""
+            try:
+                to_add = f"""<li>{str(index[i].select('a')[0]).replace("¶", index[i].get_text()[:-1]).replace("anchor-link", "")}</li>\n"""
+            except IndexError:
+                to_add = f"""<li>{str(index[i-1].select('a')[0]).replace("¶", index[i-1].get_text()[:-1]).replace("anchor-link", "")}</li>\n"""
             if previous_header == current_header:
                 string += to_add
 
