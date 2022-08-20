@@ -13086,13 +13086,111 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><h2 id="Contents">Contents<a href="#Contents"></a></h2>
+        <ol>
+        <li><a class="" href="#Recursion">Recursion</a></li></p>
+<p><li><a class="" href="#Some-Examples">Some Examples</a></li></p>
+<ol><li><a class="" href="#The-Factorial-Function">The Factorial Function</a></li>
+<li><a class="" href="#Drawing-an-English-Ruler">Drawing an English Ruler</a></li>
+<li><a class="" href="#Binary-Search">Binary Search</a></li>
+<li><a class="" href="#File-System">File System</a></li>
+<li><a class="" href="#Some-More-Examples">Some More Examples</a></li>
+<ol><li><a class="" href="#Fibonacci-Numbers">Fibonacci Numbers</a></li>
+<li><a class="" href="#Towers-of-Hanoi">Towers of Hanoi</a></li>
+<li><a class="" href="#Summing-a-Sequence">Summing a Sequence</a></li>
+<li><a class="" href="#Reversing-a-Sequence-with-Recursion">Reversing a Sequence with Recursion</a></li>
+<li><a class="" href="#Computing-Power">Computing Power</a></li>
+<li><a class="" href="#Binary-Sum">Binary Sum</a></li>
+</ol></ol><li><a class="" href="#Designing-Recursive-Algorithm">Designing Recursive Algorithm</a></li>
+<ol><li><a class="" href="#Parameterizing-a-Recursion">Parameterizing a Recursion</a></li>
+</ol><li><a class="" href="#Problems">Problems</a></li>
+<ol><li><a class="" href="#1">1</a></li>
+<li><a class="" href="#2">2</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Recursion">Recursion<a class="anchor-link" href="#Recursion">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Recursion is a technique by which a function makes one or more calls to itself
+during execution, or by which a data structure relies upon smaller instances of
+the very same type of structure in its representation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will start by looking at some simple example of recursion.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Some-Examples">Some Examples<a class="anchor-link" href="#Some-Examples">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-Factorial-Function">The Factorial Function<a class="anchor-link" href="#The-Factorial-Function">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The factorial function can be defined recursively as follows:
+$$
+\begin{cases}
+0! = 1 &amp; \text{if} \; n = 0 \\
+n! = n \times (n-1)! &amp; \text{if} \; n &gt; 0
+\end{cases}
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This definition is typical of many recursive definitions. First, it contains one
+or more base cases, which are defined nonrecursively in terms of fixed quantities.
+In this case, $n = 0$ is the base case. It also contains one or more recursive cases,
+which are defined by appealing to the definition of the function being defined.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using this definition, we can write a recursive algorithm to compute the factorial of a number.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span><span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
@@ -13106,10 +13204,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13122,33 +13220,13 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>10
-9
-8
-7
-6
-5
-4
-3
-2
-1
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>3628800</pre>
+<pre>120</pre>
 </div>
 
 </div>
@@ -13156,21 +13234,117 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here the <strong>recursion trace</strong> for the factorial function for $n = 5$:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/0101.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A recursion trace closely mirrors the programming language’s execution of the
+recursion. In Python, each time a function (recursive or otherwise) is called, a structure known as an activation record or frame is created to store information about
+the progress of that invocation of the function. This activation record includes a
+namespace for storing the function call’s parameters and local variables, and information about which command
+in the body of the function is currently executing.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When the execution of a function leads to a nested function call, the execution of the former call is suspended and its activation record stores the place in the
+source code at which the flow of control should continue upon return of the nested
+call. This process is used both in the standard case of one function calling a different function, or in the recursive case in which a function invokes itself. The key
+point is that there is a different activation record for each active call.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Drawing-an-English-Ruler">Drawing an English Ruler<a class="anchor-link" href="#Drawing-an-English-Ruler">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In an english ruler, for
+each inch, we place a tick with a numeric label. We denote the length of the tick
+designating a whole inch as the major tick length. Between the marks for whole
+inches, the ruler contains a series of minor ticks, placed at intervals of 1/2 inch,
+1/4 inch, and so on. As the size of the interval decreases by half, the tick length
+decreases by one.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/0102.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>An interval with a central tick length $L\ge 1$ is composed of:</p>
+<ul>
+<li>An interval with a central tick length $L − 1$</li>
+<li>A single tick of length $L$</li>
+<li>An interval with a central tick length $L − 1$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let’s write a recursive function to draw an english ruler.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ruler</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="c1"># print(n)</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
-        <span class="n">ruler</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-        <span class="c1"># print(n)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">draw_line</span><span class="p">(</span><span class="n">tick_length</span><span class="p">,</span> <span class="n">tick_label</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="n">tick_length</span>
+    <span class="k">if</span> <span class="n">tick_label</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">tick_label</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">draw_interval</span><span class="p">(</span><span class="n">center_length</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">center_length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">draw_interval</span><span class="p">(</span><span class="n">center_length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">draw_line</span><span class="p">(</span><span class="n">center_length</span><span class="p">)</span>
+        <span class="n">draw_interval</span><span class="p">(</span><span class="n">center_length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">draw_ruler</span><span class="p">(</span><span class="n">num_inches</span><span class="p">,</span> <span class="n">major_length</span><span class="p">):</span>
+    <span class="n">draw_line</span><span class="p">(</span><span class="n">major_length</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">num_inches</span><span class="p">):</span>
+        <span class="n">draw_interval</span><span class="p">(</span><span class="n">major_length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">draw_line</span><span class="p">(</span><span class="n">major_length</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13180,10 +13354,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ruler</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">draw_interval</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13200,16 +13374,21 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>----------
---------
-------
-----
+<pre>-
 --
+-
+---
+-
 --
+-
 ----
-------
---------
-----------
+-
+--
+-
+---
+-
+--
+-
 </pre>
 </div>
 </div>
@@ -13218,13 +13397,127 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/0103.png" alt=""></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ruler</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ruler</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">ruler</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ruler</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-
+--
+-
+---
+-
+--
+-
+----
+-
+--
+-
+---
+-
+--
+-
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Binary-Search">Binary Search<a class="anchor-link" href="#Binary-Search">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When the sequence is sorted and indexable, for any index j, we know that all the values stored at indices $0, \ldots , j − 1$
+are less than or equal to the value at index j, and all the values stored at indices
+$j + 1, \ldots , n − 1$ are greater than or equal to that at index j. This observation allows
+us to quickly “home in” on a search target using a variant of the children’s game
+“high-low.” We call an element of the sequence a candidate if, at the current stage
+of the search, we cannot rule out that this item matches the target. The algorithm
+maintains two parameters, <code>low</code> and <code>high</code>, such that all the candidate entries have
+index at least <code>low</code> and at most <code>high</code>. Initially, <code>low = 0</code> and <code>high = n − 1</code>. We then
+compare the target value to the median candidate, that is, the item <code>data[mid]</code> with
+index
+$$
+\text{mid} = \lfloor\frac{low + high}{2}\rfloor
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We consider three cases:</p>
+<ul>
+<li>If the target equals <code>data[mid]</code>, then we have found the item we are looking
+for, and the search terminates successfully.</li>
+<li>If <code>target &lt; data[mid]</code>, then we recur on the first half of the sequence, that is,
+on the interval of indices from low to mid − 1.</li>
+<li>If <code>target &gt; data[mid]</code>, then we recur on the second half of the sequence, that
+is, on the interval of indices from mid + 1 to high.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">low</span><span class="p">:</span><span class="n">high</span><span class="p">])</span>
     <span class="k">if</span> <span class="n">low</span> <span class="o">&gt;</span> <span class="n">high</span><span class="p">:</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
     <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
@@ -13243,11 +13536,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
-<span class="n">target</span> <span class="o">=</span> <span class="mi">8</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">37</span><span class="p">]</span>
+<span class="n">target</span> <span class="o">=</span> <span class="mi">22</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">binary_search</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 
@@ -13265,9 +13558,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1, 2, 3, 4, 5, 6, 7, 8, 9]
-[6, 7, 8, 9]
-7
+<pre>9
 </pre>
 </div>
 </div>
@@ -13276,21 +13567,86 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/0104.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The binary search is a very efficient algorithm for searching a sorted sequence. The time complexity is $O(\log n)$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="File-System">File System<a class="anchor-link" href="#File-System">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Modern operating systems define file-system directories (which are also sometimes
+called “folders”) in a recursive way. Namely, a file system consists of a top-level
+directory, and the contents of this directory consists of files and other directories,
+which in turn can contain files and other directories, and so on.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Given the recursive nature of the file-system representation, it should not come
+as a surprise that many common behaviors of an operating system, such as copying
+a directory or deleting a directory, are implemented with recursive algorithms. In
+this section, we consider one such algorithm: computing the total disk usage for all
+files and directories nested within a particular directory.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/0105.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The cumulative disk space for an entry can be computed with a simple recursive
+algorithm. It is equal to the immediate disk space used by the entry plus the sum
+of the cumulative disk space usage of any entries that are stored directly within
+the entry. For example, the cumulative disk space for cs016 is 249K because it
+uses 2K itself, 8K cumulatively in grades, 10K cumulatively in homeworks, and
+229K cumulatively in programs.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="k">def</span> <span class="nf">disc_usage</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="n">totals</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">total</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-    <span class="n">totals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-            <span class="n">totals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">disc_usage</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">item</span><span class="p">)))</span>
+            <span class="n">total</span><span class="o">+=</span><span class="p">(</span><span class="n">disc_usage</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">item</span><span class="p">)))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:&lt;7}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">total</span><span class="p">),</span> <span class="n">path</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">totals</span>
+    <span class="k">return</span> <span class="n">total</span>
 </pre></div>
 
     </div>
@@ -13300,7 +13656,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">totals</span> <span class="o">=</span> <span class="n">disc_usage</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
@@ -13320,19 +13676,30 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0       ./.ipynb_checkpoints
-12600   ./ADT.py
+<pre>4096    ./.ipynb_checkpoints
+12392   ./ADT.py
+306960  ./Doubly_Linked_List.html
 17897   ./Doubly_Linked_List.ipynb
+48797   ./images/0101.png
+8961    ./images/0102.png
+89628   ./images/0103.png
+51008   ./images/0104.png
+64979   ./images/0105.png
 43335   ./images/0301.png
 49306   ./images/0302.png
 54702   ./images/0303.png
-0       ./images
+414812  ./images
+320239  ./LinkedList.html
 15506   ./LinkedList.ipynb
-4779    ./Recursion.ipynb
+294068  ./Recursion.html
+16544   ./Recursion.ipynb
+279768  ./temp.html
+41431   ./temp.ipynb
+289104  ./Trees.html
 11704   ./Trees.ipynb
 8380    ./__pycache__/ADT.cpython-310.pyc
-0       ./__pycache__
-4096    .
+8380    ./__pycache__
+2036997 .
 </pre>
 </div>
 </div>
@@ -13343,7 +13710,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">totals</span>
@@ -13359,32 +13726,199 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[33]:</div>
+    <div class="prompt output_prompt">Out[38]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[4096,
- [0],
- [12600],
- [17897],
- [0, [43335], [49306], [54702]],
- [15506],
- [4779],
- [11704],
- [0, [8380]]]</pre>
+<pre>2036997</pre>
 </div>
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Some-More-Examples">Some More Examples<a class="anchor-link" href="#Some-More-Examples">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Fibonacci-Numbers">Fibonacci Numbers<a class="anchor-link" href="#Fibonacci-Numbers">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fibonaaci numbers are defined recursively as follows:
+$$
+\begin{cases}
+f(0) = 0 &amp; \text{if} \; n = 0 \\
+f(1) = 1 &amp; \text{if} \; n = 1 \\
+f(n) = f(n-1) + f(n-2) &amp; \text{if} \; n &gt; 1
+\end{cases}
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>One intuitive way to implement this using recursion is as follows:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bad_fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">bad_fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">bad_fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
+<span class="n">bad_fibonacci</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>224 ms ± 7.23 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>However, the time complexity of this algorithm is $O(2^n)$, which is not very practical for large $n$. The same algorithm can be implemented using recursion with time complexity just $O(n)$:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">good_fibo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">good_fibo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
+<span class="n">good_fibo</span><span class="p">(</span><span class="mi">30</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>4.04 µs ± 113 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Towers-of-Hanoi">Towers of Hanoi<a class="anchor-link" href="#Towers-of-Hanoi">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this game, Y=you are given a set of three pegs and $n$ disks, with each disk a different size. Let's name the pegs A, B, and C, and let's number the disks from 1, the smallest disk, to $n$, the largest disk. At the outset, all $n$ disks are on peg A, in order of decreasing size from bottom to top, so that disk $n$ is on the bottom and disk 1 is on the top. The goal is to move all nnn disks from one peg to another with constraint that no disk can be placed on top of a larger disk.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/0106.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The problem can be solved recursively by applying the following algorithm:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">tower_of_hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">temp</span><span class="p">):</span>
@@ -13403,10 +13937,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tower_of_hanoi</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tower_of_hanoi</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13423,37 +13957,21 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Move disk 1 from A to C
-Move disk 2 from A to B
-Move disk 1 from C to B
-Move disk 3 from A to C
-Move disk 1 from B to A
-Move disk 2 from B to C
-Move disk 1 from A to C
-Move disk 4 from A to B
-Move disk 1 from C to B
-Move disk 2 from C to A
-Move disk 1 from B to A
-Move disk 3 from C to B
-Move disk 1 from A to C
-Move disk 2 from A to B
-Move disk 1 from C to B
-Move disk 5 from A to C
-Move disk 1 from B to A
-Move disk 2 from B to C
-Move disk 1 from A to C
-Move disk 3 from B to A
-Move disk 1 from C to B
-Move disk 2 from C to A
-Move disk 1 from B to A
-Move disk 4 from B to C
-Move disk 1 from A to C
-Move disk 2 from A to B
-Move disk 1 from C to B
-Move disk 3 from A to C
-Move disk 1 from B to A
-Move disk 2 from B to C
-Move disk 1 from A to C
+<pre>Move disk 1 from A to B
+Move disk 2 from A to C
+Move disk 1 from B to C
+Move disk 3 from A to B
+Move disk 1 from C to A
+Move disk 2 from C to B
+Move disk 1 from A to B
+Move disk 4 from A to C
+Move disk 1 from B to C
+Move disk 2 from B to A
+Move disk 1 from C to A
+Move disk 3 from B to C
+Move disk 1 from A to B
+Move disk 2 from A to C
+Move disk 1 from B to C
 </pre>
 </div>
 </div>
@@ -13462,16 +13980,33 @@ Move disk 1 from A to C
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Summing-a-Sequence">Summing a Sequence<a class="anchor-link" href="#Summing-a-Sequence">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can solve the summation problem using linear recursion by
+observing that the sum of all n integers in S is trivially 0, if n = 0, and otherwise
+that it is the sum of the first n − 1 integers in S plus the last element in S.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">nums</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">linear_sum</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">+</span> <span class="p">[</span><span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="k">return</span> <span class="n">linear_sum</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">S</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13481,11 +14016,11 @@ Move disk 1 from A to C
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="n">nums</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">linear_sum</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13498,22 +14033,49 @@ Move disk 1 from A to C
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[53]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>23</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
 </div>
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/0107.png" alt=""></p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Reversing-a-Sequence-with-Recursion">Reversing a Sequence with Recursion<a class="anchor-link" href="#Reversing-a-Sequence-with-Recursion">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can solve the problem using linear recursion, by observing that
+the reversal of a sequence can be achieved by swapping the first and last elements
+and then recursively reversing the remaining elements.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">):</span>
@@ -13530,7 +14092,7 @@ Move disk 1 from A to C
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
@@ -13559,7 +14121,7 @@ Move disk 1 from A to C
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[57]:</div>
 
 
 
@@ -13574,18 +14136,470 @@ Move disk 1 from A to C
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that there are two implicit base case scenarios: When<code>start == stop</code>, the
+implicit range is empty, and when <code>start == stop−1</code>, the implicit range has only
+one element. In either of these cases, there is no need for action, as a sequence
+with zero elements or one element is trivially equal to its reversal. When otherwise
+invoking recursion, we are guaranteed to make progress towards a base case, as
+the difference, <code>stop−start</code>, decreases by two with each call.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Computing-Power">Computing Power<a class="anchor-link" href="#Computing-Power">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A recursive definition of power function can be given as:
+$$
+\begin{align*}
+f(x,n) &amp;= x^n &amp; \text{if} \; n = 0 \\
+        &amp;= f(x,n-1) * x &amp; \text{if} \; n &gt; 0
+\end{align*}
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This definition leads to the following recursive algorithm:</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sort_array</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">start</span><span class="o">&gt;</span><span class="n">end</span><span class="p">:</span>
-        <span class="k">return</span>
-    
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
+<span class="n">power</span><span class="p">(</span><span class="mi">1234</span><span class="p">,</span><span class="mi">111</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>17.6 µs ± 409 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The algorithm runs in $O(n)$ time, where $n$ is the size of the input sequence. However, we can so better by using a more efficient algorithm which runs in $O(\log n)$ time.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let $k = \lfloor n/2\rfloor$ denote the
+floor of the division (expressed as <code>n // 2</code> in Python). We consider the expression $(x^k)^2$. When $n$ is even, $\lfloor n/2\rfloor = n/2$ and therefore $(x^k)^2 = (x^{n/2})^2=x^n$. When n is odd,
+$\lfloor n/2\rfloor = (n-)/2$ and $(x^k)^2 = (x^{(n-1)/2})^2=x^{n-1}$.
+This analysis leads to the following recursive definition:
+$$
+f(x,n)
+\begin{cases}
+&amp;= 1 &amp; \text{if} \; n = 0 \\
+&amp;= xf(x,\lfloor n/2 \rfloor) &amp; \text{if} \; n &gt; 0 \text{ is odd}\\
+&amp;= f(x,\lfloor n/2 \rfloor) &amp; \text{if} \; n &gt; 0 \text{ is even}
+\end{cases}
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">partial</span> <span class="o">=</span> <span class="n">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="k">2</span> == 0:
+            <span class="k">return</span> <span class="n">partial</span> <span class="o">*</span> <span class="n">partial</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">partial</span> <span class="o">*</span> <span class="n">partial</span> <span class="o">*</span> <span class="n">x</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>it
+<span class="n">power</span><span class="p">(</span><span class="mi">1234</span><span class="p">,</span><span class="mi">111</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2.02 µs ± 44 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Binary-Sum">Binary Sum<a class="anchor-link" href="#Binary-Sum">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The problem, again is to sum a sequence of numbers.  Computing the sum of one
+or zero elements is trivial. With two or more elements, we can recursively compute the sum of the first half, and the sum of the second half, and add these sums
+together. Here is the algorithm:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">binary_sum</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">start</span><span class="o">&gt;=</span><span class="n">stop</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">start</span> <span class="o">==</span> <span class="n">stop</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">S</span><span class="p">[</span><span class="n">start</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">stop</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="n">binary_sum</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">)</span> <span class="o">+</span> <span class="n">binary_sum</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">binary_sum</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[71]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>23</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The running time of this algorithm is $O(n)$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Designing-Recursive-Algorithm">Designing Recursive Algorithm<a class="anchor-link" href="#Designing-Recursive-Algorithm">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In general, an algorithm that uses recursion typically has the following form:</p>
+<ul>
+<li><strong>Test for base cases</strong> We begin by testing for a set of base cases (there should
+be at least one). These base cases should be defined so that every possible
+chain of recursive calls will eventually reach a base case, and the handling of
+each base case should not use recursion.</li>
+<li><strong>Recur</strong> If not a base case, we perform one or more recursive calls. This recursive step may involve a test that decides which of several possible recursive
+calls to make. We should define each possible recursive call so that it makes
+progress towards a base case.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Parameterizing-a-Recursion">Parameterizing a Recursion<a class="anchor-link" href="#Parameterizing-a-Recursion">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To design a recursive algorithm for a given problem, it is useful to think of the
+different ways we might define subproblems that have the same general structure
+as the original problem. If one has difficulty finding the repetitive structure needed
+to design a recursive algorithm, it is sometimes useful to work out the problem on
+a few concrete examples to see how the subproblems should be defined.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A successful recursive design sometimes requires that we redefine the original
+problem to facilitate similar-looking subproblems. Often, this involved reparameterizing the signature of the function. For example, when performing a binary
+search in a sequence, a natural function signature for a caller would appear as
+<code>binary_search(data, target)</code>. However, later, we defined our function
+with calling signature <code>binary_search(data, target, low, high</code>), using the additional
+parameters to demarcate sublists as the recursion proceeds. This change in parameterization is critical for binary search. If we had insisted on the cleaner signature,
+<code>binary_search(data, target)</code>, the only way to invoke a search on half the list would
+have been to make a new list instance with only those elements to send as the first
+parameter. However, making a copy of half the list would already take $O(n)$ time,
+negating the whole benefit of the binary search algorithm.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Problems">Problems<a class="anchor-link" href="#Problems">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1">1<a class="anchor-link" href="#1">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Describe a recursive algorithm for finding the maximum element in a sequence, S, of n elements.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Base case: If n = 1, then the maximum element is the only element in the sequence. Return this element.</p>
+<p>Recur: If n &gt; 1, then the maximum element is the maximum of the first n−1 elements and the last element.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_max</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">find_max</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">find_max</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[84]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>8</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2">2<a class="anchor-link" href="#2">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Describe a recursive function for converting a string of digits into the integer it represents. For example, 13531 represents the integer 13, 531.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Base case: If the length of string is 0, return 0.</p>
+<p>Recur: If the length of string is &gt; 0, then the first character is the digit, and the rest of the string is the rest of the number.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">string_to_digit_recur</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">string_to_digit_recur</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+   
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">string_to_digit_recur</span><span class="p">(</span><span class="s2">&quot;123&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[89]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>123</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 

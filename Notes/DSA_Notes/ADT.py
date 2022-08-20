@@ -71,11 +71,11 @@ class LinkedList:
 
     @property
     def data(self):
-        return self.head.data if self.head is not None else None
+        return self.head.data if self.head else None
 
     @property
     def next(self):
-        return self.head.next if self.head is not None else None
+        return self.head.next if self.head else None
 
     def __len__(self) -> int:
         return self._length
@@ -98,7 +98,7 @@ class LinkedList:
         # Set the current node to the head
         current = self.head
         # Loop until the current node's next is None ie the end of the list
-        while current is not None:
+        while current:
             # Print the current node's data
             print(current.data)
             # Set the current node to the current node's next
@@ -141,9 +141,9 @@ class LinkedList:
         --------
         None
         """
-        # Check if the given node is not None
+        # Check if the given node
         if prev_node is None:
-            raise NoneType("The given node is None.")
+            raise NoneType("Given node is None.")
         # Create a new node
         new_node = Node(data)
         # Set the new_node's next to the prev_node's next
@@ -176,7 +176,7 @@ class LinkedList:
             # Set the current node to the head
             current = self.head
             # Loop until the current node's next is None ie the end of the list
-            while current.next is not None:
+            while current.next:
                 # Set the current node to the current node's next
                 current = current.next
             # Set the current node's next to the new node
@@ -203,7 +203,7 @@ class LinkedList:
         # Set the current node to the head
         current = self.head
         # Loop until the current node's next is None ie the end of the list
-        while current.next is not None:
+        while current.next:
             # Set the current node to the current node's next
             current = current.next
         # Set the previous node's next to None
@@ -237,7 +237,7 @@ class LinkedList:
             self.head = current.next
         else:
             # Loop until the current node's next is None ie the end of the list
-            while current.next is not None:
+            while current.next:
                 # Check if the current node's next's data is the same as the given data
                 if current.next.data == data:
                     # Set the current node's next to the current node's next's next
@@ -285,8 +285,8 @@ class DoublyLinkedList:
         new_node = Node(data)
         # Set the new node's next to the current head
         new_node.next = self.head
-        # check if the head is not None
-        if self.head is not None:
+        # check if the head
+        if self.head:
             # Set the head's prev to the new node
             self.head.prev = new_node
         # Set the head to the new node
@@ -309,7 +309,7 @@ class DoublyLinkedList:
         --------
         None
         """
-        # Check if the given node is not None
+        # Check if the given node
         if prev_node is None:
             raise NoneType("The given node is None.")
         # Create a new node
@@ -320,8 +320,8 @@ class DoublyLinkedList:
         prev_node.next = new_node
         # Set the new_node's prev to the prev_node
         new_node.prev = prev_node
-        # Check if the new_node's next is not None
-        if new_node.next is not None:
+        # Check if the new_node's next
+        if new_node.next:
             # Set the new_node's next's prev to the new node
             new_node.next.prev = new_node
         # Increment the length
@@ -342,7 +342,7 @@ class DoublyLinkedList:
         --------
         None
         """
-        # Check if the given node is not None
+        # Check if the given node
         if next_node is None:
             raise NoneType("The given node is None.")
         # Create a new node
@@ -386,7 +386,7 @@ class DoublyLinkedList:
             # Set the current node to the head
             current = self.head
             # Loop until the current node's next is None ie the end of the list
-            while current.next is not None:
+            while current.next:
                 # Set the current node to the current node's next
                 current = current.next
             # Set the current node's next to the new node
@@ -414,7 +414,7 @@ class DoublyLinkedList:
         # Set the current node to the head
         current = self.head
         # Loop until the current node's next is None ie the end of the list
-        while current is not None:
+        while current:
             # Print the current node's data
             print(current.data)
             # Set the current node to the current node's next
@@ -439,12 +439,12 @@ class DoublyLinkedList:
         # Set the current node to the head
         current = self.head
         # Loop until the current node's next is None ie the end of the list
-        while current.next is not None:
+        while current.next:
             # Set the current node to the current node's next
             current = current.next
         # Set the current node's prev's next to None
         print(current)
-        if current.prev is not None:
+        if current.prev:
             current.prev.next = None
         else:
             self.head = None
