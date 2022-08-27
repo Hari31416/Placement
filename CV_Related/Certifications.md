@@ -6,7 +6,9 @@
    - Implement and apply a variety of optimization algorithms, such as **mini-batch gradient descent**, **Momentum**, **RMSprop** and **Adam**.
    - Built a number of real world models from **neural style transfer** to **music generation** and **Emojify**.
 2. Machine Learning Specialization by *Andrew Ng* on *Coursera*
-   - Learned concepts of linear models, gradient descent, regularizations implemented them in **Python**.
+   - Learned linear and logistic regression, gradient descent, some regularization techniques and implemented them using numpy
+   - Trained neural networks with TensorFlow and implemented a simple Decision Tree Classification algorithm from scratch
+   - Learned unsupervised algorithms and some Recommender Systems. Got introduced to basics of Reinforcement Learning
 3. 2021 Python for Machine Learning and Data Science Masterclass by *Jose Portilla* on *Udemy* **(44 Hrs.)**
    - Learned **pandas** and data visualization libraries, such as **matplotlib** and **seaborn** and **plotly**.
    - Learned about a variety of machine learning algorithms, both **supervised** and **unsupervised** and used **scikit-learn** to implement them.
