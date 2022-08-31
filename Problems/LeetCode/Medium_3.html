@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Temp</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Medium 3</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <style type="text/css">
   pre { line-height: 125%; }
@@ -13086,259 +13086,117 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../../tools&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="1.-String-Compression">1. String Compression<a class="anchor-link" href="#1.-String-Compression">&#182;</a></h1>
 </div>
 </div>
-
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">files.notebook</span> <span class="kn">import</span> <span class="n">Notebook</span>
-</pre></div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div><p>Given an array of characters <code>chars</code>, compress it using the following algorithm:</p>
 
-    </div>
-</div>
-</div>
+<p>Begin with an empty string <code>s</code>. For each group of <strong>consecutive repeating characters</strong> in <code>chars</code>:</p>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nb</span> <span class="o">=</span> <span class="n">Notebook</span><span class="p">()</span>
-</pre></div>
+<ul>
+    <li>If the group's length is <code>1</code>, append the character to <code>s</code>.</li>
+    <li>Otherwise, append the character followed by the group's length.</li>
+</ul>
 
-    </div>
-</div>
-</div>
+<p>The compressed string <code>s</code> <strong>should not be returned separately</strong>, but instead, be stored <strong>in the input character array <code>chars</code></strong>. Note that group lengths that are <code>10</code> or longer will be split into multiple characters in <code>chars</code>.</p>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nb</span><span class="o">.</span><span class="n">notebooks</span>
-</pre></div>
+<p>After you are done <strong>modifying the input array,</strong> return <em>the new length of the array</em>.</p>
 
-    </div>
-</div>
-</div>
+<p>You must write an algorithm that uses only constant extra space.</p>
 
-<div class="output_wrapper">
-<div class="output">
+<p>&nbsp;</p>
+<p><strong>Example 1:</strong></p>
 
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;./Medium_1.ipynb&#39;,
- &#39;./Easy_1.ipynb&#39;,
- &#39;./Easy_2.ipynb&#39;,
- &#39;./Easy_3.ipynb&#39;,
- &#39;./Easy_4.ipynb&#39;,
- &#39;./Easy_5.ipynb&#39;,
- &#39;./Hard_1.ipynb&#39;,
- &#39;./Medium_2.ipynb&#39;,
- &#39;./temp.ipynb&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nb</span><span class="o">.</span><span class="n">export_notebook</span><span class="p">(</span><span class="n">nb</span><span class="o">.</span><span class="n">notebooks</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;./Easy_1.html&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">export_directory</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Exporting notebooks...: 100%|██████████| 9/9 [00:03&lt;00:00,  2.59it/s]
+<pre><strong>Input:</strong> chars = ["a","a","b","b","c","c","c"]
+<strong>Output:</strong> Return 6, and the first 6 characters of the input array should be: ["a","2","b","2","c","3"]
+<strong>Explanation:</strong> The groups are "aa", "bb", and "ccc". This compresses to "a2b2c3".
 </pre>
-</div>
-</div>
 
-</div>
-</div>
+<p><strong>Example 2:</strong></p>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">files</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[5]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;././Easy_1.html&#39;,
- &#39;././Easy_2.html&#39;,
- &#39;././Easy_3.html&#39;,
- &#39;././Easy_4.html&#39;,
- &#39;././Easy_5.html&#39;,
- &#39;././Hard_1.html&#39;,
- &#39;././Medium_1.html&#39;,
- &#39;././Medium_2.html&#39;,
- &#39;././temp.html&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="s2">&quot;&lt;ul&gt;&quot;</span>
-<span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;&lt;/ul&gt;&quot;</span>
-<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-  <span class="c1"># if &quot;temp&quot; in f:</span>
-  <span class="c1">#   continue</span>
-    <span class="n">file</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
-    <span class="n">start</span><span class="o">+=</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;li&gt;</span>
-<span class="s2">            &lt;a href=&quot;Problems/LeetCode/</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2">&quot; target=&quot;blank&quot; class=&quot;links&quot;&gt;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&lt;/a&gt;</span>
-<span class="s2">          &lt;/li&gt;&quot;&quot;&quot;</span>
-<span class="n">start</span><span class="o">+=</span><span class="n">end</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;ul&gt;&lt;li&gt;
-            &lt;a href=&#34;Problems/LeetCode/././Easy_1.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;&lt;/a&gt;
-          &lt;/li&gt;&lt;li&gt;
-            &lt;a href=&#34;Problems/LeetCode/././Easy_2.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;&lt;/a&gt;
-          &lt;/li&gt;&lt;li&gt;
-            &lt;a href=&#34;Problems/LeetCode/././Easy_3.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;&lt;/a&gt;
-          &lt;/li&gt;&lt;li&gt;
-            &lt;a href=&#34;Problems/LeetCode/././Easy_4.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;&lt;/a&gt;
-          &lt;/li&gt;&lt;li&gt;
-            &lt;a href=&#34;Problems/LeetCode/././Easy_5.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;&lt;/a&gt;
-          &lt;/li&gt;&lt;li&gt;
-            &lt;a href=&#34;Problems/LeetCode/././Hard_1.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;&lt;/a&gt;
-          &lt;/li&gt;&lt;li&gt;
-            &lt;a href=&#34;Problems/LeetCode/././Medium_1.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;&lt;/a&gt;
-          &lt;/li&gt;&lt;li&gt;
-            &lt;a href=&#34;Problems/LeetCode/././Medium_2.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;&lt;/a&gt;
-          &lt;/li&gt;&lt;li&gt;
-            &lt;a href=&#34;Problems/LeetCode/././temp.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;&lt;/a&gt;
-          &lt;/li&gt;&lt;/ul&gt;
+<pre><strong>Input:</strong> chars = ["a"]
+<strong>Output:</strong> Return 1, and the first character of the input array should be: ["a"]
+<strong>Explanation:</strong> The only group is "a", which remains uncompressed since it's a single character.
 </pre>
-</div>
-</div>
 
+<p><strong>Example 3:</strong></p>
+
+<pre><strong>Input:</strong> chars = ["a","b","b","b","b","b","b","b","b","b","b","b","b"]
+<strong>Output:</strong> Return 4, and the first 4 characters of the input array should be: ["a","b","1","2"].
+<strong>Explanation:</strong> The groups are "a" and "bbbbbbbbbbbb". This compresses to "ab12".</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+    <li><code>1 &lt;= chars.length &lt;= 2000</code></li>
+    <li><code>chars[i]</code> is a lowercase English letter, uppercase English letter, digit, or symbol.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">compress</span><span class="p">(</span><span class="n">chars</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">chars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">j</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">new_c</span> <span class="o">=</span> <span class="n">chars</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">new_c</span><span class="o">==</span><span class="n">c</span><span class="p">:</span>
+            <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">count</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">string</span><span class="o">+=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="n">chars</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">c</span>
+                <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
+                <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+                    <span class="n">chars</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">n</span>
+                    <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">string</span><span class="o">+=</span><span class="n">c</span>
+                <span class="n">chars</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">c</span>
+                <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="n">count</span><span class="o">=</span><span class="mi">1</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">new_c</span>
+    <span class="k">if</span> <span class="n">count</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">string</span><span class="o">+=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">chars</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">c</span>
+        <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">):</span>
+            <span class="n">chars</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">n</span>
+            <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">string</span><span class="o">+=</span><span class="n">c</span>
+        <span class="n">chars</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">c</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nb</span><span class="o">.</span><span class="n">notebooks</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">]</span>
+<span class="n">len_</span> <span class="o">=</span> <span class="n">compress</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span>
+<span class="n">len_</span><span class="p">,</span> <span class="n">chars</span><span class="p">[:</span><span class="n">len_</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13351,69 +13209,17 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;.\\Easy_1.ipynb&#39;,
- &#39;.\\Easy_2.ipynb&#39;,
- &#39;.\\Easy_3.ipynb&#39;,
- &#39;.\\Hard_1.ipynb&#39;,
- &#39;.\\Medium_1.ipynb&#39;,
- &#39;.\\Medium_2.ipynb&#39;,
- &#39;.\\temp.ipynb&#39;]</pre>
+<pre>(4, [&#39;a&#39;, &#39;b&#39;, &#39;1&#39;, &#39;2&#39;])</pre>
 </div>
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nb</span><span class="o">.</span><span class="n">export_notebook</span><span class="p">(</span><span class="n">nb</span><span class="o">.</span><span class="n">notebooks</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;.\\Easy_3.html&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
 </div>
 
