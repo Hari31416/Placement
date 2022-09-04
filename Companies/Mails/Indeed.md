@@ -1,0 +1,3 @@
+I have an up to par knowledge of **Python** and **JavaScript**. I have created a couple of **mobile-optimized** web applications building both the back end and front end using **django** as well as **node.js**, **express**, **jQuery** etc. I have also worked with databases like **MySQL** and **MongoDB**. I have a good knowledge of data structure and algorithms and strive to write clean and elegant code to solve complex problems.
+
+As an M.Sc. student, I have a strong foundation in Mathematics and Statistics, have a sound reasoning which lets me solve complex problems quickly. Furthermore, I am a skilled multitasker, a quick learner and a team player. 

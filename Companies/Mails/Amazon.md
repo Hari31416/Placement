@@ -1,0 +1,1 @@
+I have a good knowledge of **Python** and **JavaScript**. I have done a couple of web development projects creating both the back end and front end of the website using **django** as well as **node.js**, **express**, **jQuery** etc. I also have a decent knowledge of **MySQL** and **MongoDB**. 

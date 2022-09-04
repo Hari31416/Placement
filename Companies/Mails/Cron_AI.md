@@ -1,0 +1,5 @@
+I have an excellent knowledge of **Python** and basic knowledge of C++. I have a good knowledge of **Django** and **Node.js** and have done a couple of projects using them. I can work with **Front End** development tools to create a **responsive** front end. I have also worked with databases like **MySQL** and **MongoDB**. I have a good knowledge of data structure and algorithms and strive to write clean and elegant code to solve complex problems.
+
+Apart from this, I have working knowledge of **OpenCV** and have used **Tensorflow** and **PyTorch** to create deep learning models for different tasks like image classification and NLP. Furthermore, I can use various libraries (seaborn and plotly) and tools (tablaeu) to visualize data and draw insights from it. 
+
+As an M.Sc. student, I have a strong foundation in Mathematics and Statistics and have a sound reasoning which lets me solve complex problems quickly. Furthermore, I am a skilled multitasker, a quick learner and a team player.

@@ -1,0 +1,3 @@
+I have good knowledge of Python and JavaScript. I have worked with databases like MySQL and MongoDB. I have a good knowledge of data structure and can implement them in Python as well as algorithms and strive to write clean and elegant code to solve complex problems.
+
+As an M.Sc. student, I have a strong foundation in Mathematics and Statistics, have a sound reasoning which lets me solve complex problems quickly. Furthermore, I am a skilled multitasker, a quick learner and a team player. I am self-motivated and excellent at problem solving.

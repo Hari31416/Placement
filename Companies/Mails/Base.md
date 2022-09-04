@@ -1,0 +1,5 @@
+I have an up to par knowledge of **Python** and **JavaScript**. I have done a couple of web development projects creating both the back end and front end of the website using **django** as well as **node.js**, **express**, **jQuery** etc. I have also worked with databases like **MySQL** and **MongoDB**. I have a good knowledge of data structure and algorithms and strive to write clean and elegant code to solve complex problems.
+
+Apart from this, I have intermediate knowledge of **Machine Learning** and basic knowledge of **Deep Learning** and various NN architectures for image classification, NLP, audio analysis and forcasting.
+
+As an M.Sc. student, I have a strong foundation in Mathematics and Statistics, have a sound reasoning which lets me solve complex problems quickly. Furthermore, I am a skilled multitasker and love 'wearing many hats'. I am a quick learner and a team player. I am also a good communicator and have a knack for writing. I have a good command over English and have a good vocabulary. But most importantly, I love learning new softwares and technologies.
