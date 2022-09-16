@@ -1,0 +1,15 @@
+:root{
+    --black:rgb(31, 30, 30);
+    --white:rgb(224, 221, 221);
+    --canvas:rgb(248, 252, 252);
+}
+
+body {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+canvas {
+    background-color: var(--canvas);
+    border: 1px solid var(--black);
+}

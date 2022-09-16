@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Canvas experiment</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="clock.js"></script>
+    <style>
+        #analog,
+        #digital {
+            border: 1px solid rgb(9, 9, 9);
+            background-color: rgb(211, 237, 195)
+        }
+
+        .digital {
+            display: flex;
+        }
+
+        #digital {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>What Time Is It?</h1>
+            <div class="digital pb-2">
+                <canvas id="digital" width="200" height="50"></canvas>
+            </div>
+            <canvas id="analog" width="250" height="250"></canvas>
+        </div>
+    </div>
+</body>
+
+</html>

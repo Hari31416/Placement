@@ -98,7 +98,7 @@ class LinkedList:
         # Set the current node to the head
         current = self.head
         # Loop until the current node's next is None ie the end of the list
-        while current:
+        while current.next:
             # Print the current node's data
             print(current.data)
             # Set the current node to the current node's next
