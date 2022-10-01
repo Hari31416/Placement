@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Latex Notes</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+
+      p,
+      h2,
+      h3 {
+        orphans: 3;
+        widows: 3;
+      }
+
+      h2,
+      h3,
+      h4 {
+        page-break-after: avoid;
+      }
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    a {
+      color: #070ee9;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: #1a1a1a;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 1.4em;
+    }
+
+    h5,
+    h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+
+    h6 {
+      font-weight: normal;
+    }
+
+    ol,
+    ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+
+    li>ol,
+    li>ul {
+      margin-top: 0;
+    }
+
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+
+    .sourceCode {
+      background-color: transparent;
+      overflow: visible;
+    }
+
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    table caption {
+      margin-bottom: 0.75em;
+    }
+
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+
+    #TOC li {
+      list-style: none;
+    }
+
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+
+    #TOC>ul {
+      padding-left: 0;
+    }
+
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+
+    code {
+      white-space: pre-wrap;
+    }
+
+    span.smallcaps {
+      font-variant: small-caps;
+    }
+
+    div.columns {
+      display: flex;
+      gap: min(4vw, 1.5em);
+    }
+
+    div.column {
+      flex: auto;
+      overflow-x: auto;
+    }
+
+    div.hanging-indent {
+      margin-left: 1.5em;
+      text-indent: -1.5em;
+    }
+
+    ul.task-list {
+      list-style: none;
+    }
+
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <header id="title-block-header">
+    <h1 class="title">Latex Notes</h1>
+  </header>
+  <center>
+    <h3>Find the PDF file on <a href="https://hari31416.github.io/Placement/Notes/Latex/Latex.pdf">GitHub</a></h3>
+  </center>
+  <h1 id="introduction">Introduction</h1>
+  <h2 id="tex">TeX</h2>
+  <p>TeX is a typesetting system which was designed and written by Donald
+    Knuth[1] and first released in 1978. TeXis a popular means of
+    typesetting complex mathematical formulae; it has been noted as one of
+    the most sophisticated digital typographical systems. It was designed
+    with two main goals in mind: to allow anybody to produce high-quality
+    books with minimal effort, and to provide a system that would give
+    exactly the same results on all computers, at any point in time.</p>
+  <h2 id="latex">LaTeX</h2>
+  <p>LATEX enables authors to typeset and print their work at the highest
+    typographical quality, using a predefined, professional layout. LaTeX
+    was originally written by Leslie Lamport. It uses the TEX formatter as
+    its typesetting engine.</p>
+  <p>In a LaTeX environment, LaTeX takes the role of the book designer and
+    uses TEX as its typesetter. But LaTeX is ’only’ a program and therefore
+    needs more guidance. The author has to provide additional information to
+    describe the logical structure of his work. This information is written
+    into the text as ’LaTeX commands.’</p>
+  <p>This is quite different from the <strong>WYSIWYG2</strong> (What you
+    see is what you get) approach that most modern word processors, such as
+    MS Word or LibreOffice, take.</p>
+  <h2 id="various-files">Various Files</h2>
+  <h3 id="files-with-latex">Files With LaTeX</h3>
+  <p><strong>.tex</strong> LaTeX or TeX input file. Can be compiled with
+    LaTeX.<br />
+    <strong>.sty</strong> LaTeX Macro package. Load this into your LaTeX
+    document using the <code>\usepackage</code> command.<br />
+    <strong>.dtx</strong> Documented TeX. This is the main distribution
+    format for LaTeX style files. If you process a .dtx file you get
+    documented macro code of the LATEX package contained in the .dtx
+    file.<br />
+    <strong>.ins</strong> The installer for the files contained in the
+    matching .dtx file. If you download a LaTeX package from the net, you
+    will normally get a .dtx and a .ins file. Run LaTeX on the .ins file to
+    unpack the .dtx file.<br />
+    <strong>.cls</strong> Class files define what your document looks like.
+    They are selected with the <code>\documentclass</code> command.<br />
+    <strong>.fd</strong> Font description file telling LaTeX about new
+    fonts.
+  </p>
+  <h3 id="files-outputed">Files Outputed</h3>
+  <p><strong>.log</strong> Gives a detailed account of what happened
+    during the last compiler run.<br />
+    <strong>.toc</strong> Stores all your section headers. It gets read in
+    for the next compiler run and is used to produce the table of
+    contents.<br />
+    <strong>.lof</strong> This is like .toc but for the list of
+    figures.<br />
+    <strong>.lot</strong> And again the same for the list of tables.<br />
+    <strong>.aux</strong>Another file that transports information from one
+    compiler run to the next. Among other things, the .aux file is used to
+    store information associated with cross-references.
+  </p>
+  <h1 id="terminology">Terminology</h1>
+  <h2 id="preamble">Preamble</h2>
+  <p>The preamble is the first section of an input file, before the text
+    of the document itself, in which you tell LaTeX the type of document,
+    and other information LaTeX will need to format the document
+    correctly.</p>
+  <pre><code>\documentclass[12pt]{article}
+\usepackage{graphicx}
+\begin{document}
+    ...
+\end{document}</code></pre>
+  <h2 id="class-files">class files</h2>
+  <p>Contains global processing information for the document. A class file
+    is specified using documentclass command.</p>
+  <h2 id="packages">Packages</h2>
+  <p>Packages are a way to extend the functionality of LaTeX. They are
+    loaded using the <code>\usepackage</code> command. Common way to use a
+    package is</p>
+  <pre><code>    \usepackage[options]{package}</code></pre>
+  <h2 id="command">command</h2>
+  <p>A command begins with a backslash <code>\</code> and is a string of
+    characters. A command can have optional and required arguments.</p>
+  <h2 id="environment">Environment</h2>
+  <p>Environments are delimited by an opening tag <code>\begin</code> and
+    a closing tag <code>\end</code>. Everything inside those tags will be
+    formatted in a special manner depending on the type of the
+    environment.</p>
+  <pre><code>    \begin{tabular}{ c c c } 
+        cell1 &amp; cell2 &amp; cell3 \\ 
+        cell4 &amp; cell5 &amp; cell6 \\ 
+        cell7 &amp; cell8 &amp; cell9 \\ 
+       \end{tabular}</code></pre>
+  <table>
+    <tbody>
+      <tr class="odd">
+        <td style="text-align: center;">cell1</td>
+        <td style="text-align: center;">cell2</td>
+        <td style="text-align: center;">cell3</td>
+      </tr>
+      <tr class="even">
+        <td style="text-align: center;">cell4</td>
+        <td style="text-align: center;">cell5</td>
+        <td style="text-align: center;">cell6</td>
+      </tr>
+      <tr class="odd">
+        <td style="text-align: center;">cell7</td>
+        <td style="text-align: center;">cell8</td>
+        <td style="text-align: center;">cell9</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="document-environment">Document Environment</h2>
+  <p>All that is between <code>\begin{document}</code> and
+    <code>\end{document}</code>. Can be thought of as "printing" to the
+    document.
+  </p>
+  <h2 id="ctan">CTAN</h2>
+  <p>Abbreviation for Comprehensive TeX Archive Network. CTAN is a network
+    of servers that hosts the TeX-related software and documentation. It is
+    the central repository for TeX-related software and documentation.</p>
+  <h2 id="latex-distributions">Latex Distributions</h2>
+  <p>A TeX distribution such is used to produce an output file (such as
+    PDF or DVI) suitable for printing or digital distribution. Some of the
+    popular distributions are:</p>
+  <ul>
+    <li>
+      <p>TeX Live</p>
+    </li>
+    <li>
+      <p>MiKTeX</p>
+    </li>
+    <li>
+      <p>MacTeX</p>
+    </li>
+    <li>
+      <p>teTex</p>
+    </li>
+    <li>
+      <p>proTeXt</p>
+    </li>
+  </ul>
+  <h2 id="math-mode">Math Mode</h2>
+  <p>Math mode is a special mode in which you can write mathematical
+    expressions. There are two ways to enter math mode:</p>
+  <ul>
+    <li>
+      <p>Inline math mode: <span class="math inline">\(a^2 + b^2 =
+          c^2\)</span></p>
+    </li>
+    <li>
+      <p>Display math mode: <span class="math display">\[a^2 + b^2 =
+          c^2\]</span></p>
+    </li>
+  </ul>
+  <p>To enter inline math mode, use a single dollar sign <code>$</code>,
+    and to enter Display math mode, use a double dollar sign
+    <code>$$</code>.
+  </p>
+  <p>Apart from this to typeset inline-mode math you can use one of these
+    delimiter pairs:
+    <code>\( ... \), $ ... $ or \begin{math} ... \end{math}</code>.
+  </p>
+  <p>Also, to typeset display-mode math you can use one of these delimiter
+    pairs:
+    <code>\[ ... \], \begin{displaymath} ... \end{displaymath}</code><br />
+    or<br />
+    <code>\begin{equation} ... \end{equation}</code>.
+  </p>
+  <h1 id="new-environments">New Environments</h1>
+  <h2 id="basic-environment">Basic Environment</h2>
+  <p>The new environment definition is achieved by the
+    <code>\newenvironment</code> tag:
+  </p>
+  <pre><code>    \newenvironment{boxed}
+    {\begin{center}
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }</code></pre>
+  <p>Right after the <code>\newenvironment</code>, in between braces, you
+    must write the name of the environment, boxed in the example. Below that
+    are two pairs of braces. Inside the first pair of braces is set what
+    your new environment will do before the text within, then inside the
+    second pair of braces declare what your new environment will do after
+    the text.</p>
+  <p>In the example, in between the before braces a tabular environment is
+    started to draw the vertical lines and a horizontal line is drawn.
+    Inside the after braces another horizontal line is drawn and the tabular
+    environment is closed. Additionally it’s enclosed by a center
+    environment.</p>
+  <div class="my_boxed">
+    <p>This is a boxed environment.</p>
+  </div>
+  <h2 id="environments-with-parameters">Environments with Parameters</h2>
+  <p>Environments that accept parameters can also be defined.</p>
+  <pre><code>    \newenvironment{boxed}[1]
+    {\begin{center}
+    #1\\[1ex]
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }</code></pre>
+  <p>As you see, the command definition is almost the same as in the
+    example of the previous section, except for <code>[1]</code> that sets
+    the number of parameters to be used in the environment; and
+    <code>#1\\[1ex]</code> that inserts the parameter at the top of the box
+    and also separates the title from the box by a 1ex blank space.
+  </p>
+  <div class="boxed_2">
+    <p><span>Hello</span> This is a boxed environment with a title.</p>
+  </div>
+  <h2 id="overwriting-existing-environments">Overwriting existing
+    environments</h2>
+  <p>Environments can be overwritten with <code>\renewenvironment</code>.
+    The syntax is equivalent to that of the <code>\newenvironment</code>
+    definition.</p>
+  <pre><code>    \renewenvironment{itemize}
+    {\begin{center}\em}
+    {\end{center}}</code></pre>
+  <p>In this example, the <code>itemize</code> environment is overwritten.
+    The new definition is that the <code>itemize</code> environment will be
+    enclosed by a center environment and the items will be emphasized.</p>
+  <h2 id="summary-of-environments">Summary of Environments</h2>
+  <ol>
+    <li>
+      <p>An environment is used with a matching pair of
+        <code>\begin</code> and <code>\end</code> statements. Both
+        <code>\begin</code> and <code>\end</code> take the name of the
+        environment as argument in curly braces. The <code>\begin</code>
+        statement might have additional mandatory and/or optional
+        arguments.
+      </p>
+    </li>
+    <li>
+      <p><code>\newenvironment{&lt;name&gt;}{&lt;begin code&gt;}{&lt;end code&gt;}</code>
+        defines a new environment called <code>&lt;name&gt;</code>. At
+        <code>\begin{&lt;name&gt;}</code> the code
+        <code>&lt;begin code&gt;</code> will be executed and at
+        <code>\end{&lt;name&gt;}</code> the <code>&lt;end code&gt;</code> is
+        inserted.
+      </p>
+    </li>
+    <li>
+      <p><code>\renewenvironment{&lt;name&gt;}{&lt;begin code&gt;}{&lt;end code&gt;}</code>
+        can be used to change the existing definition of an
+        environment.</p>
+    </li>
+  </ol>
+</body>
+
+</html>

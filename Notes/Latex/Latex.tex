@@ -1,0 +1,219 @@
+\documentclass[]{article}
+\usepackage{amsmath, amssymb, graphicx, hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+\newenvironment{my_boxed}
+    {\begin{center}
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }
+
+\newenvironment{boxed_2}[1]
+    {\begin{center}
+    #1\\[1ex]
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }
+\title{Latex Notes}
+% \author{Harikesh}
+% \date{\today}
+\begin{document}
+\tableofcontents
+\section{Introduction}
+\subsection{\TeX}
+\TeX\; is a typesetting system which was designed and written by Donald Knuth[1] and first released in 1978. \TeX \;is a popular means of typesetting complex mathematical formulae; it has been noted as one of the most sophisticated digital typographical systems. It was designed with two main goals in mind: to allow anybody to produce high-quality books with minimal effort, and to provide a system that would give exactly the same results on all computers, at any point in time.
+
+\subsection{\LaTeX}
+LATEX enables authors to typeset and print their work at the highest typographical quality, using a predefined, professional layout. \LaTeX\; was originally written by Leslie Lamport. It uses the TEX formatter as its typesetting engine.
+
+In a \LaTeX\; environment, \LaTeX\; takes the role of the book designer and
+uses TEX as its typesetter. But \LaTeX\; is 'only' a program and therefore
+needs more guidance. The author has to provide additional information to
+describe the logical structure of his work. This information is written into the text as '\LaTeX\; commands.'
+
+This is quite different from the \textbf{WYSIWYG2} (What you see is what you get) approach that most modern word processors, such as MS Word or LibreOffice, take.
+
+\subsection{Various Files}
+\subsubsection{Files With \LaTeX}
+\textbf{.tex} \LaTeX\; or \TeX\; input file. Can be compiled with \LaTeX\;.
+\\ \textbf{.sty} \LaTeX\; Macro package. Load this into your \LaTeX\; document using the
+\verb|\usepackage| command.
+\\ \textbf{.dtx} Documented \TeX\;. This is the main distribution format for \LaTeX\; style
+files. If you process a .dtx file you get documented macro code of the
+LATEX package contained in the .dtx file.
+\\ \textbf{.ins} The installer for the files contained in the matching .dtx file. If you
+download a \LaTeX\; package from the net, you will normally get a .dtx
+and a .ins file. Run \LaTeX\; on the .ins file to unpack the .dtx file.
+\\ \textbf{.cls} Class files define what your document looks like. They are selected
+with the \verb|\documentclass| command.
+\\ \textbf{.fd }Font description file telling \LaTeX\; about new fonts.
+
+\subsubsection{Files Outputed}
+\textbf{.log} Gives a detailed account of what happened during the last compiler
+run.
+\\ \textbf{.toc} Stores all your section headers. It gets read in for the next compiler
+run and is used to produce the table of contents.
+\\ \textbf{.lof} This is like .toc but for the list of figures.
+\\ \textbf{.lot} And again the same for the list of tables.
+\\ \textbf{.aux}Another file that transports information from one compiler run to the next. Among other things, the .aux file is used to store information
+associated with cross-references.
+\section{Terminology}
+\subsection{Preamble}
+The preamble is the first section of an input file, before the text of the document itself, in which you tell \LaTeX\; the type of document, and other information \LaTeX\; will need to format the document correctly.
+\begin{verbatim}
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\begin{document}
+    ...
+\end{document}
+    \end{verbatim}
+\subsection{class files}
+Contains global processing information for the document. A class file is specified using documentclass command.
+
+\subsection{Packages}
+Packages are a way to extend the functionality of \LaTeX\;. They are loaded using the \verb|\usepackage| command. Common way to use a package is
+\begin{verbatim}
+    \usepackage[options]{package}
+\end{verbatim}
+
+\subsection{command}
+A command begins with a backslash \verb|\| and is a string of characters. A command can have optional and required arguments.
+\subsection{Environment}
+Environments are delimited by an opening tag \verb|\begin| and a closing tag \verb|\end|. Everything inside those tags will be formatted in a special manner depending on the type of the environment.
+\begin{verbatim}
+    \begin{tabular}{ c c c } 
+        cell1 & cell2 & cell3 \\ 
+        cell4 & cell5 & cell6 \\ 
+        cell7 & cell8 & cell9 \\ 
+       \end{tabular}
+\end{verbatim}
+\begin{tabular}{ c c c }
+    cell1 & cell2 & cell3 \\
+    cell4 & cell5 & cell6 \\
+    cell7 & cell8 & cell9 \\
+\end{tabular}
+\subsection{Document Environment}
+All that is between \verb|\begin{document}| and \verb|\end{document}|. Can be thought of as "printing" to the document.
+\subsection{CTAN}
+Abbreviation for Comprehensive TeX Archive Network. CTAN is a network of servers that hosts the TeX-related software and documentation. It is the central repository for TeX-related software and documentation.
+\subsection{Latex Distributions}
+A TeX distribution such is used to produce an output file (such as PDF or DVI) suitable for printing or digital distribution.
+Some of the popular distributions are:
+\begin{itemize}
+    \item TeX Live
+    \item MiKTeX
+    \item MacTeX
+    \item teTex
+    \item proTeXt
+\end{itemize}
+\subsection{Math Mode}
+Math mode is a special mode in which you can write mathematical expressions. There are two ways to enter math mode:
+\begin{itemize}
+    \item Inline math mode: $a^2 + b^2 = c^2$
+    \item Display math mode: $$a^2 + b^2 = c^2$$
+\end{itemize}
+To enter inline math mode, use a single dollar sign \verb|$|, and to enter Display math mode, use a double dollar sign \verb|$$|.
+
+Apart from this to typeset inline-mode math you can use one of these delimiter pairs: \verb|\( ... \), $ ... $ or \begin{math} ... \end{math}|.
+
+Also, to typeset display-mode math you can use one of these delimiter pairs:
+\verb|\[ ... \], \begin{displaymath} ... \end{displaymath}|\\
+or\\
+\verb|\begin{equation} ... \end{equation}|.
+
+\newpage
+\section{New Environments}
+\subsection{Basic Environment}
+The new environment definition is achieved by the \verb|\newenvironment| tag:
+\begin{verbatim}
+    \newenvironment{boxed}
+    {\begin{center}
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }
+\end{verbatim}
+Right after the \verb|\newenvironment|, in between braces, you must write the name of the environment, boxed in the example. Below that are two pairs of braces. Inside the first pair of braces is set what your new environment will do before the text within, then inside the second pair of braces declare what your new environment will do after the text.
+
+In the example, in between the before braces a tabular environment is started to draw the vertical lines and a horizontal line is drawn. Inside the after braces another horizontal line is drawn and the tabular environment is closed. Additionally it's enclosed by a center environment.
+
+\begin{my_boxed}
+    This is a boxed environment.
+\end{my_boxed}
+
+\subsection{Environments with Parameters}
+Environments that accept parameters can also be defined.
+\begin{verbatim}
+    \newenvironment{boxed}[1]
+    {\begin{center}
+    #1\\[1ex]
+    \begin{tabular}{|p{0.9\textwidth}|}
+    \hline\\
+    }
+    { 
+    \\\\\hline
+    \end{tabular} 
+    \end{center}
+    }
+\end{verbatim}
+As you see, the command definition is almost the same as in the example of the previous section, except for \verb|[1]| that sets the number of parameters to be used in the environment; and \verb|#1\\[1ex]| that inserts the parameter at the top of the box and also separates the title from the box by a 1ex blank space.
+\begin{boxed_2}{Hello}
+    This is a boxed environment with a title.
+\end{boxed_2}
+
+\subsection{Overwriting existing environments}
+Environments can be overwritten with \verb|\renewenvironment|. The syntax is equivalent to that of the \verb|\newenvironment| definition.
+\begin{verbatim}
+    \renewenvironment{itemize}
+    {\begin{center}\em}
+    {\end{center}}
+\end{verbatim}
+In this example, the \verb|itemize| environment is overwritten. The new definition is that the \verb|itemize| environment will be enclosed by a center environment and the items will be emphasized.
+
+\subsection{Summary of Environments}
+\begin{enumerate}
+    \item An environment is used with a matching pair of \verb|\begin| and \verb|\end| statements. Both \verb|\begin| and \verb|\end| take the name of the environment as argument in curly braces. The \verb|\begin| statement might have additional mandatory and/or optional arguments.
+    \item \verb|\newenvironment{<name>}{<begin code>}{<end code>}| defines a new environment called \verb|<name>|. At \verb|\begin{<name>}| the code \verb|<begin code>| will be executed and at \verb|\end{<name>}| the \verb|<end code>| is inserted.
+    \item \verb|\renewenvironment{<name>}{<begin code>}{<end code>}| can be used to change the existing definition of an environment.
+\end{enumerate}
+\end{document}
