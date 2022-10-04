@@ -4,3 +4,4 @@ Here are a list of some great articles:
 - [11 Interviewing Skills to Benefit Your Career (Coursera)](https://www.coursera.org/articles/interviewing-skills)
 - [How to Prepare for Job Interviews (Coursera)](https://blog.coursera.org/how-to-prepare-for-job-interviews/)
 - [SQL Interview Questions: A Guide for Data Analysts (Coursera)](https://www.coursera.org/articles/sql-interview-questions)
+- [Top 90+ Data Science Interview Questions and Answers: Basic to Technical](https://www.simplilearn.com/tutorials/data-science-tutorial/data-science-interview-questions)
