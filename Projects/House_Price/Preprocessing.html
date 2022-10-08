@@ -13048,10 +13048,8 @@ div#notebook {
   }
 }
 </style>
-
-
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     init_mathjax = function() {
@@ -13072,17 +13070,12 @@ div#notebook {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
-                    }
-                },
-                "HTML-CSS": {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -13115,7 +13108,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[217]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13136,7 +13129,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[218]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_c</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/test_cleaned.csv&quot;</span><span class="p">)</span>
@@ -13179,7 +13172,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[220]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_detail</span><span class="p">(</span><span class="n">column</span><span class="p">):</span>
@@ -13194,13 +13187,13 @@ div#notebook {
     <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data_description.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">start</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
-        <span class="n">end</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">start</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">column</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
-        <span class="n">texts_found</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+   
+    <span class="n">start</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">start</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">column</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">texts_found</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">texts_found</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">texts_found</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]))</span>
-    <span class="k">except</span><span class="p">:</span>
+    <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No such column&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -13211,7 +13204,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">str_cols</span> <span class="o">=</span> <span class="n">train_c</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">train_c</span><span class="o">.</span><span class="n">dtypes</span> <span class="o">==</span> <span class="s1">&#39;object&#39;</span><span class="p">]</span>
@@ -13240,7 +13233,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[221]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_c_str</span> <span class="o">=</span> <span class="n">train_c</span><span class="p">[</span><span class="n">str_cols</span><span class="p">]</span>
@@ -13256,7 +13249,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[222]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ohe</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -13271,7 +13264,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[223]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_c_str_ohe</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">test_c_str_ohe</span><span class="o">.</span><span class="n">shape</span>
@@ -13287,7 +13280,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[223]:</div>
+    <div class="prompt output_prompt">Out[48]:</div>
 
 
 
@@ -13334,7 +13327,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[224]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">str_cols</span><span class="p">:</span>
@@ -13981,7 +13974,7 @@ SaleCondition: Condition of sale
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[225]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="s2">&quot;ExterQual, ExterCond, BsmtQual, BsmtCond, BsmtExposure, BsmtFinType1, BsmtFinType2, HeatingQC, KitchenQual, FireplaceQu, GarageQual, GarageCond, PoolQC, Fence, LotShape, Utilities, GarageFinish, LandContour, LandSlope, CentralAir, PavedDrive&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
@@ -13998,7 +13991,7 @@ SaleCondition: Condition of sale
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[225]:</div>
+    <div class="prompt output_prompt">Out[50]:</div>
 
 
 
@@ -14043,7 +14036,7 @@ SaleCondition: Condition of sale
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[226]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">zero</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;NA&quot;</span><span class="p">,</span> <span class="s2">&quot;Unf&quot;</span><span class="p">,</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span> <span class="s2">&quot;No&quot;</span><span class="p">]</span>
@@ -14088,7 +14081,7 @@ SaleCondition: Condition of sale
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[228]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">train_c_str</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -14103,7 +14096,7 @@ SaleCondition: Condition of sale
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[229]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
@@ -14124,27 +14117,27 @@ SaleCondition: Condition of sale
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>ExterQual int32
-ExterCond int32
-BsmtQual int32
-BsmtCond int32
-BsmtExposure int32
-BsmtFinType1 int32
-BsmtFinType2 int32
-HeatingQC int32
-KitchenQual int32
-FireplaceQu int32
-GarageQual int32
-GarageCond int32
-PoolQC int32
-Fence int32
-LotShape int32
-Utilities int32
-GarageFinish int32
-LandContour int32
-LandSlope int32
-CentralAir int32
-PavedDrive int32
+<pre>ExterQual int64
+ExterCond int64
+BsmtQual int64
+BsmtCond int64
+BsmtExposure int64
+BsmtFinType1 int64
+BsmtFinType2 int64
+HeatingQC int64
+KitchenQual int64
+FireplaceQu int64
+GarageQual int64
+GarageCond int64
+PoolQC int64
+Fence int64
+LotShape int64
+Utilities int64
+GarageFinish int64
+LandContour int64
+LandSlope int64
+CentralAir int64
+PavedDrive int64
 </pre>
 </div>
 </div>
@@ -14155,7 +14148,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[230]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_c_nums</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train_c_nums</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">cols</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -14172,7 +14165,7 @@ PavedDrive int32
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[230]:</div>
+    <div class="prompt output_prompt">Out[54]:</div>
 
 
 
@@ -14197,7 +14190,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[231]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">test_c_str</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -14212,7 +14205,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[232]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
@@ -14233,27 +14226,27 @@ PavedDrive int32
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>ExterQual int32
-ExterCond int32
-BsmtQual int32
-BsmtCond int32
-BsmtExposure int32
-BsmtFinType1 int32
-BsmtFinType2 int32
-HeatingQC int32
-KitchenQual int32
-FireplaceQu int32
-GarageQual int32
-GarageCond int32
-PoolQC int32
-Fence int32
-LotShape int32
-Utilities int32
-GarageFinish int32
-LandContour int32
-LandSlope int32
-CentralAir int32
-PavedDrive int32
+<pre>ExterQual int64
+ExterCond int64
+BsmtQual int64
+BsmtCond int64
+BsmtExposure int64
+BsmtFinType1 int64
+BsmtFinType2 int64
+HeatingQC int64
+KitchenQual int64
+FireplaceQu int64
+GarageQual int64
+GarageCond int64
+PoolQC int64
+Fence int64
+LotShape int64
+Utilities int64
+GarageFinish int64
+LandContour int64
+LandSlope int64
+CentralAir int64
+PavedDrive int64
 </pre>
 </div>
 </div>
@@ -14264,7 +14257,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[233]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_c_nums</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">test_c_nums</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">cols</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -14281,7 +14274,7 @@ PavedDrive int32
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[233]:</div>
+    <div class="prompt output_prompt">Out[57]:</div>
 
 
 
@@ -14306,7 +14299,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[234]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_c_str</span> <span class="o">=</span> <span class="n">train_c_str</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -14324,7 +14317,7 @@ PavedDrive int32
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[234]:</div>
+    <div class="prompt output_prompt">Out[58]:</div>
 
 
 
@@ -14346,7 +14339,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[235]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">train_c_str</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
@@ -14362,7 +14355,7 @@ PavedDrive int32
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[235]:</div>
+    <div class="prompt output_prompt">Out[59]:</div>
 
 
 
@@ -14394,7 +14387,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[236]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">not_to_drop</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;MSZoning&quot;</span><span class="p">,</span> <span class="s2">&quot;Neighborhood&quot;</span><span class="p">,</span> <span class="s2">&quot;SaleType&quot;</span><span class="p">,</span> <span class="s2">&quot;SaleCondition&quot;</span><span class="p">]</span>
@@ -14411,7 +14404,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[237]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_c_str</span> <span class="o">=</span> <span class="n">train_c_str</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">to_drop</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -14429,7 +14422,7 @@ PavedDrive int32
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[237]:</div>
+    <div class="prompt output_prompt">Out[61]:</div>
 
 
 
@@ -14454,7 +14447,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[238]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_c_str</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">train_c_str</span><span class="p">,</span> <span class="n">drop_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -14476,7 +14469,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[239]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_c_nums</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train_c_nums</span><span class="p">,</span> <span class="n">train_c_str</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -14490,7 +14483,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[240]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_c_nums</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">test_c_nums</span><span class="o">.</span><span class="n">shape</span>
@@ -14506,7 +14499,7 @@ PavedDrive int32
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[240]:</div>
+    <div class="prompt output_prompt">Out[64]:</div>
 
 
 
@@ -14531,7 +14524,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[241]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">train_c_nums</span><span class="o">.</span><span class="n">dtypes</span> <span class="o">==</span> <span class="s2">&quot;object&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -14547,7 +14540,7 @@ PavedDrive int32
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[241]:</div>
+    <div class="prompt output_prompt">Out[65]:</div>
 
 
 
@@ -14564,7 +14557,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[242]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">test_c_nums</span><span class="o">.</span><span class="n">dtypes</span> <span class="o">==</span> <span class="s2">&quot;object&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -14580,7 +14573,7 @@ PavedDrive int32
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[242]:</div>
+    <div class="prompt output_prompt">Out[66]:</div>
 
 
 
@@ -14619,7 +14612,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[243]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_Id</span> <span class="o">=</span> <span class="n">train_c_nums</span><span class="p">[</span><span class="s2">&quot;Id&quot;</span><span class="p">]</span>
@@ -14633,7 +14626,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[261]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_Id</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;data/train_Id.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -14647,7 +14640,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[244]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_c_nums</span> <span class="o">=</span> <span class="n">train_c_nums</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Id&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -14666,9 +14659,31 @@ PavedDrive int32
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We'll create a new feature, the age of the house by using the column <code>YearBuilt</code>. Then we'll drop the column <code>YearBuilt</code>.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[245]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_c_nums</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_c_nums</span><span class="p">[</span><span class="s2">&quot;YrSold&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">train_c_nums</span><span class="p">[</span><span class="s2">&quot;YearBuilt&quot;</span><span class="p">]</span>
+<span class="n">test_c_nums</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_c_nums</span><span class="p">[</span><span class="s2">&quot;YrSold&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">test_c_nums</span><span class="p">[</span><span class="s2">&quot;YearBuilt&quot;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">years_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;YearBuilt&quot;</span><span class="p">,</span> <span class="s2">&quot;YearRemodAdd&quot;</span><span class="p">,</span> <span class="s2">&quot;GarageYrBlt&quot;</span><span class="p">]</span>
@@ -14690,7 +14705,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[246]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">train_c_nums</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;SalePrice&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -14704,7 +14719,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[262]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;data/y.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -14717,7 +14732,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[247]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">test_c_nums</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span><span class="s2">&quot;Number of columns are not equal&quot;</span>
@@ -14745,7 +14760,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[248]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_range</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
@@ -14769,7 +14784,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[249]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">large_range</span> <span class="o">=</span> <span class="p">[]</span>
@@ -14790,7 +14805,7 @@ PavedDrive int32
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[249]:</div>
+    <div class="prompt output_prompt">Out[75]:</div>
 
 
 
@@ -14817,7 +14832,8 @@ PavedDrive int32
  &#39;ScreenPorch&#39;,
  &#39;PoolArea&#39;,
  &#39;MiscVal&#39;,
- &#39;MoSold&#39;]</pre>
+ &#39;MoSold&#39;,
+ &#39;Age&#39;]</pre>
 </div>
 
 </div>
@@ -14836,7 +14852,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[250]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_to_standardize</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">large_range</span><span class="p">]</span>
@@ -14853,7 +14869,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[251]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_to_standardize</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">test_done</span><span class="o">.</span><span class="n">shape</span>
@@ -14869,13 +14885,13 @@ PavedDrive int32
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[251]:</div>
+    <div class="prompt output_prompt">Out[77]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>((1459, 22), (1459, 73))</pre>
+<pre>((1459, 23), (1459, 74))</pre>
 </div>
 
 </div>
@@ -14886,7 +14902,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[252]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_to_standardize</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">X_done</span><span class="o">.</span><span class="n">shape</span>
@@ -14902,13 +14918,13 @@ PavedDrive int32
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[252]:</div>
+    <div class="prompt output_prompt">Out[78]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>((1460, 22), (1460, 73))</pre>
+<pre>((1460, 23), (1460, 73))</pre>
 </div>
 
 </div>
@@ -14927,7 +14943,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[253]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
@@ -14945,7 +14961,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[254]:</div>
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_standard</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_standard</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">X_to_standardize</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
@@ -14959,7 +14975,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[255]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_done</span><span class="p">,</span> <span class="n">X_standard</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -14973,7 +14989,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[256]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">test_c_nums</span><span class="o">.</span><span class="n">shape</span>
@@ -14989,13 +15005,13 @@ PavedDrive int32
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[256]:</div>
+    <div class="prompt output_prompt">Out[82]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>((1460, 95), (1459, 95))</pre>
+<pre>((1460, 96), (1459, 97))</pre>
 </div>
 
 </div>
@@ -15006,7 +15022,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[257]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -15022,12 +15038,11 @@ PavedDrive int32
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[257]:</div>
+    <div class="prompt output_prompt">Out[83]:</div>
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
+<div class="output_html rendered_html output_subarea output_execute_result"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -15056,7 +15071,6 @@ PavedDrive int32
       <th>Fireplaces</th>
       <th>GarageCars</th>
       <th>...</th>
-      <th>TotRmsAbvGrd</th>
       <th>GarageArea</th>
       <th>WoodDeckSF</th>
       <th>OpenPorchSF</th>
@@ -15066,6 +15080,7 @@ PavedDrive int32
       <th>PoolArea</th>
       <th>MiscVal</th>
       <th>MoSold</th>
+      <th>Age</th>
     </tr>
   </thead>
   <tbody>
@@ -15106,7 +15121,6 @@ PavedDrive int32
       <td>0.613014</td>
       <td>1.767123</td>
       <td>...</td>
-      <td>4.387662e-17</td>
       <td>-2.022735e-17</td>
       <td>2.190029e-16</td>
       <td>3.357284e-17</td>
@@ -15116,6 +15130,7 @@ PavedDrive int32
       <td>-7.945889e-16</td>
       <td>2.409602e-16</td>
       <td>-6.395189e-17</td>
+      <td>-1.126572e-16</td>
     </tr>
     <tr>
       <th>std</th>
@@ -15154,7 +15169,6 @@ PavedDrive int32
       <td>0.000000</td>
       <td>0.000000</td>
       <td>...</td>
-      <td>-2.780469e+00</td>
       <td>-2.212963e+00</td>
       <td>-7.521758e-01</td>
       <td>-7.044833e-01</td>
@@ -15164,6 +15178,7 @@ PavedDrive int32
       <td>-6.869175e-02</td>
       <td>-8.768781e-02</td>
       <td>-1.969111e+00</td>
+      <td>-1.282839e+00</td>
     </tr>
     <tr>
       <th>25%</th>
@@ -15178,7 +15193,6 @@ PavedDrive int32
       <td>0.000000</td>
       <td>1.000000</td>
       <td>...</td>
-      <td>-9.341298e-01</td>
       <td>-6.479160e-01</td>
       <td>-7.521758e-01</td>
       <td>-7.044833e-01</td>
@@ -15188,6 +15202,7 @@ PavedDrive int32
       <td>-6.869175e-02</td>
       <td>-8.768781e-02</td>
       <td>-4.891101e-01</td>
+      <td>-9.516316e-01</td>
     </tr>
     <tr>
       <th>50%</th>
@@ -15202,7 +15217,6 @@ PavedDrive int32
       <td>1.000000</td>
       <td>2.000000</td>
       <td>...</td>
-      <td>-3.186833e-01</td>
       <td>3.284429e-02</td>
       <td>-7.521758e-01</td>
       <td>-3.270298e-01</td>
@@ -15212,6 +15226,7 @@ PavedDrive int32
       <td>-6.869175e-02</td>
       <td>-8.768781e-02</td>
       <td>-1.191097e-01</td>
+      <td>-5.737148e-02</td>
     </tr>
     <tr>
       <th>75%</th>
@@ -15226,7 +15241,6 @@ PavedDrive int32
       <td>1.000000</td>
       <td>2.000000</td>
       <td>...</td>
-      <td>2.967633e-01</td>
       <td>4.820057e-01</td>
       <td>5.886506e-01</td>
       <td>3.221901e-01</td>
@@ -15236,6 +15250,7 @@ PavedDrive int32
       <td>-6.869175e-02</td>
       <td>-8.768781e-02</td>
       <td>6.208910e-01</td>
+      <td>5.719226e-01</td>
     </tr>
     <tr>
       <th>max</th>
@@ -15250,7 +15265,6 @@ PavedDrive int32
       <td>3.000000</td>
       <td>4.000000</td>
       <td>...</td>
-      <td>4.604889e+00</td>
       <td>4.421526e+00</td>
       <td>6.087635e+00</td>
       <td>7.554198e+00</td>
@@ -15260,12 +15274,12 @@ PavedDrive int32
       <td>1.830618e+01</td>
       <td>3.116527e+01</td>
       <td>2.100892e+00</td>
+      <td>3.287824e+00</td>
     </tr>
   </tbody>
 </table>
-<p>8 rows × 95 columns</p>
-</div>
-</div>
+<p>8 rows × 96 columns</p>
+</div></div>
 
 </div>
 
@@ -15283,7 +15297,7 @@ PavedDrive int32
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[260]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;data/train_final.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -15302,7 +15316,7 @@ PavedDrive int32
 
 
 
- 
+
 
 
 </html>

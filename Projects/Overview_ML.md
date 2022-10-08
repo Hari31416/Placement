@@ -21,7 +21,9 @@ How the best model and model before them were tuned for the best parameter.
 
 # 8. Model Deployment, if any
 
-# 9. Question Section
+# 9. Result
+
+# 10. Question Section
 Here, answer a few of the most asked questions about the project. Some questions are:
 
 1. If you were to do something differently, what would that be?

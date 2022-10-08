@@ -12,7 +12,8 @@ What is the objective of the project.
 
 # 6. Deployment
 
-# 7. Question Section
+# 7. Result
+# 8. Question Section
 Here, answer a few of the most asked questions about the project. Some questions are:
 
 1. If you were to do something differently, what would that be?
