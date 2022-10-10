@@ -13964,7 +13964,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="6.-Remove-Duplicates-from-Sorted-List"><em>6. Remove Duplicates from Sorted List</em><a class="anchor-link" href="#6.-Remove-Duplicates-from-Sorted-List">&#182;</a></h1>
+<h1 id="6.-Remove-Duplicates-from-Sorted-List">6. Remove Duplicates from Sorted List<a class="anchor-link" href="#6.-Remove-Duplicates-from-Sorted-List">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13997,6 +13997,30 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 </div>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">remove_duplicates</span><span class="p">(</span><span class="n">head</span><span class="p">):</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">head</span>
+    <span class="n">current_val</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">val</span>
+    <span class="k">while</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+        <span class="n">next_val</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">val</span>
+        <span class="k">if</span> <span class="n">next_val</span> <span class="o">==</span> <span class="n">current_val</span><span class="p">:</span>
+            <span class="n">current</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">val</span>
+            <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">current_val</span> <span class="o">=</span> <span class="n">next_val</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">head</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -14289,7 +14313,7 @@ AB -&gt; 28
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="9.-Remove-Linked-List-Elements"><em>9. Remove Linked List Elements</em><a class="anchor-link" href="#9.-Remove-Linked-List-Elements">&#182;</a></h1>
+<h1 id="9.-Remove-Linked-List-Elements">9. Remove Linked List Elements<a class="anchor-link" href="#9.-Remove-Linked-List-Elements">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14331,25 +14355,21 @@ AB -&gt; 28
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">remove_element</span><span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">head</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">head</span>
-    <span class="k">if</span> <span class="n">head</span><span class="o">.</span><span class="n">val</span> <span class="o">==</span> <span class="n">val</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">None</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">head</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">head</span>
-    <span class="n">current</span> <span class="o">=</span> <span class="n">head</span>
-    <span class="k">while</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">current</span><span class="o">.</span><span class="n">val</span> <span class="o">==</span> <span class="n">val</span><span class="p">:</span>
-            <span class="n">temp</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
-            <span class="n">current</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">val</span>
-            <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">next</span>
-        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
-     
-    <span class="k">return</span> <span class="n">head</span>
+    <span class="n">dummy_head</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">dummy_head</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">head</span>
+    
+    <span class="n">current_node</span> <span class="o">=</span> <span class="n">dummy_head</span>
+    <span class="k">while</span> <span class="n">current_node</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">current_node</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">val</span> <span class="o">==</span> <span class="n">val</span><span class="p">:</span>
+            <span class="n">current_node</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">current_node</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">current_node</span> <span class="o">=</span> <span class="n">current_node</span><span class="o">.</span><span class="n">next</span>
+            
+    <span class="k">return</span> <span class="n">dummy_head</span><span class="o">.</span><span class="n">next</span>
 </pre></div>
 
     </div>
