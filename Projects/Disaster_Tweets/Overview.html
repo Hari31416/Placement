@@ -84,109 +84,118 @@
 <li><a href="#2-aim-of-the-project">2. Aim of the Project</a></li>
 <li><a href="#3-preparation-of-dataset">3. Preparation of Dataset</a>
 <ul>
-<li><a href="#31-data-cleaning">3.1. Data Cleaning</a></li>
-<li><a href="#32-feature-engineering">3.2. Feature Engineering</a></li>
-<li><a href="#33-preprocessing">3.3. Preprocessing</a>
+<li><a href="#31-cleaning-the-text">3.1. Cleaning the Text</a></li>
+<li><a href="#32-filling-null-values">3.2. Filling Null Values</a></li>
+<li><a href="#33-text-to-vector">3.3. Text to Vector</a>
 <ul>
-<li><a href="#331-label-encoding">3.3.1. Label Encoding</a></li>
-<li><a href="#332-normalization">3.3.2. Normalization</a></li>
-<li><a href="#333-outliers">3.3.3. Outliers</a></li>
-<li><a href="#334-train-test-split">3.3.4. Train-Test Split</a></li>
+<li><a href="#331-tf-idf">3.3.1. Tf-Idf</a></li>
+<li><a href="#332-text-vectorization">3.3.2. Text Vectorization</a></li>
+<li><a href="#333-word-embedding">3.3.3. Word Embedding</a></li>
 </ul>
 </li>
+<li><a href="#34-transfer-learning-with-use">3.4. Transfer Learning with USE</a></li>
+<li><a href="#35-making-training-faster">3.5. Making Training Faster</a></li>
 </ul>
 </li>
 <li><a href="#4-the-performance-metrics">4. The Performance Metrics</a></li>
 <li><a href="#5-base-model">5. Base Model</a></li>
 <li><a href="#6-the-training-process">6. The Training Process</a>
 <ul>
-<li><a href="#61-models">6.1. Models</a></li>
+<li><a href="#61-using-just-the-text-column">6.1. Using just the <code>text</code> column</a></li>
+<li><a href="#62-using-the-text-and-keyword-columns">6.2. Using the <code>text</code> and <code>keyword</code> Columns</a></li>
 </ul>
 </li>
 <li><a href="#7-fine-tuning-process">7. Fine Tuning Process</a></li>
 <li><a href="#8-model-deployment-if-any">8. Model Deployment, if any</a></li>
-<li><a href="#9-final-result">9. Final Result</a></li>
-<li><a href="#10-question-section">10. Question Section</a>
-<ul>
-<li><a href="#101-if-you-were-to-do-something-differently-what-would-that-be">10.1. If you were to do something differently, what would that be?</a></li>
-<li><a href="#102-what-were-the-most-challenging-aspect-of-the-project-and-how-you-overtook-it">10.2. What were the most challenging aspect of the project and how you overtook it?</a></li>
-<li><a href="#103-what-were-some-mistakes-you-made-how-did-you-rectify-them">10.3. What were some mistakes you made? How did you rectify them?</a></li>
-<li><a href="#104-what-were-the-most-important-features">10.4. What Were the Most Important Features?</a></li>
-<li><a href="#105-what-improvements-would-you-make-to-your-model-in-the-future">10.5. What improvements would you make to your model in the future?</a></li>
-</ul>
-</li>
+<li><a href="#9-result">9. Result</a></li>
+<li><a href="#10-question-section">10. Question Section</a></li>
 </ul>
 <h1 id="1-the-data-source">1. The Data Source</h1>
-<p>The data is taken from kaggle. The data is a part of Kaggle's getting started competitions. The dataset has 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa. Some of the columns in the dataset are:</p>
-<li><strong>SalePrice</strong> - the property's sale price in dollars. This is the target variable that you're trying to predict.</li>
-<li><strong>LotFrontage</strong>: Linear feet of street connected to property</li>
-<li><strong>Foundation</strong>: Type of foundation</li>
-<li><strong>BsmtQual</strong>: Height of the basement</li>
-<li><strong>Bedroom</strong>: Number of bedrooms above basement level</li>
-<li><strong>Kitchen</strong>: Number of kitchens</li>
-etc.
-<h1 id="2-aim-of-the-project">2. Aim of the Project</h1>
-<p>The aim of the project is to predict the price of the house using the given features.</p>
-<h1 id="3-preparation-of-dataset">3. Preparation of Dataset</h1>
-<h2 id="31-data-cleaning">3.1. Data Cleaning</h2>
-<p>The dataset contains lot of missing values in both train and the test set. A variety of methods are used to fill the missing values. The methods used are:</p>
-<ol>
-<li>A lot of missing values in this dataset are because the facilty or object defined by that column does not exist in the house. Default value of &quot;None&quot; is used for all of them.</li>
-<li>Some mising values are filed by the mode.</li>
-<li>Some columns are filled by grouping using other columns and then filling them by the mean of the group.</li>
-</ol>
-<h2 id="32-feature-engineering">3.2. Feature Engineering</h2>
-<p>Not a lot of feature engineering is done since there are already 80 features to work with. However, I've created some new features using the existing features. The new features are:</p>
-<ol>
-<li>The age of the house</li>
-</ol>
-<h2 id="33-preprocessing">3.3. Preprocessing</h2>
-<h3 id="331-label-encoding">3.3.1. Label Encoding</h3>
-<p>There are about 80 columns. And a lot of them are categorical. One hot encoding them will result in a lot of columns. So, I have used ordinal encoding for the categorical columns. I've used values from 0 to 5 for the different categories. 0 for the worst and 5 for the best. This results in not creation of new columns. This works because there are a lot of columns where comparative adjectives like &quot;excellent&quot;, &quot;good&quot;, &quot;bad&quot; are used. Of course, this does not work for all the columns. Other columns are dropped.</p>
-<h3 id="332-normalization">3.3.2. Normalization</h3>
-<p>Numerical columns, which has larger range are normalized using <code>StandardScaler</code>.</p>
-<h3 id="333-outliers">3.3.3. Outliers</h3>
-<p>The dataset does have some outliers. But, I've not removed them. I've tried removing them. But, it did not improve the performance of the model. Plus, we need to predict on all the test dataset and that dataset too has outliers. So, I've not removed them.</p>
-<h3 id="334-train-test-split">3.3.4. Train-Test Split</h3>
-<p>A 80-20 split is used for the train and the test set. I've used <code>train_test_split</code> from <code>sklearn.model_selection</code> which shuffles the data before splitting. So, we don't have data leakage.</p>
-<h1 id="4-the-performance-metrics">4. The Performance Metrics</h1>
-<p>This is a regression task. The ideal metric for this is RMSE (Root Mean Squared Error). However, Kaggle has used RMSLE (The Root Mean Squared Log Error) for this competition. So, I've used that as well.</p>
-<h1 id="5-base-model">5. Base Model</h1>
-<p>The base model used is a simple linear regression with the default parameters given by <code>sklearn</code>. The RMSE and the RMSLE for the base model on test dataset are:</p>
+<p>The data is taken from Kaggle. It contains some tweets. Along with the tweet text, we have some more information like keyword and location. The tweets may or may not talk about a disaster happening. The various columns of the dataset are:</p>
 <ul>
-<li>RMSE: 32138.47833846781</li>
-<li>RMSLE: 0.1541983866756769
-The base model now done, we are ready to move on to the next step.</li>
+<li>id - a unique identifier for each tweet</li>
+<li>text - the text of the tweet</li>
+<li>location - the location the tweet was sent from (may be blank)</li>
+<li>keyword - a particular keyword from the tweet (may be blank)</li>
+<li>target - in train.csv only, this denotes whether a tweet is about a real disaster (1) or not (0)</li>
+<li></li>
 </ul>
-<h1 id="6-the-training-process">6. The Training Process</h1>
-<h2 id="61-models">6.1. Models</h2>
-<p>A polynomial model is fitted after the linear model. Elastic net is used to fit the model. After that, I've moved to more powerful algorithms.</p>
-<h1 id="7-fine-tuning-process">7. Fine Tuning Process</h1>
-<p>To tune the model, I've used <code>GridSearchCV</code> from <code>sklearn.model_selection</code>. I've used 3-fold cross validation.</p>
-<h1 id="8-model-deployment-if-any">8. Model Deployment, if any</h1>
-<p>The model is not deployed.</p>
-<h1 id="9-final-result">9. Final Result</h1>
-<p>The best model gave an RMSLE score of 0.12384 on the Kaggle test set. This was placed in the top 15% of the leaderboard.</p>
-<h1 id="10-question-section">10. Question Section</h1>
-<h2 id="101-if-you-were-to-do-something-differently-what-would-that-be">10.1. If you were to do something differently, what would that be?</h2>
-<p>There are a couple of things that I would do differently:</p>
+<h1 id="2-aim-of-the-project">2. Aim of the Project</h1>
+<p>The goal is to predict whether a given tweet is about a real disaster or not. If so, predict a 1. If not, predict a 0. It is not always obvious, just by the words, whether the tweet is about a real disaster or not. So, training a model to do so will be a difficult task.</p>
+<h1 id="3-preparation-of-dataset">3. Preparation of Dataset</h1>
+<p>This is a dataset where the features are text. So, we have more steps than general to prepare the dataset. The preparation will be done in many steps:</p>
+<h2 id="31-cleaning-the-text">3.1. Cleaning the Text</h2>
+<p>First step is to clean the texts. For this, many things can be done. Some steps, which I've performed are:</p>
 <ol>
-<li>First, I'll try different ratio for train-test split. I've used 90-10 split given the fact that the dataset is small. However, this gives a small dataset for training. Using a 80-20 split might give better results.</li>
-<li>Second, a lot of categorical columns have been dropped. I might try coming with some other way to encode them. Not all of them are useful, of course, but some features might be useful.</li>
-<li>Feature engineering is not done a lot. I might try to do more of it.</li>
+<li>Lowercasing</li>
+<li>Removing last <code>s</code> (only done in <code>keyword</code> column)</li>
+<li>Removing <code>@user</code></li>
+<li>Removing the links</li>
+<li>Removing non ASCII characters (like emojis)</li>
+<li>Removing punctuation and special characters</li>
+<li>Removing english stopwords</li>
 </ol>
-<h2 id="102-what-were-the-most-challenging-aspect-of-the-project-and-how-you-overtook-it">10.2. What were the most challenging aspect of the project and how you overtook it?</h2>
-<p>The most challenging aspect of the project was to decide which features to use, escpecially the categotical features. There are a huge number of categorical variables in the dataset and there are a large number of diffrent category in each these features. Just doing a one hot encoding will not work well, this will result in over 300 columns which are not good as number of samples in the dataset are under 1500.</p>
-<p>The solution to this problem is to use ordinal encoding. There are a lot of columns where comparative adjectives like &quot;excellent&quot;, &quot;good&quot;, &quot;bad&quot; are used. All these adjectives give a send of order to these categories. So, I used number from 0 to 6 to encode this sense of order. After that, the features are used just as any numerical columns are used. Of course, this does not work for all the columns and I did drop some of the columns.</p>
-<h2 id="103-what-were-some-mistakes-you-made-how-did-you-rectify-them">10.3. What were some mistakes you made? How did you rectify them?</h2>
-<p>I spent a lot of time fitting a polynomial model of degree 2 using the <code>ElaticNet</code> model. However, it was performing poorer than even the base model. It turned out that this dataset is not a good fit for polynomial models. So, I dropped the polynomial model and moved on to more powerful models.</p>
-<h2 id="104-what-were-the-most-important-features">10.4. What Were the Most Important Features?</h2>
-<p>Here are the five most important features as given by the <code>RandomForestRegressor</code> model:</p>
-<p><code>OverallQual</code>, <code>GrLivArea</code>, <code>GarageCars</code>, <code>ExterQual</code>, <code>TotalBsmtSF</code></p>
-<p>While the <code>XGBoost</code> model gives the following features as the most important:</p>
-<p><code>OverallQual</code>, <code>GarageCars</code>, <code>TotRmsAbvGrd</code>, <code>BsmtQual</code>, <code>GrLivArea</code></p>
-<h2 id="105-what-improvements-would-you-make-to-your-model-in-the-future">10.5. What improvements would you make to your model in the future?</h2>
-<p>The model is not using all the features. Also, feature engineering is not done rigorously. This is something that I would like to improve in the future. I would also like to try some different models and see how they perform. Finally, it would be good idea to deploy the model, using django or Streamlit.</p>
+<h2 id="32-filling-null-values">3.2. Filling Null Values</h2>
+<p>Some values are missing from the dataset, especially from the column <code>keyword</code> and <code>address</code>. The <code>address</code> column is not used in the final models as it is not very relavant and hence the column is simply dropped. The <code>keyword</code> column is more relavant and hence the missing values are filled with follwoing stretegy:</p>
+<ol>
+<li>Make a list of all the keywords in the <code>keyword</code> column.</li>
+<li>Loop thorough the <code>text</code> for which the <code>keyword</code> is null.</li>
+<li>Search if there is a word in the text that is in the list of keywords.</li>
+<li>If yes, fill the <code>keyword</code> column with that word else fill with some other special word.</li>
+</ol>
+<h2 id="33-text-to-vector">3.3. Text to Vector</h2>
+<p>ML models requires numbers to work, they can not work on raw text data, even though they are cleaned and all. There are number of ways to convert a text to a vector. The methods I've used are as follow:</p>
+<h3 id="331-tf-idf">3.3.1. Tf-Idf</h3>
+<p>Tf-Idf is a method to convert text to vector. It is a combination of two methods:</p>
+<ol>
+<li>Term Frequency (Tf)</li>
+<li>Inverse Document Frequency (Idf)</li>
+</ol>
+<p>This step is done for my base model, which is a Naive Bayes model trained on this Tf-Idf. However, the bulk of my modeling experiments revolve around DL models and there I've used other methods. They are given below.</p>
+<h3 id="332-text-vectorization">3.3.2. Text Vectorization</h3>
+<p>I've used TensorFlow's <code>TextVectorization</code> layer to create a vector of the text. The max vocabulary size used is 10000 and the maximum length of words in a single example is 20. The <code>TextVectorization</code> layer added directly to the model.</p>
+<h3 id="333-word-embedding">3.3.3. Word Embedding</h3>
+<p>Next step is to create a word embedding using the text-vectors. I've used <code>Embedding</code> layer for this. The output dimension of the layer is 128. Same as before, the <code>Embedding</code> layer is added directly to the model.</p>
+<h2 id="34-transfer-learning-with-use">3.4. Transfer Learning with USE</h2>
+<p>An alternative to creating and training our own word embedding is to use some already pretrained word embedding. This has the advantage of having more robust. I've used the Universal Sentence Encoder (USE) for this. The USE is a pretrained model that can be used to create a vector of a sentence. USE is a great word embedding in a way that it embedds two words which are Semantic similar are closer to each other in the embedding space. The model is available on tensorflow hub.</p>
+<p>Both sentence level and character level encoding are performed using USE to train DL models.</p>
+<h2 id="35-making-training-faster">3.5. Making Training Faster</h2>
+<p>I'm using Tensorflow for deep learning models. With GPU if we do some preprocessing to the dataset using the <code>tf.Data</code> API, the training time can be reduced significantly. Though, we have a very small dataset and we can go on without using these steps, I've done it anyway. In brief, these are the steps which are done to make the training faster:</p>
+<ol>
+<li>Create Tensorflow Dataset from numpy array using <code>tf.data.Dataset.from_tensor_slices</code> and <code>tf.data.Dataset.zip</code>.</li>
+<li>Batched the datasets with batch size of 64.</li>
+<li>Used <code>prefetch</code> which prepares subsequent batches of data whilst other batches of data are being computed on.</li>
+<li>Used <code>tf.data.AUTOTUNE</code> so that Tensorflow can figure out itself how many number of parallel calls it should make.</li>
+</ol>
+<p>See the article <a href="https://www.tensorflow.org/guide/data_performance">Better performance with the tf.data API</a></p>
+<h1 id="4-the-performance-metrics">4. The Performance Metrics</h1>
+<p>The dataset is not exactly balanced. However, it is not terribly imbalanced either. So, accuracy is a good metric to use. However, we will also use F1 score and AUC score. Kaggle uses accuracy to evaluate the submissions. So, accuracy will be our primary metric too.</p>
+<h1 id="5-base-model">5. Base Model</h1>
+<p>The base model is a Naive Bayes model. It is a simple model and is a good starting point. The model is trained on the Tf-Idf vector of the text. The model gives an accuracy of 0.79 and f1 score of 0.785 on the test set</p>
+<h1 id="6-the-training-process">6. The Training Process</h1>
+<p>As the base model is trained, I've moved to deep learning models. The input to models are text embeddings, first trained while training the NN network itself and then using a pretrained embedding model, the USE. I've experminented with a number of architectures involving the most successfull NN layers like Conv1D, LSTM, GRU, Bidirectional, etc. The models are trained on the GPU. The training process is as follow:</p>
+<h2 id="61-using-just-the-text-column">6.1. Using just the <code>text</code> column</h2>
+<p>This family of models were trained on just the <code>text</code> column. The <code>keyword</code> and <code>location</code> columns were not used. The models were trained on the sentence level encoding by using the USE. I used Fully connected layers, Conv1D, LSTM, GRU, as well as the bidirectional variant of the last two layers. The best model in this family gave an accuracy of 83.6% on train set. Surprsingly, this was as simple feed forward model.</p>
+<h2 id="62-using-the-text-and-keyword-columns">6.2. Using the <code>text</code> and <code>keyword</code> Columns</h2>
+<p>Next set of experiments were performed using both the <code>text</code> and <code>keyword</code> columns. The <code>location</code> column was not used. For this, I created a multivariate model where there were two inputs, one for <code>text</code> and other for <code>keyword</code>. For <code>keyword</code>, character level encoding was performed.</p>
+<h1 id="7-fine-tuning-process">7. Fine Tuning Process</h1>
+<p>How the best model and model before them were tuned for the best parameter.</p>
+<h1 id="8-model-deployment-if-any">8. Model Deployment, if any</h1>
+<p>The model is not deployed. However, the model is saved in the form of a tensorflow model. The model can be loaded and used for prediction.</p>
+<h1 id="9-result">9. Result</h1>
+<h1 id="10-question-section">10. Question Section</h1>
+<p>Here, answer a few of the most asked questions about the project. Some questions are:</p>
+<ol>
+<li>If you were to do something differently, what would that be?</li>
+<li>If I were to change condition X in this project, how would your approach change?</li>
+<li>What were the most challenging aspect of the project and how you overtook it?</li>
+<li>Some mistakes you made.</li>
+<li>What improvements can be made?</li>
+<li>Why did this algorithm work or didn't work?</li>
+<li>What were the most important features?</li>
+<li>(Classification) Balanced or unbalanced classes?</li>
+<li>What were the most important features?</li>
+</ol>
 
         
         

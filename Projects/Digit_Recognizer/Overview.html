@@ -79,7 +79,58 @@
         
     </head>
     <body class="vscode-body vscode-light">
-        <h1 id="1-the-data-source">1. The Data Source</h1>
+        <ul>
+<li><a href="#1-the-data-source">1. The Data Source</a></li>
+<li><a href="#2-aim-of-the-project">2. Aim of the Project</a></li>
+<li><a href="#3-preparation-of-dataset">3. Preparation of Dataset</a>
+<ul>
+<li><a href="#31-further-preparation-of-dataset-for-working-with-neural-networks">3.1. Further Preparation of Dataset for Working with Neural Networks</a></li>
+</ul>
+</li>
+<li><a href="#4-the-performance-metrics">4. The Performance Metrics</a></li>
+<li><a href="#5-base-model">5. Base Model</a>
+<ul>
+<li><a href="#51-machine-learning-model">5.1. Machine Learning Model</a></li>
+<li><a href="#52-deep-learning-model">5.2. Deep Learning Model</a></li>
+</ul>
+</li>
+<li><a href="#6-the-training-process">6. The Training Process</a>
+<ul>
+<li><a href="#61-machine-learning-models">6.1. Machine Learning Models</a></li>
+<li><a href="#62-deep-learning-models">6.2. Deep Learning Models</a>
+<ul>
+<li><a href="#621-preprocessing-and-callbacks">6.2.1. Preprocessing and Callbacks</a></li>
+<li><a href="#622-architecture-used">6.2.2. Architecture Used</a></li>
+<li><a href="#623-reducing-overfitting">6.2.3. Reducing Overfitting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#7-fine-tuning-process">7. Fine Tuning Process</a>
+<ul>
+<li><a href="#71-machine-learning-models">7.1. Machine Learning Models</a></li>
+<li><a href="#72-deep-learning-models">7.2. Deep Learning Models</a></li>
+</ul>
+</li>
+<li><a href="#8-model-deployment-if-any">8. Model Deployment, if any</a></li>
+<li><a href="#9-result">9. Result</a>
+<ul>
+<li><a href="#91-machine-learning-models">9.1. Machine Learning Models</a></li>
+<li><a href="#92-deep-learning-models">9.2. Deep Learning Models</a></li>
+</ul>
+</li>
+<li><a href="#10-question-section">10. Question Section</a>
+<ul>
+<li><a href="#101-what-improvements-can-be-made">10.1. What improvements can be made?</a></li>
+<li><a href="#102-if-you-were-to-do-something-differently-what-would-that-be">10.2. If you were to do something differently, what would that be?</a></li>
+<li><a href="#103-what-were-some-mistakes-you-made">10.3. What were some mistakes you made?</a></li>
+<li><a href="#104-what-were-the-most-challenging-aspect-of-the-project-and-how-you-overtook-it">10.4. What were the most challenging aspect of the project and how you overtook it?</a></li>
+<li><a href="#105-why-did-dl-models-work-while-ml-models-didnt-work-that-well">10.5. Why did DL models work while ML models didn't work that well?</a></li>
+<li><a href="#106-balanced-or-unbalanced-classes">10.6. Balanced or unbalanced classes?</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="1-the-data-source">1. The Data Source</h1>
 <p>The data is the famous MNIST digit recognition dataset. I've used the dataset from kaggle which consists of 42,000 training images and 28,000 test images. Each image is a 28x28 grayscale image, associated with a label from 0 to 9. The data, I've used is in CSV format with 28*28+1=785 columns, one for each pixel, and one for the label. The pixel values are not normalized, and are in the range 0-255. The data is available at <a href="https://www.kaggle.com/c/digit-recognizer/data">Kaggle</a>.</p>
 <h1 id="2-aim-of-the-project">2. Aim of the Project</h1>
 <p>The goal of the project is to develope a model that can classify the images into their respective labels.</p>
