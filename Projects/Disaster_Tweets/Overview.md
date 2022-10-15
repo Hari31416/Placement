@@ -18,6 +18,11 @@
 - [8. Model Deployment, if any](#8-model-deployment-if-any)
 - [9. Result](#9-result)
 - [10. Question Section](#10-question-section)
+  - [10.1. If you were to do something differently, what would that be?](#101-if-you-were-to-do-something-differently-what-would-that-be)
+  - [10.2. What improvements can be made?](#102-what-improvements-can-be-made)
+  - [10.3. What were the most important features?](#103-what-were-the-most-important-features)
+  - [10.4. Balanced or unbalanced classes?](#104-balanced-or-unbalanced-classes)
+  - [10.5. What were the most challenging aspect of the project and how you overtook it?](#105-what-were-the-most-challenging-aspect-of-the-project-and-how-you-overtook-it)
 
 # 1. The Data Source
 The data is taken from Kaggle. It contains some tweets. Along with the tweet text, we have some more information like keyword and location. The tweets may or may not talk about a disaster happening. The various columns of the dataset are:
@@ -98,17 +103,27 @@ How the best model and model before them were tuned for the best parameter.
 The model is not deployed. However, the model is saved in the form of a tensorflow model. The model can be loaded and used for prediction.
 
 # 9. Result
-
+The best model gives an accuracy of 83.6% on the test datatset.
 # 10. Question Section
-Here, answer a few of the most asked questions about the project. Some questions are:
 
-1. If you were to do something differently, what would that be?
-2. If I were to change condition X in this project, how would your approach change?
-3. What were the most challenging aspect of the project and how you overtook it?
-4. Some mistakes you made.
-5. What improvements can be made?
-6. Why did this algorithm work or didn't work?
-7. What were the most important features?
-8. (Classification) Balanced or unbalanced classes?
-9. What were the most important features?
+## 10.1. If you were to do something differently, what would that be?
+First thing which I would definitely do is using pretrained, state of the art models like BERT, RoBERTa, etc.. I might try using some different word embedding models like GloVe, FastText, etc. I would also try using some different architectures like Transformers, attention based models, etc.
+## 10.2. What improvements can be made?
+Well, the model is not yet performing that good. The accuracy is just over 83%. We can definetly improve the model. Some of the things that can be done are:
+1. Use pretrained, state of the art models like BERT, RoBERTa, etc.. SOme more models can be found in the [article](https://www.topbots.com/leading-nlp-language-models-2020/) by TopBots.
+2. I've not used the `location` column yet. We can use it and see if it improves the model.
+3. Try some more architectures.
+
+## 10.3. What were the most important features?
+Obviusly, the text column was the most important feature. However, the model found some trouble because the way people use some words. For exaple, they may use some words which have meaning related to disaster but in their context, it is something else.
+
+## 10.4. Balanced or unbalanced classes?
+The dataset is not exactly balanced but it is not that imbalanced as to cause too much trouble.
+
+## 10.5. What were the most challenging aspect of the project and how you overtook it?
+
+
+1. If I were to change condition X in this project, how would your approach change?
+3. Some mistakes you made.
+4. Why did this algorithm work or didn't work?
 

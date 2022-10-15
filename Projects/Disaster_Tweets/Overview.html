@@ -108,7 +108,15 @@
 <li><a href="#7-fine-tuning-process">7. Fine Tuning Process</a></li>
 <li><a href="#8-model-deployment-if-any">8. Model Deployment, if any</a></li>
 <li><a href="#9-result">9. Result</a></li>
-<li><a href="#10-question-section">10. Question Section</a></li>
+<li><a href="#10-question-section">10. Question Section</a>
+<ul>
+<li><a href="#101-if-you-were-to-do-something-differently-what-would-that-be">10.1. If you were to do something differently, what would that be?</a></li>
+<li><a href="#102-what-improvements-can-be-made">10.2. What improvements can be made?</a></li>
+<li><a href="#103-what-were-the-most-important-features">10.3. What were the most important features?</a></li>
+<li><a href="#104-balanced-or-unbalanced-classes">10.4. Balanced or unbalanced classes?</a></li>
+<li><a href="#105-what-were-the-most-challenging-aspect-of-the-project-and-how-you-overtook-it">10.5. What were the most challenging aspect of the project and how you overtook it?</a></li>
+</ul>
+</li>
 </ul>
 <h1 id="1-the-data-source">1. The Data Source</h1>
 <p>The data is taken from Kaggle. It contains some tweets. Along with the tweet text, we have some more information like keyword and location. The tweets may or may not talk about a disaster happening. The various columns of the dataset are:</p>
@@ -183,18 +191,26 @@
 <h1 id="8-model-deployment-if-any">8. Model Deployment, if any</h1>
 <p>The model is not deployed. However, the model is saved in the form of a tensorflow model. The model can be loaded and used for prediction.</p>
 <h1 id="9-result">9. Result</h1>
+<p>The best model gives an accuracy of 83.6% on the test datatset.</p>
 <h1 id="10-question-section">10. Question Section</h1>
-<p>Here, answer a few of the most asked questions about the project. Some questions are:</p>
+<h2 id="101-if-you-were-to-do-something-differently-what-would-that-be">10.1. If you were to do something differently, what would that be?</h2>
+<p>First thing which I would definitely do is using pretrained, state of the art models like BERT, RoBERTa, etc.. I might try using some different word embedding models like GloVe, FastText, etc. I would also try using some different architectures like Transformers, attention based models, etc.</p>
+<h2 id="102-what-improvements-can-be-made">10.2. What improvements can be made?</h2>
+<p>Well, the model is not yet performing that good. The accuracy is just over 83%. We can definetly improve the model. Some of the things that can be done are:</p>
 <ol>
-<li>If you were to do something differently, what would that be?</li>
+<li>Use pretrained, state of the art models like BERT, RoBERTa, etc.. SOme more models can be found in the <a href="https://www.topbots.com/leading-nlp-language-models-2020/">article</a> by TopBots.</li>
+<li>I've not used the <code>location</code> column yet. We can use it and see if it improves the model.</li>
+<li>Try some more architectures.</li>
+</ol>
+<h2 id="103-what-were-the-most-important-features">10.3. What were the most important features?</h2>
+<p>Obviusly, the text column was the most important feature. However, the model found some trouble because the way people use some words. For exaple, they may use some words which have meaning related to disaster but in their context, it is something else.</p>
+<h2 id="104-balanced-or-unbalanced-classes">10.4. Balanced or unbalanced classes?</h2>
+<p>The dataset is not exactly balanced but it is not that imbalanced as to cause too much trouble.</p>
+<h2 id="105-what-were-the-most-challenging-aspect-of-the-project-and-how-you-overtook-it">10.5. What were the most challenging aspect of the project and how you overtook it?</h2>
+<ol>
 <li>If I were to change condition X in this project, how would your approach change?</li>
-<li>What were the most challenging aspect of the project and how you overtook it?</li>
 <li>Some mistakes you made.</li>
-<li>What improvements can be made?</li>
 <li>Why did this algorithm work or didn't work?</li>
-<li>What were the most important features?</li>
-<li>(Classification) Balanced or unbalanced classes?</li>
-<li>What were the most important features?</li>
 </ol>
 
         
