@@ -13309,7 +13309,6 @@ Increasing the variance will decrease the bias.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>KNN</strong></p>
 <p>Smaller K =&gt; Higher Variance, Lower Bias</p>
-<p>Large K =&gt; Lower Variance, Higher Bias</p>
 <p>For higher values of k, many more points closer to the datapoint in question will be considered. This would result in higher bias error  and underfitting since many points closer to the datapoint are considered and thus it can’t learn the specifics from the training set. However, we can account for a lower variance error for the testing set which has unknown values.</p>
 
 </div>
@@ -13327,6 +13326,23 @@ Increasing the variance will decrease the bias.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The parameter <code>C</code>, common to all SVM kernels, trades off misclassification of training examples against simplicity of the decision surface. A low <code>C</code> makes the decision surface smooth, while a high <code>C</code> aims at classifying all training examples correctly. <code>gamma</code> defines how much influence a single training example has. The larger <code>gamma</code> is, the closer other examples must be to be affected.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In <code>sklearn</code> <code>C</code> is defined as inversely proporational to the <code>C</code> in SVM. This is done so that <code>C</code> in the context of <code>sklearn</code> is a regularization term, which is consistence with the rest of the <code>sklearn</code> API. So, decreasing <code>C</code> will increase the bias and decrease the variance.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In SVM formula:</p>
+<p>Smaller C =&gt; Low Bias, High Variance</p>
+
 </div>
 </div>
 </div>

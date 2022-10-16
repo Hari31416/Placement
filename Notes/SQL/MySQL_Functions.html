@@ -13092,9 +13092,7 @@ div#notebook {
 <p><h2 id="Contents">Contents<a href="#Contents"></a></h2>
         <ol>
         <li><a class="" href="#KEYWORDS">KEYWORDS</a></li></p>
-<ol><li><a class="" href="#CAST">CAST</a></li>
-<li><a class="" href="#CONV">CONV</a></li>
-</ol><li><a class="" href="#String-Functions">String Functions</a></li>
+<p><li><a class="" href="#String-Functions">String Functions</a></li></p>
 <ol><li><a class="" href="#CONCAT">CONCAT</a></li>
 <li><a class="" href="#FORMAT">FORMAT</a></li>
 <li><a class="" href="#INSERT">INSERT</a></li>
@@ -13113,6 +13111,13 @@ div#notebook {
 <li><a class="" href="#STR_TO_DATE">STR_TO_DATE</a></li>
 <li><a class="" href="#SUBDATE">SUBDATE</a></li>
 <li><a class="" href="#TIMESTAMP">TIMESTAMP</a></li>
+</ol><li><a class="" href="#Advanced-Functions">Advanced Functions</a></li>
+<ol><li><a class="" href="#CAST">CAST</a></li>
+<li><a class="" href="#CONV">CONV</a></li>
+<li><a class="" href="#COALESCE">COALESCE</a></li>
+<li><a class="" href="#IFNULL">IFNULL</a></li>
+<li><a class="" href="#ISNULL">ISNULL</a></li>
+<li><a class="" href="#NULLIF">NULLIF</a></li>
 </ol>
 </div>
 </div>
@@ -13462,191 +13467,6 @@ condition</td>
 </tbody></table>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="CAST">CAST<a class="anchor-link" href="#CAST">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>CAST()</code> function converts a value (of any type) into the specified datatype.</p>
-<div class="highlight"><pre><span></span><span class="k">CAST</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">datatype</span><span class="p">)</span><span class="w"></span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>datatype</code> is the format to convert to. Can be one of the following</p>
-<table class="table table-dark"> 
-  <tbody><tr>
-    <th>Value</th>
-    <th>Description</th>
-  </tr>  
-  <tr>
-    <td>DATE</td>
-    <td>Converts <em>value</em> to DATE. Format: "YYYY-MM-DD"</td>
-  </tr>
-  <tr>
-    <td>DATETIME</td>
-    <td>Converts <em>value</em> to DATETIME. Format: "YYYY-MM-DD HH:MM:SS"</td>
-  </tr>
-  <tr>
-    <td>DECIMAL</td>
-    <td>Converts <em>value</em> to DECIMAL. Use the optional M and D parameters 
-    to specify the maximum number of digits (M) and the number of digits 
-    following the decimal point (D).</td>
-  </tr>
-  <tr>
-    <td>TIME</td>
-    <td>Converts <em>value</em> to TIME. Format: "HH:MM:SS"</td>
-  </tr>
-  <tr>
-    <td>CHAR</td>
-    <td>Converts <em>value</em> to CHAR (a fixed length string)</td>
-  </tr>
-  <tr>
-    <td>NCHAR</td>
-    <td>Converts <em>value</em> to NCHAR (like CHAR, but produces a string with 
-    the national character set)</td>
-  </tr>
-  <tr>
-    <td>SIGNED</td>
-    <td>Converts <em>value</em> to SIGNED (a signed 64-bit integer)</td>
-  </tr>
-  <tr>
-    <td>UNSIGNED</td>
-    <td>Converts <em>value</em> to UNSIGNED (an unsigned 64-bit integer)</td>
-  </tr>
-  <tr>
-    <td>BINARY</td>
-    <td>Converts <em>value</em> to BINARY (a binary string)</td>
-  </tr>
-  </tbody></table>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT CAST(&quot;123.45&quot; AS DECIMAL(10,2))
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre> * mysql://hari31416:***@localhost:8080/movies
-1 rows affected.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[37]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result"><table>
-    <tr>
-        <th>CAST(&quot;123.45&quot; AS DECIMAL(10,2))</th>
-    </tr>
-    <tr>
-        <td>123.45</td>
-    </tr>
-</table></div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="CONV">CONV<a class="anchor-link" href="#CONV">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>CONV()</code> function converts a number from one numeric base system to another, and returns the result as a string value.</p>
-<p>Note: This function returns <code>NULL</code> if any of the parameters are <code>NULL</code>.</p>
-<div class="highlight"><pre><span></span><span class="n">CONV</span><span class="p">(</span><span class="nb">number</span><span class="p">,</span><span class="w"> </span><span class="n">from_base</span><span class="p">,</span><span class="w"> </span><span class="n">to_base</span><span class="p">)</span><span class="w"></span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT CONV(1111, 2, 10);
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre> * mysql://hari31416:***@localhost:8080/movies
-1 rows affected.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[38]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result"><table>
-    <tr>
-        <th>CONV(1111, 2, 10)</th>
-    </tr>
-    <tr>
-        <td>15</td>
-    </tr>
-</table></div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -15609,6 +15429,649 @@ specified base</td>
     </tr>
     <tr>
         <td>2017-07-23 00:00:00</td>
+    </tr>
+</table></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Advanced-Functions">Advanced Functions<a class="anchor-link" href="#Advanced-Functions">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table class="ws-table-all notranslate">
+<tbody><tr>
+<th style="width:25%">Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>BIN</td>
+<td>Returns a binary representation of a number</td>
+</tr>
+<tr>
+<td>BINARY</td>
+<td>Converts a value to a binary string</td>
+</tr>
+<tr>
+<td>CASE</td>
+<td>Goes through conditions and return a value when the first condition is 
+met</td>
+</tr>
+<tr>
+<td>CAST</td>
+<td>Converts a value (of any type) into a specified datatype</td>
+</tr>
+<tr>
+<td>COALESCE</td>
+<td>Returns the first non-null value in a list</td>
+</tr>
+<tr>
+<td>CONNECTION_ID</td>
+<td>Returns the unique connection ID for the current connection</td>
+</tr>
+<tr>
+<td>CONV</td>
+<td>Converts a number from one numeric base system to another</td>
+</tr>
+<tr>
+<td>CONVERT</td>
+<td>Converts a value into the specified datatype or character set</td>
+</tr>
+<tr>
+<td>CURRENT_USER</td>
+<td>Returns the user name and host name for the MySQL account that the server 
+used to authenticate the current client</td>
+</tr>
+<tr>
+<td>DATABASE</td>
+<td>Returns the name of the current database</td>
+</tr>
+<tr>
+<td>IF</td>
+<td>Returns a value if a condition is TRUE, or another value if a condition is FALSE</td>
+</tr>
+<tr>
+<td>IFNULL</td>
+<td>Return a specified value if the expression is NULL, otherwise return the 
+expression</td>
+</tr>
+<tr>
+<td>ISNULL</td>
+<td>Returns 1 or 0 depending on whether an expression is NULL</td>
+</tr>
+<tr>
+<td>LAST_INSERT_ID</td>
+<td>Returns the AUTO_INCREMENT id of the last row that has been inserted or 
+updated in a table</td>
+</tr>
+<tr>
+<td>NULLIF</td>
+<td>Compares two expressions and returns NULL if they are equal. Otherwise, the 
+first expression is returned</td>
+</tr>
+<tr>
+<td>SESSION_USER</td>
+<td>Returns the current MySQL user name and host name</td>
+</tr>
+<tr>
+<td>SYSTEM_USER</td>
+<td>Returns the current MySQL user name and host name</td>
+</tr>
+<tr>
+<td>USER</td>
+<td>Returns the current MySQL user name and host name</td>
+</tr>
+<tr>
+<td>VERSION</td>
+<td>Returns the current version of the MySQL database</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="CAST">CAST<a class="anchor-link" href="#CAST">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>CAST()</code> function converts a value (of any type) into the specified datatype.</p>
+<div class="highlight"><pre><span></span><span class="k">CAST</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">datatype</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>datatype</code> is the format to convert to. Can be one of the following</p>
+<table class="table table-dark"> 
+  <tbody><tr>
+    <th>Value</th>
+    <th>Description</th>
+  </tr>  
+  <tr>
+    <td>DATE</td>
+    <td>Converts <em>value</em> to DATE. Format: "YYYY-MM-DD"</td>
+  </tr>
+  <tr>
+    <td>DATETIME</td>
+    <td>Converts <em>value</em> to DATETIME. Format: "YYYY-MM-DD HH:MM:SS"</td>
+  </tr>
+  <tr>
+    <td>DECIMAL</td>
+    <td>Converts <em>value</em> to DECIMAL. Use the optional M and D parameters 
+    to specify the maximum number of digits (M) and the number of digits 
+    following the decimal point (D).</td>
+  </tr>
+  <tr>
+    <td>TIME</td>
+    <td>Converts <em>value</em> to TIME. Format: "HH:MM:SS"</td>
+  </tr>
+  <tr>
+    <td>CHAR</td>
+    <td>Converts <em>value</em> to CHAR (a fixed length string)</td>
+  </tr>
+  <tr>
+    <td>NCHAR</td>
+    <td>Converts <em>value</em> to NCHAR (like CHAR, but produces a string with 
+    the national character set)</td>
+  </tr>
+  <tr>
+    <td>SIGNED</td>
+    <td>Converts <em>value</em> to SIGNED (a signed 64-bit integer)</td>
+  </tr>
+  <tr>
+    <td>UNSIGNED</td>
+    <td>Converts <em>value</em> to UNSIGNED (an unsigned 64-bit integer)</td>
+  </tr>
+  <tr>
+    <td>BINARY</td>
+    <td>Converts <em>value</em> to BINARY (a binary string)</td>
+  </tr>
+  </tbody></table>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT CAST(&quot;123.45&quot; AS DECIMAL(10,2))
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> * mysql://hari31416:***@localhost:8080/movies
+1 rows affected.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea "><table>
+    <tr>
+        <th>CAST(&quot;123.45&quot; AS DECIMAL(10,2))</th>
+    </tr>
+    <tr>
+        <td>123.45</td>
+    </tr>
+</table></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="CONV">CONV<a class="anchor-link" href="#CONV">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>CONV()</code> function converts a number from one numeric base system to another, and returns the result as a string value.</p>
+<p>Note: This function returns <code>NULL</code> if any of the parameters are <code>NULL</code>.</p>
+<div class="highlight"><pre><span></span><span class="n">CONV</span><span class="p">(</span><span class="nb">number</span><span class="p">,</span><span class="w"> </span><span class="n">from_base</span><span class="p">,</span><span class="w"> </span><span class="n">to_base</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT CONV(1111, 2, 10);
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> * mysql://hari31416:***@localhost:8080/movies
+1 rows affected.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea "><table>
+    <tr>
+        <th>CONV(1111, 2, 10)</th>
+    </tr>
+    <tr>
+        <td>15</td>
+    </tr>
+</table></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="COALESCE">COALESCE<a class="anchor-link" href="#COALESCE">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>COALESCE()</code> function returns the first non-null value in a list. The syntax is</p>
+<div class="highlight"><pre><span></span><span class="k">COALESCE</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span><span class="w"> </span><span class="n">value2</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"></span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT COALESCE(NULL, NULL, NULL, &#39;W3Schools.com&#39;, NULL, &#39;Example.com&#39;);
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> * mysql://hari31416:***@localhost:8080/movies
+1 rows affected.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea "><table>
+    <tr>
+        <th>COALESCE(NULL, NULL, NULL, &#x27;W3Schools.com&#x27; , NULL, &#x27;Example.com&#x27; )</th>
+    </tr>
+    <tr>
+        <td>W3Schools.com</td>
+    </tr>
+</table></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="IFNULL">IFNULL<a class="anchor-link" href="#IFNULL">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>IFNULL()</code> function returns a specified value if the expression is <code>NULL</code>.</p>
+<p>If the expression is NOT <code>NULL</code>, this function returns the expression.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT IFNULL(NULL, &quot;W3Schools.com&quot;);
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> * mysql://hari31416:***@localhost:8080/movies
+1 rows affected.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea "><table>
+    <tr>
+        <th>IFNULL(NULL, &quot;W3Schools.com&quot; )</th>
+    </tr>
+    <tr>
+        <td>W3Schools.com</td>
+    </tr>
+</table></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT IFNULL(&quot;Hello&quot;, &quot;W3Schools.com&quot;);
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> * mysql://hari31416:***@localhost:8080/movies
+1 rows affected.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea "><table>
+    <tr>
+        <th>IFNULL(&quot;Hello&quot;, &quot;W3Schools.com&quot; )</th>
+    </tr>
+    <tr>
+        <td>Hello</td>
+    </tr>
+</table></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ISNULL">ISNULL<a class="anchor-link" href="#ISNULL">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>ISNULL()</code> function returns 1 or 0 depending on whether an expression is <code>NULL</code>.</p>
+<p>If expression is <code>NULL</code>, this function returns 1. Otherwise, it returns 0.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT ISNULL(NULL);
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> * mysql://hari31416:***@localhost:8080/movies
+1 rows affected.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea "><table>
+    <tr>
+        <th>ISNULL(NULL)</th>
+    </tr>
+    <tr>
+        <td>1</td>
+    </tr>
+</table></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="NULLIF">NULLIF<a class="anchor-link" href="#NULLIF">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>NULLIF()</code> function compares two expressions and returns <code>NULL</code> if they are equal. Otherwise, the first expression is returned.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT NULLIF(25, &quot;Hello&quot;);
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> * mysql://hari31416:***@localhost:8080/movies
+1 rows affected.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea "><table>
+    <tr>
+        <th>NULLIF(25, &quot;Hello&quot; )</th>
+    </tr>
+    <tr>
+        <td>25</td>
+    </tr>
+</table></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT NULLIF(&quot;2017-08-25&quot;, &quot;2017-08-25&quot;);
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> * mysql://hari31416:***@localhost:8080/movies
+1 rows affected.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea "><table>
+    <tr>
+        <th>NULLIF(&quot;2017-08-25&quot;, &quot;2017-08-25&quot; )</th>
+    </tr>
+    <tr>
+        <td>None</td>
     </tr>
 </table></div>
 
