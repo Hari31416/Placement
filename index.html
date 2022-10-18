@@ -19,6 +19,18 @@
       text-decoration: none;
       color: rgb(135, 192, 241);
     }
+
+    .links-nav {
+      text-decoration: none;
+      color: rgb(26, 170, 214);
+      font-size: 1.5em;
+    }
+
+    #up-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
   </style>
   <title>Placement</title>
 </head>
@@ -29,15 +41,42 @@
     <p class="lead">
       This page contains the link for some of my Jupyter Notebook related to some articles, notes and problem notebooks
       related to placement and other more general fields in HTML format for read only. <br>
-      To launch a simple REPL, click <a class="links"
+      You can launch a simple Python REPL by clicking <a class="links"
         href="https://hari31416.github.io/Python/Codes/Projects/repl/repl_lite.html">here</a>.
     </p>
   </div>
   <hr />
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <ul style="list-style-type: none;">
+        <li>
+          <a href="#notes" class="links-nav">Notes</a>
+        </li>
+        <li><a href="#interview-cv" class="links-nav">Interview and CV Related Stuffs</a>
+        </li>
+        <li><a href="#project" class="links-nav">Projects</a>
+        </li>
+        <li><a href="#misc" class="links-nav">Miscellaneous</a>
+        </li>
+        <li><a href="#problem" class="links-nav">Problem Notbooks</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <hr />
+  <div class="container pb-5">
+    <div class="row">
+      <div class="col-9"></div>
+      <div class="col-2"><a id="up-btn" href="#nav"><button class="btn btn-lg btn-success">UP</button></a>
+      </div>
+    </div>
+  </div>
   <div class='container'>
     <div class="col-lg-8 offset-lg-2">
       <div class="index pt-2">
-        <h2>Notes</h2>
+        <h2 id="notes">Notes</h2>
         <h3>DSA</h3>
         <ul>
           <li>
@@ -62,7 +101,8 @@
             <a href="Notes/Python/Scope_and_Namespace.html" target="blank" class="links">Scope and Namespace</a>
           </li>
           <li>
-            <a href="Notes/Python/Variables_and_Pointers.html" target="blank" class="links">Variables and Pointers</a>
+            <a href="Notes/Python/Variables_and_Pointers.html" target="blank" class="links">Variables and
+              Pointers</a>
           </li>
         </ul>
         <h3>JavaScript</h3>
@@ -150,7 +190,7 @@
           </li>
         </ul>
         <hr>
-        <h2>Interview and CV Related Stuffs</h2>
+        <h2 id="interview-cv">Interview and CV Related Stuffs</h2>
         <h3>General</h3>
         <ul>
           <li>
@@ -211,7 +251,7 @@
           </li>
         </ul>
         <hr>
-        <h2>Projects</h2>
+        <h2 id="project">Projects</h2>
         <h3>General</h3>
         <ul>
           <li>
@@ -293,7 +333,7 @@
           </li>
         </ul>
         <hr>
-        <h2>Miscellaneous</h2>
+        <h2 id="misc">Miscellaneous</h2>
         <ul>
           <li>
             <a href="Notes/Misc/Anamoly_Detection.html" target="blank" class="links">Anamoly Detection</a>
@@ -310,7 +350,7 @@
           </li>
         </ul>
         <hr>
-        <h2>Problem Notbooks</h2>
+        <h2 id="problem">Problem Notbooks</h2>
         <h4><a class="links" href="Problems/All_Problems.html">All Problems</a></h4>
         <h3>LeetCode</h3>
         <ul>
