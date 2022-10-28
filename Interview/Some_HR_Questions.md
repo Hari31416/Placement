@@ -27,6 +27,8 @@
     - [2.5.1. Tips](#251-tips)
     - [2.5.2. Sample Answers](#252-sample-answers)
       - [2.5.2.1. 1](#2521-1)
+      - [2.5.2.2. 2](#2522-2)
+      - [2.5.2.3. 3](#2523-3)
   - [2.6. Why should we hire you?](#26-why-should-we-hire-you)
     - [2.6.1. Tips](#261-tips)
     - [2.6.2. Sample Answers](#262-sample-answers)
@@ -176,7 +178,7 @@ It's a professional shift. I've gained much from my last job, but now I'm seekin
 
 ## 2.5. Where do you see yourself in the next 5 years?
 Similar phrases related to this question are
-- What are your expectations from yourself?
+<ul><li>Where do you want to be in 5 years?</li><li>Where do you see yourself in the next 5 years?</li><li>What are your career goals?</li><li>Describe your career goals.</li><li>What are your long-term career goals?</li><li>What are your short-term career goals?</li><li>What are your goals for the next 5 years?</li><li>What is your ideal job at the peak of your career?</li><li>What are you looking for by applying for this job?</li><li>How do you define success?</li><li>What’s most important to you in your career?</li><li>What specific steps will you take/are you taking to achieve your vision of yourself in the next 5 years?</li></ul>
  
 This can prove to be a trap and you might not even be aware of it. While the question might seem casual, the main purpose of this question is to find out how long you are planning to stay in the company if hired and how your vision fits the vision of the company. You should promote your commitment to the company while looking toward growth opportunities.
 
@@ -191,13 +193,18 @@ You can craft a response that explores your:
 * Potential experiences within the company over the next five years
 * Possible certifications, skills, or achievements you might obtain
 * Aspirations for growth within the role 
-* See the article [What Are Your Career Goals? Tips for Setting Your Goals](https://www.coursera.org/articles/career-goals)
+* See the article [What Are Your Career Goals? Tips for Setting Your Goals](https://www.coursera.org/articles/career-goals). [Here](https://zety.com/blog/where-do-you-see-yourself-in-5-years) is another article on the same topic.
 
 ### 2.5.2. Sample Answers
 #### 2.5.2.1. 1
 
 Over five years, I'd love to take advantage of every opportunity the company will give me to gain knowledge through the external and internal training programs. My dream career objective is to be a Technical Architect. Hence, I am looking forward to creating different products that embody the mission of this company and contribute to making a positive impact while speeding up my path to becoming a Tech Architect.
 
+#### 2.5.2.2. 2
+One of the reasons I want to work for P&G is because I find your personalized approach to training attractive. I’m excited about the opportunity to work with a mentor and immerse myself in learning new skills. I’m also the type of employee that likes to hit the ground running and jump into projects as soon as possible. So, over the next five years, I see myself taking on as many complex assignments as the position would allow.By the end of that period, I want to say that I’ve built lasting client relationships. I want to say that I’m one of the best Salespeople on the team. I wouldn’t mind becoming someone who could train and mentor others when the time comes as well.
+
+#### 2.5.2.3. 3
+In five years, I want to complete the internal training program for my position. I’ve read about it on your website, and I think it’s a fabulous program. Not only would I get all the training for my role, but I would be on the fast track to becoming a project manager. That’s my top career goal. Plus, my ideal path would include working abroad for a couple of years. I understand that it’s of value to you to find people prepared to do so.
 ## 2.6. Why should we hire you?
 Similar phrases related to this question are:
 - Explain, how would you be an asset to this organization?
