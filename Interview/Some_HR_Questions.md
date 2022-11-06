@@ -36,11 +36,20 @@
       - [2.6.2.2. 2](#2622-2)
       - [2.6.2.3. 3](#2623-3)
   - [2.7. What do you consider your greatest achievement?](#27-what-do-you-consider-your-greatest-achievement)
+    - [2.7.1. Tips](#271-tips)
+    - [2.7.2. Sample Answers](#272-sample-answers)
+      - [2.7.2.1. 1](#2721-1)
+      - [2.7.2.2. 2](#2722-2)
+      - [2.7.2.3. 3](#2723-3)
+      - [2.7.2.4. 4](#2724-4)
   - [2.8. Tell me about a difficult situation you’ve faced and how you handled it.](#28-tell-me-about-a-difficult-situation-youve-faced-and-how-you-handled-it)
-  - [2.9. What are your salary expectations?](#29-what-are-your-salary-expectations)
-  - [2.10. How do you deal with criticism?](#210-how-do-you-deal-with-criticism)
-  - [2.11. How would you rate yourself on a scale of 1 to 10?](#211-how-would-you-rate-yourself-on-a-scale-of-1-to-10)
-  - [2.12. What are your hobbies?](#212-what-are-your-hobbies)
+    - [2.8.1. Tips](#281-tips)
+    - [2.8.2. Sample Answers](#282-sample-answers)
+      - [2.8.2.1. 1](#2821-1)
+      - [2.8.2.2. 2](#2822-2)
+  - [2.9. How do you deal with criticism?](#29-how-do-you-deal-with-criticism)
+  - [2.10. How would you rate yourself on a scale of 1 to 10?](#210-how-would-you-rate-yourself-on-a-scale-of-1-to-10)
+  - [2.11. What are your hobbies?](#211-what-are-your-hobbies)
 - [3. Behavioural HR Interview Questions](#3-behavioural-hr-interview-questions)
   - [3.1. Tell me about a time when you were not satisfied with your performance?](#31-tell-me-about-a-time-when-you-were-not-satisfied-with-your-performance)
   - [3.2. Tell me about a time when you were made to work under close supervision.](#32-tell-me-about-a-time-when-you-were-made-to-work-under-close-supervision)
@@ -230,16 +239,72 @@ My skill in XYZ company is outstanding. I have earned a lot of certificates and 
 ## 2.7. What do you consider your greatest achievement?
 Similar phrases related to this question are:
 - What is your biggest achievement so far?
+- Tell Me Your Proudest Accomplishment or Greatest Achievement.
+- What are your achievements in life?
 
+### 2.7.1. Tips
+* Pick an accomplishment that’s as recent as possible, and somewhat relevant to this job and career.
+* Follow the STAR method to answer this question.
+* Choose something that had a large overall impact on your career; something important and significant.
+* Get specific and talk about real results and data whenever possible. What was the impact of your work?
+* Don’t be shy or humble. This interview question is a chance to brag about yourself and share what you’re truly proud of professionally.
+  
+For more tips, see the article [How to Answer “What Is Your Greatest Achievement?”](https://careersidekick.com/greatest-achievement-interview-question/)
+
+### 2.7.2. Sample Answers
+#### 2.7.2.1. 1
+I have achieved several milestones to date in my career as a software developer. The most recent one is of the time when we were working on a critical component of a product pertaining to customer payments. We were working round the clock for around 2 months and I was a core developer. I was made a lead to this component for completing the task in another 2 months.
+
+To meet the deadline, we ensured that we upskilled ourselves to learn all the aspects of the development of this module and also brought in a few more resources to complete it faster. Post the deployment, I trained our team to support the platform proficiently. Ultimately, we could complete the product well in advance of the deadline. When the product was launched, the higher management was super proud of us and our team was awarded for our outstanding performance in the quarterly town hall. It was a very proud moment for me.
+
+#### 2.7.2.2. 2
+I experienced my greatest achievement when I worked as a website manager for an entertainment outlet. My team was under pressure and the website was struggling at the time, and I was tasked with forming a strategy to increase traffic.
+
+#### 2.7.2.3. 3
+My greatest professional achievement was completing my Bachelor’s degree in 4 years with a 3.8 GPA. I had no financial support from my family and had to work a full-time job while pursuing my Economics degree. This taught me to prioritize my time, build great habits and stay focused on my goals. I’m proud of this accomplishment and I feel that what I learned is going to give me a big advantage in my career now.
+
+#### 2.7.2.4. 4
+My greatest professional achievement was turning around the success of my last employer’s Marketing department. When I joined, the entire team was struggling and we were failing to hit our quarterly goals. I was hired to create a new marketing plan, which I designed and implemented without any guidance. Within 6 months, we were achieving 20-25% above our goals, and my marketing plan brought in an additional $3 million in revenue for the company through the second half of last year. This additional revenue brought the company from an operating loss each quarter to profitability.
 ## 2.8. Tell me about a difficult situation you’ve faced and how you handled it. 
+Similar phrases related to this question are:
+- Describe a difficult situation or project and how you overcame it.
+- Tell me how you handled a difficult situation.
 
-## 2.9. What are your salary expectations?
+As part of a behavioral-based interview, this is an effective way for a hiring manager to learn a great deal about an applicant without using multiple questions. It also helps in assessing your emotional intelligence, a deciding factor for many companies today.
 
-## 2.10. How do you deal with criticism?
+Asking this question gives an interviewer insight on many key traits including:
+- How you prioritize
+- Your initiative
+- Your communication skills
+- Whether you own up to your mistakes
+- Whether you can avoid creating drama
+- The ways you deal with conflict, deadlines, and other work pressures
+- The strength of your leadership skills
+- Your instincts to ask for help when needed
+- Your ability to think on your feet 
+  
+### 2.8.1. Tips
+- Choosing to act with integrity during an ethical dilemma or challenge
+- Taking initiative to approach and effectively solve difficult situations
+- Using a particular thought or action process to find a solution to a tough problem
+- Avoid speaking badly of current/former company, co-workers, supervisors, or direct reports.
+- Try not to come across as “superior” in your past or current role.
+- Conversely, don't play yourself down — unless it's explaining how you've grown.
+- Don't describe a non-work-related situation, unless you have no relevant work experience to share.
 
-## 2.11. How would you rate yourself on a scale of 1 to 10?
+### 2.8.2. Sample Answers
+#### 2.8.2.1. 1
+At my current job, a client called late Friday afternoon with an urgent question about their project status. Usually my boss directly interacts with our clients, but he'd already left for the weekend. I told the client that while I might not know the exact answer, I could possibly help because I was also working on the project. The client was fine with that. We worked through the question together, and I was able to provide enough information that the client felt the rest could wait until Monday. I left a detailed note for my boss asking him to check in with the client on Monday.
 
-## 2.12. What are your hobbies?
+#### 2.8.2.2. 2
+In my recent job as a department manager, there was a new hire who consistently provided incomplete reports. They were asked multiple times to include all the required information, but the reports continued to lack all the data and had to be redone for others to do their jobs. I wondered if the new employee was getting clear information, so I created a sample report for the new hire showing all the required data. I also asked other supervisors to review this with their reports and to post a chart of when the reports were due. As a result, the quality of everyone's reports improved, not just those of the new employee. I learned that it's really important to listen and to clearly communicate expectations to get the desired results.
+
+See the [article](https://www.topinterview.com/interview-advice/answering-tell-me-how-you-handled-difficult-situation-interview-question) for more details.
+## 2.9. How do you deal with criticism?
+
+## 2.10. How would you rate yourself on a scale of 1 to 10?
+
+## 2.11. What are your hobbies?
 
 # 3. Behavioural HR Interview Questions
 These questions are mostly of the format “Tell me about a time…” where you would be asked to share your experience based on certain scenarios which would help the interviewer judge how well you handled various work situations thereby reflecting your skills, capacity, and personality.
