@@ -1,9 +1,13 @@
 # Interview Related Articles
+
+## Technical Interview
+
 Here are a list of some great articles:
 
 - [15 Data Analyst Interview Questions and Answers (Coursera)](https://www.coursera.org/articles/data-analyst-interview-questions-and-answers)
 - [10 Common IT Interview Questions and How to Answer Them](https://www.coursera.org/articles/common-it-interview-questions-and-how-to-answer-them)
 - [11 Interviewing Skills to Benefit Your Career (Coursera)](https://www.coursera.org/articles/interviewing-skills)
+- [Data Science Interview Questions (InterviewBit)](https://www.interviewbit.com/data-science-interview-questions/)
 - [How to Prepare for Job Interviews (Coursera)](https://blog.coursera.org/how-to-prepare-for-job-interviews/)
 - [SQL Interview Questions: A Guide for Data Analysts (Coursera)](https://www.coursera.org/articles/sql-interview-questions)
 - [Top 90+ Data Science Interview Questions and Answers: Basic to Technical](https://www.simplilearn.com/tutorials/data-science-tutorial/data-science-interview-questions)
@@ -16,8 +20,10 @@ Here are a list of some great articles:
 - [Technical Interview Questions](https://www.interviewbit.com/technical-interview-questions/)
 - [SQL Interview Questions](https://www.interviewbit.com/sql-interview-questions/)
 - [Python Interview Questions](https://www.interviewbit.com/python-interview-questions/)
+- [130 Data Science Interview Questions and Answers](https://data-flair.training/blogs/data-science-interview-questions/)
 
 ## HR Interview Related Articles
+
 - [SimpliLearn](https://www.simplilearn.com/hr-interview-questions-answers-article)
 - [InterviewBit](https://www.interviewbit.com/hr-interview-questions/)
 - [Coursera](https://www.coursera.org/articles/common-interview-questions)
