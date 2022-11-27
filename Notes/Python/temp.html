@@ -13070,12 +13070,12 @@ div#notebook {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -13102,41 +13102,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install pyperclip
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Collecting pyperclip
-  Using cached pyperclip-1.8.2-py3-none-any.whl
-Installing collected packages: pyperclip
-Successfully installed pyperclip-1.8.2
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">files.notebook</span> <span class="kn">import</span> <span class="n">Notebook</span>
@@ -13149,7 +13115,7 @@ Successfully installed pyperclip-1.8.2
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nb</span> <span class="o">=</span> <span class="n">Notebook</span><span class="p">()</span>
@@ -13162,10 +13128,47 @@ Successfully installed pyperclip-1.8.2
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">create_content</span><span class="p">(</span><span class="n">nb</span><span class="o">.</span><span class="n">notebooks</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">return_string</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nb</span><span class="o">.</span><span class="n">notebooks</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;./OOP.ipynb&#39;,
+ &#39;./Scope_and_Namespace.ipynb&#39;,
+ &#39;./temp.ipynb&#39;,
+ &#39;./Terminology.ipynb&#39;,
+ &#39;./Variables_and_Pointers.ipynb&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">create_content</span><span class="p">(</span><span class="n">nb</span><span class="o">.</span><span class="n">notebooks</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">return_string</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13208,7 +13211,7 @@ Content copied to clipboard.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
@@ -13230,11 +13233,32 @@ Content copied to clipboard.
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;h2 id=&#34;Contents&#34;&gt;Contents&lt;a href=&#34;#Contents&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
         &lt;ol&gt;
-        &lt;ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Assignment&#34;&gt;Assignment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Object-References&#34;&gt;Object References&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Object-Identity&#34;&gt;Object Identity&lt;/a&gt;&lt;/li&gt;
-&lt;ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Small-Integers&#34;&gt;Small Integers&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Reserved-Words-(Keywords)&#34;&gt;Reserved Words (Keywords)&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Python-OOP&#34;&gt;Python OOP&lt;/a&gt;&lt;/li&gt;
+&lt;ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Class&#34;&gt;Class&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Objects&#34;&gt;Objects&lt;/a&gt;&lt;/li&gt;
+&lt;ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#The-self&#34;&gt;The self&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#The-__init__-method&#34;&gt;The __init__ method&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#OOP-Concepts&#34;&gt;OOP Concepts&lt;/a&gt;&lt;/li&gt;
+&lt;ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Abstraction&#34;&gt;Abstraction&lt;/a&gt;&lt;/li&gt;
+&lt;ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Data-Abstraction&#34;&gt;Data Abstraction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Process-Abstraction&#34;&gt;Process Abstraction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Abstract-Class-in-Python&#34;&gt;Abstract Class in Python&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Encapsulation&#34;&gt;Encapsulation&lt;/a&gt;&lt;/li&gt;
+&lt;ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Encapsulation-in-Python&#34;&gt;Encapsulation in Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Getter-and-Setter&#34;&gt;Getter and Setter&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Inheritance&#34;&gt;Inheritance&lt;/a&gt;&lt;/li&gt;
+&lt;ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Inheritance-in-Python&#34;&gt;Inheritance in Python&lt;/a&gt;&lt;/li&gt;
+&lt;ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Single-Inheritance&#34;&gt;Single Inheritance&lt;/a&gt;&lt;/li&gt;
+&lt;ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#The-super()-Keyword&#34;&gt;The super() Keyword&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Multiple-inheritance&#34;&gt;Multiple inheritance&lt;/a&gt;&lt;/li&gt;
+&lt;ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#The-Diamond-Problem&#34;&gt;The Diamond Problem&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Polymorphism&#34;&gt;Polymorphism&lt;/a&gt;&lt;/li&gt;
+&lt;ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Compile-Time-Polymorphism-and-Method-Overloading&#34;&gt;Compile Time Polymorphism and Method Overloading&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Run-Time-Polymorphism-and-Method-Overriding&#34;&gt;Run-Time Polymorphism and Method Overriding&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Some-More-Concepts&#34;&gt;Some More Concepts&lt;/a&gt;&lt;/li&gt;
+&lt;ol&gt;&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Duck-Typing&#34;&gt;Duck Typing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Composition&#34;&gt;Composition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;&#34; href=&#34;#Difference-between-Abstraction-and-Encapsulation&#34;&gt;Difference between Abstraction and Encapsulation&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </pre>
 </div>
@@ -13246,20 +13270,7 @@ Content copied to clipboard.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">export_directory</span><span class="p">()</span>
@@ -13279,7 +13290,7 @@ Content copied to clipboard.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>Exporting notebooks...: 100%|██████████| 2/2 [00:01&lt;00:00,  1.20it/s]
+<pre>Exporting notebooks...: 100%|██████████| 5/5 [00:01&lt;00:00,  2.74it/s]
 </pre>
 </div>
 </div>
@@ -13290,7 +13301,7 @@ Content copied to clipboard.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">files</span>
@@ -13306,13 +13317,17 @@ Content copied to clipboard.
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;././temp.html&#39;, &#39;././Terminology.html&#39;]</pre>
+<pre>[&#39;././OOP.html&#39;,
+ &#39;././Scope_and_Namespace.html&#39;,
+ &#39;././temp.html&#39;,
+ &#39;././Terminology.html&#39;,
+ &#39;././Variables_and_Pointers.html&#39;]</pre>
 </div>
 
 </div>
@@ -13323,14 +13338,14 @@ Content copied to clipboard.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="s2">&quot;&lt;ul&gt;&quot;</span>
 <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;&lt;/ul&gt;&quot;</span>
 <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-  <span class="c1"># if &quot;temp&quot; in f:</span>
-  <span class="c1">#   continue</span>
+    <span class="k">if</span> <span class="s2">&quot;temp&quot;</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">continue</span>
     <span class="n">file</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
@@ -13356,10 +13371,46 @@ Content copied to clipboard.
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;ul&gt;&lt;li&gt;
-            &lt;a href=&#34;Notes/Python/temp.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;temp&lt;/a&gt;
+            &lt;a href=&#34;Notes/Python/OOP.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;OOP&lt;/a&gt;
+          &lt;/li&gt;&lt;li&gt;
+            &lt;a href=&#34;Notes/Python/Scope_and_Namespace.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;Scope and Namespace&lt;/a&gt;
           &lt;/li&gt;&lt;li&gt;
             &lt;a href=&#34;Notes/Python/Terminology.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;Terminology&lt;/a&gt;
+          &lt;/li&gt;&lt;li&gt;
+            &lt;a href=&#34;Notes/Python/Variables_and_Pointers.html&#34; target=&#34;blank&#34; class=&#34;links&#34;&gt;Variables and Pointers&lt;/a&gt;
           &lt;/li&gt;&lt;/ul&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pyperclip</span>
+<span class="n">pyperclip</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>QXcbClipboard::setMimeData: Cannot set X11 selection owner
 </pre>
 </div>
 </div>
@@ -13460,7 +13511,7 @@ Content copied to clipboard.
 
 
 
- 
+
 
 
 </html>
