@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Metrics</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+
+        /* From extension ms-toolsai.jupyter */
+        /* These classnames are inherited from bootstrap, but are present in most notebook renderers */
+
+        .alert {
+            width: auto;
+            padding: 1em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        .alert>*:last-child {
+            margin-bottom: 0;
+        }
+
+        #preview>.alert:last-child {
+            /* Prevent this being set to zero by the default notebook stylesheet */
+            padding-bottom: 1em;
+        }
+
+        .alert-success {
+            /* Note there is no suitable color available, so we just copy "info" */
+            background-color: var(--theme-info-background);
+            color: var(--theme-info-foreground);
+        }
+
+        .alert-info {
+            background-color: var(--theme-info-background);
+            color: var(--theme-info-foreground);
+        }
+
+        .alert-warning {
+            background-color: var(--theme-warning-background);
+            color: var(--theme-warning-foreground);
+        }
+
+        .alert-danger {
+            background-color: var(--theme-error-background);
+            color: var(--theme-error-foreground);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet"
+        type="text/css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="metrics">Metrics</h1>
+    <h2 id="terms">Terms</h2>
+    <h3 id="cross-selling">Cross Selling</h3>
+    <p>Cross-selling is encouraging the purchase of anything in conjunction with the primary product. For example, if a
+        customer has already purchased a subscription to your marketing tool, cross-selling would encourage that
+        customer to purchase a subscription to your CRM.</p>
+    <blockquote>
+        <p>Say you work at a fast-food franchise, and a patron orders a burger. If you wanted to cross-sell, you would
+            offer extra items to make for a complete meal.</p>
+    </blockquote>
+    <h3 id="up-selling">Up Selling</h3>
+    <p>Up-selling is encouraging the purchase of a more expensive product. For example, if a customer has already
+        purchased a subscription to your marketing tool, up-selling would encourage that customer to purchase a
+        subscription to your marketing tool with additional features.</p>
+    <blockquote>
+        <p>To upsell a burger, you’d offer options for a more elaborate burger. So, for example, adding a slice of
+            cheese or a pickle for an additional fee. Or, you could tell them about a higher-quality cut of beef they
+            could choose for a small premium.</p>
+    </blockquote>
+    <h2 id="metrics-for-business-performance">Metrics For Business Performance</h2>
+    <h3 id="total-revenue">Total Revenue</h3>
+    <p>Arguably the most important metric of any business is revenue. Total revenue can be measured on any time scale,
+        typically monthly, quarterly, or annually.</p>
+    <h3 id="average-revenue-per-accountproductcustomer">Average Revenue Per Account/Product/Customer</h3>
+    <p>The average revenue brought in by a single product, service, account, or customer helps leaders and managers to
+        understand where they should focus their attention and resources.</p>
+    <h3 id="market-penetration">Market Penetration</h3>
+    <p>Understanding your market share is important because it measures where your business is compared to the expected
+        growth outlined in your business or sales plan. Usually, you will find businesses measuring this against their
+        total addressable market (TAM), which is an estimation of how big a given market is for a product or service.
+    </p>
+    <h3 id="percentage-of-revenue-from-new-vs-existing-customers">Percentage of Revenue from New vs. Existing Customers
+    </h3>
+    <p>Understanding what percentage of revenue is from new and existing customers is helpful for a few reasons. For
+        example, if existing customers account for a growing percentage of total revenue, this can be an indicator your
+        RevOps team is doing a great job of upselling and growing accounts, but the team tasked with acquiring new logos
+        is lagging behind.</p>
+    <p>If new customers are the lion’s share of your revenue, then this could either be an indicator of a high churn
+        rate or hypergrowth. To understand at what end of the spectrum your team is trending, it’s important to track
+        LTV, NPS, and more.</p>
+    <h3 id="win-rate">Win Rate</h3>
+    <p>Win rate, or the opportunity-to-win ratio, is the measurement of successful deals or deals that close, in
+        comparison to the total deals made – including those that are open, lost, slipped, or in another pipeline phase.
+    </p>
+    <h3 id="year-over-year-growth">Year-Over-Year Growth</h3>
+    <p>Although growth can be measured over any timeframe – such as month-over-month, quarter-over-quarter, or
+        year-over-year – annual growth showcases high-level execution of strategy and whether long-term growth goals
+        have been achieved.</p>
+    <p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math
+                        xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <semantics>
+                            <mrow>
+                                <mi>G</mi>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mrow>
+                                        <msub>
+                                            <mi>R</mi>
+                                            <mi>t</mi>
+                                        </msub>
+                                        <mo>−</mo>
+                                        <msub>
+                                            <mi>R</mi>
+                                            <mrow>
+                                                <mi>t</mi>
+                                                <mo>−</mo>
+                                                <mn>1</mn>
+                                            </mrow>
+                                        </msub>
+                                    </mrow>
+                                    <msub>
+                                        <mi>R</mi>
+                                        <mrow>
+                                            <mi>t</mi>
+                                            <mo>−</mo>
+                                            <mn>1</mn>
+                                        </mrow>
+                                    </msub>
+                                </mfrac>
+                            </mrow>
+                            <annotation encoding="application/x-tex">G = \frac{R_{t} - R_{t-1}}{R_{t-1}}
+                            </annotation>
+                        </semantics>
+                    </math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
+                            style="height:0.6833em;"></span><span class="mord mathnormal">G</span><span class="mspace"
+                            style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace"
+                            style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut"
+                            style="height:2.2547em;vertical-align:-0.8943em;"></span><span class="mord"><span
+                                class="mopen nulldelimiter"></span><span class="mfrac"><span
+                                    class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"
+                                            style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut"
+                                                    style="height:3em;"></span><span class="mord"><span
+                                                        class="mord"><span class="mord mathnormal"
+                                                            style="margin-right:0.00773em;">R</span><span
+                                                            class="msupsub"><span class="vlist-t vlist-t2"><span
+                                                                    class="vlist-r"><span class="vlist"
+                                                                        style="height:0.3011em;"><span
+                                                                            style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span
+                                                                                class="pstrut"
+                                                                                style="height:2.7em;"></span><span
+                                                                                class="sizing reset-size6 size3 mtight"><span
+                                                                                    class="mord mtight"><span
+                                                                                        class="mord mathnormal mtight">t</span><span
+                                                                                        class="mbin mtight">−</span><span
+                                                                                        class="mord mtight">1</span></span></span></span></span><span
+                                                                        class="vlist-s">​</span></span><span
+                                                                    class="vlist-r"><span class="vlist"
+                                                                        style="height:0.2083em;"><span></span></span></span></span></span></span></span></span><span
+                                                style="top:-3.23em;"><span class="pstrut"
+                                                    style="height:3em;"></span><span class="frac-line"
+                                                    style="border-bottom-width:0.04em;"></span></span><span
+                                                style="top:-3.677em;"><span class="pstrut"
+                                                    style="height:3em;"></span><span class="mord"><span
+                                                        class="mord"><span class="mord mathnormal"
+                                                            style="margin-right:0.00773em;">R</span><span
+                                                            class="msupsub"><span class="vlist-t vlist-t2"><span
+                                                                    class="vlist-r"><span class="vlist"
+                                                                        style="height:0.2806em;"><span
+                                                                            style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span
+                                                                                class="pstrut"
+                                                                                style="height:2.7em;"></span><span
+                                                                                class="sizing reset-size6 size3 mtight"><span
+                                                                                    class="mord mtight"><span
+                                                                                        class="mord mathnormal mtight">t</span></span></span></span></span><span
+                                                                        class="vlist-s">​</span></span><span
+                                                                    class="vlist-r"><span class="vlist"
+                                                                        style="height:0.15em;"><span></span></span></span></span></span></span><span
+                                                        class="mspace" style="margin-right:0.2222em;"></span><span
+                                                        class="mbin">−</span><span class="mspace"
+                                                        style="margin-right:0.2222em;"></span><span class="mord"><span
+                                                            class="mord mathnormal"
+                                                            style="margin-right:0.00773em;">R</span><span
+                                                            class="msupsub"><span class="vlist-t vlist-t2"><span
+                                                                    class="vlist-r"><span class="vlist"
+                                                                        style="height:0.3011em;"><span
+                                                                            style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span
+                                                                                class="pstrut"
+                                                                                style="height:2.7em;"></span><span
+                                                                                class="sizing reset-size6 size3 mtight"><span
+                                                                                    class="mord mtight"><span
+                                                                                        class="mord mathnormal mtight">t</span><span
+                                                                                        class="mbin mtight">−</span><span
+                                                                                        class="mord mtight">1</span></span></span></span></span><span
+                                                                        class="vlist-s">​</span></span><span
+                                                                    class="vlist-r"><span class="vlist"
+                                                                        style="height:0.2083em;"><span></span></span></span></span></span></span></span></span></span><span
+                                            class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist"
+                                            style="height:0.8943em;"><span></span></span></span></span></span><span
+                                class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+    <h3 id="lifetime-value-ltv-of-a-customer">Lifetime Value (LTV) of a Customer</h3>
+    <p>Lifetime value is the revenue that can be expected throughout the duration of the average relationship with a
+        customer.</p>
+    <h3 id="net-promoter-score-nps">Net Promoter Score (NPS)</h3>
+    <p>What is the likelihood that your customers will recommend your product or service to their network?</p>
+    <p>This question is what sales professionals have in mind when they measure net promoter score, where they ask each
+        customer the likelihood of them promoting their business through word of mouth from 1 (not very likely) to 10
+        (very likely).</p>
+    <h3 id="sales-expense-ratio">Sales Expense Ratio</h3>
+    <p>It’s important to understand how your sales costs, direct customer acquisition costs, and indirect operating
+        expenses compare to your revenue. The higher your sales expense ratio, the less profitable your sales
+        organization will be.</p>
+    <h2 id="website-performance-metrics">Website Performance Metrics</h2>
+    <h3 id="conversion-rate">Conversion Rate</h3>
+    <p>Conversion rate is the percentage of visitors to your website who take a desired action. For example, if you have
+        a landing page with a form to download a whitepaper, the conversion rate would be the percentage of visitors who
+        fill out the form.</p>
+    <h3 id="bounce-rate">Bounce Rate</h3>
+    <p>The bounce rate can be defined as the percentage of web users who leave your website after only viewing a single
+        page.</p>
+    <p>A high bounce rate is indicative of your landing page not being what visitors expected, usually in the form of
+        content. Since they had no interest in the material they saw and taking action, they left the page without
+        clicking on a link, completing a form, etc.</p>
+    <h3 id="page-views">Page Views</h3>
+    <p>This is probably the most obvious metric that helps to determine the success of your landing page since it
+        measures the number of people who are looking at your landing page.</p>
+    <p>Page Views metric allows you to see which pages are getting the most and least traffic.</p>
+    <h3 id="average-time-spent-on-page">Average Time Spent on Page</h3>
+    <p>Keeping an eye on how long visitors are staying on your landing page can be useful. However, keep in mind that
+        the kind of landing page you have can have a direct impact on this metric.</p>
+    <p>Therefore, a shorter or longer average time spent on the page doesn’t have to indicate that your landing page is
+        not performing well.</p>
+    <h3 id="sessions-by-source">Sessions by Source</h3>
+    <p>It is incredibly important to know where it is that your visitors are coming from when they arrive at your
+        landing page. This ultimately helps you get a bigger picture of how your campaign is performing.</p>
+    <p>By determining the channels that bring in converting traffic, you can learn more about what optimizations to make
+        to your page and where to focus your ad spend.</p>
+    <p>For instance, if a large amount of your traffic is coming from Facebook and many of those leads convert, then you
+        will want to consider investing more in the ads you’re using on that social media outlet.</p>
+    <h3 id="cost-per-conversion">Cost Per Conversion</h3>
+    <p>Cost per conversion lets you know how much you are spending on acquiring each new lead.</p>
+    <p>While the goal is to increase the number of landing page conversions, you also don’t want to increase your costs
+        significantly.</p>
+    <h3 id="form-abandonment">Form Abandonment</h3>
+    <p>Form abandonment refers to the number of visitors who began to fill out a form on your website and then left the
+        site.</p>
+    <p>There are numerous reasons why form abandonment may occur, including your form requesting sensitive details or
+        too much information</p>
+    <h3 id="return-vs-new-visitors">Return vs. New Visitors</h3>
+    <p>This metric is pretty straightforward in what it is—showing you the percentage of return and new visitors to your
+        landing page.</p>
+    <p>If new visitors are spending more time on your landing page than returning visitors, you should consider offering
+        them something to get them to come back again, such as a special coupon code.</p>
+    <p>If your returning visitors have a higher bounce rate than new ones, then the quality/quantity of the content may
+        not be as appealing.</p>
+    <p>They are coming back for more, but the content is lacking. Therefore, you will want to examine your content
+        strategy and see where you can make improvements to reduce the bounce rate of returning visitors.</p>
+    <h2 id="video-performance-metrics">Video Performance Metrics</h2>
+    <h3 id="watch-time">Watch Time</h3>
+    <p>Watch time is the total amount of time a viewer spends watching your video. This metric is important because it
+        shows how engaged your audience is with your video content.</p>
+    <h3 id="traffic-sources">Traffic sources</h3>
+    <p>This will tell you where your viewers came from. It's divided into several types: YouTube search, playlists,
+        suggested videos, Google search, external website, and more.</p>
+    <h3 id="impressions">Impressions</h3>
+    <p>Impressions measure how many times your video thumbnail was shown to viewers. Impressions are only counted within
+        YouTube—this metric doesn’t include any impressions on external sites or apps.</p>
+    <h3 id="impressions-click-through-rate">Impressions Click-Through Rate</h3>
+    <p>To round out our reach metrics, impressions click-through rate measures the percentage of clicks that were
+        prompted to watch your video from their homepage, recommendations section, or trending section. This is a key
+        metric to watch, because a high click-through rate is an indicator that your content is compelling for a wide
+        audience on YouTube.</p>
+    <h3 id="returning-viewers">Returning Viewers</h3>
+    <p>Returning viewers measures how many people continue to come back to your YouTube channel and consume your video
+        content. This will help you understand what segment of your audience is loyal to your brand. The hope is that
+        this metric continues to rise as your viewers return time and time again to watch your videos.</p>
+    <h3 id="unique-viewers">Unique Viewers</h3>
+    <p>Unique viewers is an estimated number of people who watched your content over a certain time period. This metric
+        helps you determine the actual size of your audience. This metric correlates to your subscribers.</p>
+
+    <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>
