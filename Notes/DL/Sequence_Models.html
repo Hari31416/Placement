@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Sequence Models</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-
-<style type="text/css">
-  pre { line-height: 125%; }
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Sequence Models
+  </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js">
+  </script>
+  <style type="text/css">
+   pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -81,11 +86,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
   </style>
-
-
-
-<style type="text/css">
-/*!
+  <style type="text/css">
+   /*!
 *
 * Twitter Bootstrap
 *
@@ -13019,9 +13021,10 @@ ul.typeahead-list  > li > a.pull-right {
 .terminal-app #terminado-container {
   margin-top: 20px;
 }
-/*# sourceMappingURL=style.min.css.map */</style>
-<style type="text/css">
-/* Overrides of notebook CSS for static HTML export */
+/*# sourceMappingURL=style.min.css.map */
+  </style>
+  <style type="text/css">
+   /* Overrides of notebook CSS for static HTML export */
 body {
   overflow: visible;
   padding: 8px;
@@ -13047,12 +13050,13 @@ div#notebook {
     page-break-inside: avoid;
   }
 }
-</style>
-<!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    init_mathjax = function() {
+  </style>
+  <!-- Load mathjax -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe">
+  </script>
+  <!-- MathJax configuration -->
+  <script type="text/x-mathjax-config">
+   init_mathjax = function() {
         if (window.MathJax) {
         // MathJax loaded
             MathJax.Hub.Config({
@@ -13080,654 +13084,1221 @@ div#notebook {
         }
     }
     init_mathjax();
-    </script>
-    <!-- End of mathjax configuration --></head>
-<body>
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><h2 id="Contents">Contents<a href="#Contents"></a></h2>
+  </script>
+  <!-- End of mathjax configuration -->
+ </head>
+ <body>
+  <div class="border-box-sizing" id="notebook" tabindex="-1">
+   <div class="container" id="notebook-container">
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        <h2 id="Contents">
+         Contents
+         <a href="#Contents">
+         </a>
+        </h2>
         <ol>
-        <li><a class="" href="#Sequence-Models">Sequence Models</a></li></p>
-<ol><li><a class="" href="#Why-Sequence-Models?">Why Sequence Models?</a></li>
-<li><a class="" href="#RNN">RNN</a></li>
-<ol><li><a class="" href="#Forward-Propagation">Forward Propagation</a></li>
-<li><a class="" href="#Simplified-RNN">Simplified RNN</a></li>
-<li><a class="" href="#Backward-Propagation-(Backpropagation-through-time!)">Backward Propagation (Backpropagation through time!)</a></li>
-<li><a class="" href="#Bidirectional-RNN-(BRNN)">Bidirectional RNN (BRNN)</a></li>
-<li><a class="" href="#Problem-with-RNN">Problem with RNN</a></li>
-<ol><li><a class="" href="#Long-Term-Dependencies">Long-Term Dependencies</a></li>
-<li><a class="" href="#Vanishing/Exploding-Gradient">Vanishing/Exploding Gradient</a></li>
-</ol></ol><li><a class="" href="#GRU">GRU</a></li>
-<ol><li><a class="" href="#Update-Gate">Update Gate</a></li>
-<li><a class="" href="#Reset-Gate">Reset Gate</a></li>
-<li><a class="" href="#Cell-State-Calculation">Cell State Calculation</a></li>
-</ol><li><a class="" href="#LSTM">LSTM</a></li>
-<ol><li><a class="" href="#Cell-State">Cell State</a></li>
-<li><a class="" href="#Gates">Gates</a></li>
-<ol><li><a class="" href="#Forget-Gate">Forget Gate</a></li>
-<li><a class="" href="#Input-Gate">Input Gate</a></li>
-<li><a class="" href="#Output-Gate">Output Gate</a></li>
-</ol><li><a class="" href="#Variants-of-LSTM">Variants of LSTM</a></li>
-<ol><li><a class="" href="#Peephole-Connections">Peephole Connections</a></li>
-<li><a class="" href="#Coupled-Input-and-Forget-Gates">Coupled Input and Forget Gates</a></li>
-<li><a class="" href="#GRU">GRU</a></li>
-</ol><li><a class="" href="#References">References</a></li>
-</ol>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Sequence-Models">Sequence Models<a class="anchor-link" href="#Sequence-Models">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Sequence models are the machine learning models that input or output sequences of data. Sequential data includes text streams, audio clips, video clips, time-series data and etc. Some examples of sequnce models are:</p>
-<ul>
-<li><a href="#RNN">Recurrent Neural Networks (RNNs)</a></li>
-<li><a href="#GRU">Gated Recurrent Unit (GRU)</a></li>
-<li><a href="#LSTM">Long Short-Term Memory (LSTM)</a></li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are many types of sequence problems:</p>
-<p><img src="images/0601.jpeg" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Why-Sequence-Models?">Why Sequence Models?<a class="anchor-link" href="#Why-Sequence-Models?">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Traditional neural networks have some limitations which makes them inefficient for processing sequential data. For example, a network cannot process an input of variable length. This is because the input of a network must be of the same size. Another limitation is that a network cannot remember information from a long time ago. This is because a network has no memory. Furthermore, traditional NN's don't share features learned across different positions of text/sequence (like CNN's do). In order to solve these problems, we need to use a sequence model.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="RNN">RNN<a class="anchor-link" href="#RNN">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="images/0602.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Recurrent neural networks address the issue related to memory. They are networks with loops in them, allowing information to persist. In RNN, output at time $t$ depend not only on the input at time $t$ but also on the outputs from previous times.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Forward-Propagation">Forward Propagation<a class="anchor-link" href="#Forward-Propagation">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are three weight matrices here: W<sub>ax</sub>, W<sub>aa</sub>, and W<sub>ya</sub> with shapes:</p>
-<ul>
-<li>W<sub>ax</sub>: (NoOfHiddenNeurons, n<sub>x</sub>)</li>
-<li>W<sub>aa</sub>: (NoOfHiddenNeurons, NoOfHiddenNeurons)</li>
-<li>W<sub>ya</sub>: (n<sub>y</sub>, NoOfHiddenNeurons)</li>
-</ul>
-<p>These matrices are shared across all the time step. The weight matrix W<sub>aa</sub> is the memory the RNN is trying to maintain from the previous layers.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The equations for forward propagation are:</p>
-<ul>
-<li>$a^{&lt;t&gt;}=g_1(W_{ax}x^{&lt;t&gt;}+W_{aa}a^{&lt;t-1&gt;}+b_a)$</li>
-<li>$y^{&lt;t&gt;}=g_2(W_{ya}a^{&lt;t&gt;}+b_y)$</li>
-</ul>
-<p>Usually, $g_1$ is a tanh function and $g_2$ is a softmax function. $a^0$ is initialized to zero.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="images/0603.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Simplified-RNN">Simplified RNN<a class="anchor-link" href="#Simplified-RNN">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can clean the RNN equations by using some notations. First, we stack $W_{aa}$ and $W_{ax}$ horizontally into a single matrix $W_a$ as:</p>
-<ul>
-<li>$W_a = [W_{aa} W_{ax}]$</li>
-</ul>
-<p>Then, we stack $x^{&lt;t&gt;}$ and $a^{&lt;t-1&gt;}$ vertically into a single vector $a^{&lt;t&gt;}$ as:</p>
-<ul>
-<li>$a^{&lt;t&gt;} = [\frac{a^{&lt;t-1&gt;}}{x^{&lt;t&gt;}}]$</li>
-</ul>
-<p>Then, we can rewrite the equations as:
+         <li>
+          <a class="" href="#Sequence-Models">
+           Sequence Models
+          </a>
+         </li>
+        </ol>
+       </p>
+       <ol>
+        <li>
+         <a class="" href="#Why-Sequence-Models?">
+          Why Sequence Models?
+         </a>
+        </li>
+        <li>
+         <a class="" href="#RNN">
+          RNN
+         </a>
+        </li>
+        <ol>
+         <li>
+          <a class="" href="#Forward-Propagation">
+           Forward Propagation
+          </a>
+         </li>
+         <li>
+          <a class="" href="#Simplified-RNN">
+           Simplified RNN
+          </a>
+         </li>
+         <li>
+          <a class="" href="#Backward-Propagation-(Backpropagation-through-time!)">
+           Backward Propagation (Backpropagation through time!)
+          </a>
+         </li>
+         <li>
+          <a class="" href="#Bidirectional-RNN-(BRNN)">
+           Bidirectional RNN (BRNN)
+          </a>
+         </li>
+         <li>
+          <a class="" href="#Problem-with-RNN">
+           Problem with RNN
+          </a>
+         </li>
+         <ol>
+          <li>
+           <a class="" href="#Long-Term-Dependencies">
+            Long-Term Dependencies
+           </a>
+          </li>
+          <li>
+           <a class="" href="#Vanishing/Exploding-Gradient">
+            Vanishing/Exploding Gradient
+           </a>
+          </li>
+         </ol>
+        </ol>
+        <li>
+         <a class="" href="#GRU">
+          GRU
+         </a>
+        </li>
+        <ol>
+         <li>
+          <a class="" href="#Update-Gate">
+           Update Gate
+          </a>
+         </li>
+         <li>
+          <a class="" href="#Reset-Gate">
+           Reset Gate
+          </a>
+         </li>
+         <li>
+          <a class="" href="#Cell-State-Calculation">
+           Cell State Calculation
+          </a>
+         </li>
+        </ol>
+        <li>
+         <a class="" href="#LSTM">
+          LSTM
+         </a>
+        </li>
+        <ol>
+         <li>
+          <a class="" href="#Cell-State">
+           Cell State
+          </a>
+         </li>
+         <li>
+          <a class="" href="#Gates">
+           Gates
+          </a>
+         </li>
+         <ol>
+          <li>
+           <a class="" href="#Forget-Gate">
+            Forget Gate
+           </a>
+          </li>
+          <li>
+           <a class="" href="#Input-Gate">
+            Input Gate
+           </a>
+          </li>
+          <li>
+           <a class="" href="#Output-Gate">
+            Output Gate
+           </a>
+          </li>
+         </ol>
+         <li>
+          <a class="" href="#Variants-of-LSTM">
+           Variants of LSTM
+          </a>
+         </li>
+         <ol>
+          <li>
+           <a class="" href="#Peephole-Connections">
+            Peephole Connections
+           </a>
+          </li>
+          <li>
+           <a class="" href="#Coupled-Input-and-Forget-Gates">
+            Coupled Input and Forget Gates
+           </a>
+          </li>
+          <li>
+           <a class="" href="#GRU">
+            GRU
+           </a>
+          </li>
+         </ol>
+         <li>
+          <a class="" href="#References">
+           References
+          </a>
+         </li>
+        </ol>
+       </ol>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h1 id="Sequence-Models">
+        Sequence Models
+        <a class="anchor-link" href="#Sequence-Models">
+         ¶
+        </a>
+       </h1>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        Sequence models are the machine learning models that input or output sequences of data. Sequential data includes text streams, audio clips, video clips, time-series data and etc. Some examples of sequnce models are:
+       </p>
+       <ul>
+        <li>
+         <a href="#RNN">
+          Recurrent Neural Networks (RNNs)
+         </a>
+        </li>
+        <li>
+         <a href="#GRU">
+          Gated Recurrent Unit (GRU)
+         </a>
+        </li>
+        <li>
+         <a href="#LSTM">
+          Long Short-Term Memory (LSTM)
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        There are many types of sequence problems:
+       </p>
+       <p>
+        <img alt="" src="images/0601.jpeg"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h2 id="Why-Sequence-Models?">
+        Why Sequence Models?
+        <a class="anchor-link" href="#Why-Sequence-Models?">
+         ¶
+        </a>
+       </h2>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        Traditional neural networks have some limitations which makes them inefficient for processing sequential data. For example, a network cannot process an input of variable length. This is because the input of a network must be of the same size. Another limitation is that a network cannot remember information from a long time ago. This is because a network has no memory. Furthermore, traditional NN's don't share features learned across different positions of text/sequence (like CNN's do). In order to solve these problems, we need to use a sequence model.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h2 id="RNN">
+        RNN
+        <a class="anchor-link" href="#RNN">
+         ¶
+        </a>
+       </h2>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        <img alt="" src="images/0602.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        Recurrent neural networks address the issue related to memory. They are networks with loops in them, allowing information to persist. In RNN, output at time $t$ depend not only on the input at time $t$ but also on the outputs from previous times.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h3 id="Forward-Propagation">
+        Forward Propagation
+        <a class="anchor-link" href="#Forward-Propagation">
+         ¶
+        </a>
+       </h3>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        There are three weight matrices here: W
+        <sub>
+         ax
+        </sub>
+        , W
+        <sub>
+         aa
+        </sub>
+        , and W
+        <sub>
+         ya
+        </sub>
+        with shapes:
+       </p>
+       <ul>
+        <li>
+         W
+         <sub>
+          ax
+         </sub>
+         : (NoOfHiddenNeurons, n
+         <sub>
+          x
+         </sub>
+         )
+        </li>
+        <li>
+         W
+         <sub>
+          aa
+         </sub>
+         : (NoOfHiddenNeurons, NoOfHiddenNeurons)
+        </li>
+        <li>
+         W
+         <sub>
+          ya
+         </sub>
+         : (n
+         <sub>
+          y
+         </sub>
+         , NoOfHiddenNeurons)
+        </li>
+       </ul>
+       <p>
+        These matrices are shared across all the time step. The weight matrix W
+        <sub>
+         aa
+        </sub>
+        is the memory the RNN is trying to maintain from the previous layers.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        The equations for forward propagation are:
+       </p>
+       <ul>
+        <li>
+         $a^{&lt;t&gt;}=g_1(W_{ax}x^{&lt;t&gt;}+W_{aa}a^{&lt;t-1&gt;}+b_a)$
+        </li>
+        <li>
+         $y^{&lt;t&gt;}=g_2(W_{ya}a^{&lt;t&gt;}+b_y)$
+        </li>
+       </ul>
+       <p>
+        Usually, $g_1$ is a tanh function and $g_2$ is a softmax function. $a^0$ is initialized to zero.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        <img alt="" src="images/0603.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h3 id="Simplified-RNN">
+        Simplified RNN
+        <a class="anchor-link" href="#Simplified-RNN">
+         ¶
+        </a>
+       </h3>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        We can clean the RNN equations by using some notations. First, we stack $W_{aa}$ and $W_{ax}$ horizontally into a single matrix $W_a$ as:
+       </p>
+       <ul>
+        <li>
+         $W_a = [W_{aa} W_{ax}]$
+        </li>
+       </ul>
+       <p>
+        Then, we stack $x^{&lt;t&gt;}$ and $a^{&lt;t-1&gt;}$ vertically into a single vector $a^{&lt;t&gt;}$ as:
+       </p>
+       <ul>
+        <li>
+         $a^{&lt;t&gt;} = [\frac{a^{&lt;t-1&gt;}}{x^{&lt;t&gt;}}]$
+        </li>
+       </ul>
+       <p>
+        Then, we can rewrite the equations as:
 $$a^{&lt;t&gt;} = g_1(W_a a^{&lt;t-1&gt;} + b_a)$$
-$$y^{&lt;t&gt;} = g_2(W_y a^{&lt;t&gt;} + b_y)$$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Backward-Propagation-(Backpropagation-through-time!)">Backward Propagation (Backpropagation through time!)<a class="anchor-link" href="#Backward-Propagation-(Backpropagation-through-time!)">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In the case of a recurrent neural network, the loss function $\mathcal{L}$ of all time steps is defined based on the loss at every time step as follows:
+$$y^{&lt;t&gt;} = g_2(W_y a^{&lt;t&gt;} + b_y)$$
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h3 id="Backward-Propagation-(Backpropagation-through-time!)">
+        Backward Propagation (Backpropagation through time!)
+        <a class="anchor-link" href="#Backward-Propagation-(Backpropagation-through-time!)">
+         ¶
+        </a>
+       </h3>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        In the case of a recurrent neural network, the loss function $\mathcal{L}$ of all time steps is defined based on the loss at every time step as follows:
 $$
 \mathcal{L} = \sum_{t=1}^{T_y} \mathcal{L}^{&lt;t&gt;}
 $$
 Where $\mathcal{L}^{&lt;t&gt;}$ is the loss at time step $t$, given by
 $$
 \mathcal{L}^{&lt;t&gt;} = -y^{&lt;t&gt;}\log{\hat{y}^{&lt;t&gt;}} - (1-y^{&lt;t&gt;})\log{(1-\hat{y}^{&lt;t&gt;})}
-$$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Backpropagation is done at each point in time. At timestep $T$, the derivative of the loss $\mathcal{L}$ with respect to weight matrix $W$ is expressed as follows:
+$$
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        Backpropagation is done at each point in time. At timestep $T$, the derivative of the loss $\mathcal{L}$ with respect to weight matrix $W$ is expressed as follows:
 $$
 \frac{\partial \mathcal{L}}{\partial W} = \sum_{t=1}^{T_y} \frac{\partial \mathcal{L}^{&lt;t&gt;}}{\partial W}
 $$
-Where $\frac{\partial \mathcal{L}^{&lt;t&gt;}}{\partial W}$ is the derivative of the loss at time step $t$ with respect to weight matrix $W$.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="images/0604.webp" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>The backpropagation here is called <strong>backpropagation through time</strong> because we pass activation <code>a</code> from one sequence element to another like backwards in time.</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Bidirectional-RNN-(BRNN)">Bidirectional RNN (BRNN)<a class="anchor-link" href="#Bidirectional-RNN-(BRNN)">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There are many other sequence learning tasks contexts where it’s perfectly fine to condition the prediction at every time step on both the leftward and the rightward context. Consider, for example, part of speech detection. For example, consider the three sentences:</p>
-<ul>
-<li>I am ___.</li>
-<li>I am ___ hungry.</li>
-<li>I am ___ hungry, and I can eat half a pig.</li>
-</ul>
-<p>In the first sentence “happy” seems to be a likely candidate. The words “not” and “very” seem plausible in the second sentence, but “not” seems incompatible with the third sentences.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Due to this reason, we need to use a bidirectional RNN. In a bidirectional RNN, we have two RNNs, one that processes the input sequence from left to right and one that processes the input sequence from right to left. The output of the two RNNs are then concatenated and fed to a softmax layer. For the first RNN layer, the first input is $x_1$ and the last input is $x_t$, but for the second RNN layer, the first input is $x_t$ and the last input is $x_1$. To produce the output of this bidirectional RNN layer, we simply concatenate together the corresponding outputs of the two underlying unidirectional RNN layers.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="images/0605.svg" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Mathematically, we can write the equations as:
+Where $\frac{\partial \mathcal{L}^{&lt;t&gt;}}{\partial W}$ is the derivative of the loss at time step $t$ with respect to weight matrix $W$.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        <img alt="" src="images/0604.webp"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <blockquote>
+        <p>
+         The backpropagation here is called
+         <strong>
+          backpropagation through time
+         </strong>
+         because we pass activation
+         <code>
+          a
+         </code>
+         from one sequence element to another like backwards in time.
+        </p>
+       </blockquote>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h3 id="Bidirectional-RNN-(BRNN)">
+        Bidirectional RNN (BRNN)
+        <a class="anchor-link" href="#Bidirectional-RNN-(BRNN)">
+         ¶
+        </a>
+       </h3>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        There are many other sequence learning tasks contexts where it’s perfectly fine to condition the prediction at every time step on both the leftward and the rightward context. Consider, for example, part of speech detection. For example, consider the three sentences:
+       </p>
+       <ul>
+        <li>
+         I am ___.
+        </li>
+        <li>
+         I am ___ hungry.
+        </li>
+        <li>
+         I am ___ hungry, and I can eat half a pig.
+        </li>
+       </ul>
+       <p>
+        In the first sentence “happy” seems to be a likely candidate. The words “not” and “very” seem plausible in the second sentence, but “not” seems incompatible with the third sentences.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        Due to this reason, we need to use a bidirectional RNN. In a bidirectional RNN, we have two RNNs, one that processes the input sequence from left to right and one that processes the input sequence from right to left. The output of the two RNNs are then concatenated and fed to a softmax layer. For the first RNN layer, the first input is $x_1$ and the last input is $x_t$, but for the second RNN layer, the first input is $x_t$ and the last input is $x_1$. To produce the output of this bidirectional RNN layer, we simply concatenate together the corresponding outputs of the two underlying unidirectional RNN layers.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        <img alt="" src="images/0605.svg"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        Mathematically, we can write the equations as:
 $$
 \begin{align}
 a^{&lt;t&gt;}_{fwd} &amp;= g_1(W_{a}^{fwd} a^{&lt;t-1&gt;}_{fwd} + W_{x}^{fwd} x^{&lt;t&gt;} + b_a^{fwd}) \\
 a^{&lt;t&gt;}_{bwd} &amp;= g_1(W_{a}^{bwd} a^{&lt;t+1&gt;}_{bwd} + W_{x}^{bwd} x^{&lt;t&gt;} + b_a^{bwd}) \\
 \hat{y}^{&lt;t&gt;} &amp;= g_2(W_{y} a^{&lt;t&gt;}_{fwd} + W_{y} a^{&lt;t&gt;}_{bwd} + b_y)
 \end{align}
-$$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Problem-with-RNN">Problem with RNN<a class="anchor-link" href="#Problem-with-RNN">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Long-Term-Dependencies">Long-Term Dependencies<a class="anchor-link" href="#Long-Term-Dependencies">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Sometimes, we only need to look at recent information to perform the present task. For example, consider a language model trying to predict the next word based on the previous ones. If we are trying to predict the last word in “the clouds are in the sky,” we don’t need any further context – it’s pretty obvious the next word is going to be sky. In such cases, where the gap between the relevant information and the place that it’s needed is small, RNNs can learn to use the past information.</p>
-<p><img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-shorttermdepdencies.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>But there are also cases where we need more context. Consider trying to predict the last word in the text “I grew up in France… I speak fluent French.” Recent information suggests that the next word is probably the name of a language, but if we want to narrow down which language, we need the context of France, from further back. It’s entirely possible for the gap between the relevant information and the point where it is needed to become very large.</p>
-<p>Unfortunately, as that gap grows, RNNs become unable to learn to connect the information.</p>
-<p><img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-longtermdependencies.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Vanishing/Exploding-Gradient">Vanishing/Exploding Gradient<a class="anchor-link" href="#Vanishing/Exploding-Gradient">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The vanishing and exploding gradient phenomena are often encountered in the context of RNNs. The reason why they happen is that it is difficult to capture long term dependencies because of multiplicative gradient that can be exponentially decreasing/increasing with respect to the number of layers. One way to counter the problem of exploding gradient is to use gradient clipping.</p>
-<p><img src="https://stanford.edu/~shervine/teaching/cs-230/illustrations/gradient-clipping-en.png?6c3de441dc56aad634dc1a91accb48f2" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Due to all these problems, other architectures have been proposed to overcome these problems. The most popular one is the Long Short-Term Memory (LSTM) network and Gate Recurrent Unit (GRU) network.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="GRU">GRU<a class="anchor-link" href="#GRU">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://stanford.edu/~shervine/teaching/cs-230/illustrations/gru-ltr.png?00f278f71b4833d32a87ed53d86f251c" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Each layer in GRUs has a new variable $c$ which is the memory cell. It can tell to whether memorize something or not. In GRU's $c^{&lt;t&gt;} = a^{&lt;t&gt;}$. In GRU, we have two gates and the cell state. The cell state is kind of like a conveyor belt. It runs straight down the entire chain, with only some minor linear interactions. It’s very easy for information to just flow along it unchanged. Also, as $c^{&lt;t&gt;} = a^{&lt;t&gt;}$, we no longer have the vanishing gradient problem. See <a href="#lstm">LSTM</a> for details.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Update-Gate">Update Gate<a class="anchor-link" href="#Update-Gate">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The update gate acts similar to the forget and input gate of an LSTM. It decides what information to throw away and what new information to add. The calculation of the update gate is as follows:
+$$
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h3 id="Problem-with-RNN">
+        Problem with RNN
+        <a class="anchor-link" href="#Problem-with-RNN">
+         ¶
+        </a>
+       </h3>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h4 id="Long-Term-Dependencies">
+        Long-Term Dependencies
+        <a class="anchor-link" href="#Long-Term-Dependencies">
+         ¶
+        </a>
+       </h4>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        Sometimes, we only need to look at recent information to perform the present task. For example, consider a language model trying to predict the next word based on the previous ones. If we are trying to predict the last word in “the clouds are in the sky,” we don’t need any further context – it’s pretty obvious the next word is going to be sky. In such cases, where the gap between the relevant information and the place that it’s needed is small, RNNs can learn to use the past information.
+       </p>
+       <p>
+        <img alt="" src="images/0701.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        But there are also cases where we need more context. Consider trying to predict the last word in the text “I grew up in France… I speak fluent French.” Recent information suggests that the next word is probably the name of a language, but if we want to narrow down which language, we need the context of France, from further back. It’s entirely possible for the gap between the relevant information and the point where it is needed to become very large.
+       </p>
+       <p>
+        Unfortunately, as that gap grows, RNNs become unable to learn to connect the information.
+       </p>
+       <p>
+        <img alt="" src="images/0702.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h4 id="Vanishing/Exploding-Gradient">
+        Vanishing/Exploding Gradient
+        <a class="anchor-link" href="#Vanishing/Exploding-Gradient">
+         ¶
+        </a>
+       </h4>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        The vanishing and exploding gradient phenomena are often encountered in the context of RNNs. The reason why they happen is that it is difficult to capture long term dependencies because of multiplicative gradient that can be exponentially decreasing/increasing with respect to the number of layers. One way to counter the problem of exploding gradient is to use gradient clipping.
+       </p>
+       <p>
+        <img alt="" src="images/0703.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        Due to all these problems, other architectures have been proposed to overcome these problems. The most popular one is the Long Short-Term Memory (LSTM) network and Gate Recurrent Unit (GRU) network.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h2 id="GRU">
+        GRU
+        <a class="anchor-link" href="#GRU">
+         ¶
+        </a>
+       </h2>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        <img alt="" src="images/0704.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        Each layer in GRUs has a new variable $c$ which is the memory cell. It can tell to whether memorize something or not. In GRU's $c^{&lt;t&gt;} = a^{&lt;t&gt;}$. In GRU, we have two gates and the cell state. The cell state is kind of like a conveyor belt. It runs straight down the entire chain, with only some minor linear interactions. It’s very easy for information to just flow along it unchanged. Also, as $c^{&lt;t&gt;} = a^{&lt;t&gt;}$, we no longer have the vanishing gradient problem. See
+        <a href="#lstm">
+         LSTM
+        </a>
+        for details.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h3 id="Update-Gate">
+        Update Gate
+        <a class="anchor-link" href="#Update-Gate">
+         ¶
+        </a>
+       </h3>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        The update gate acts similar to the forget and input gate of an LSTM. It decides what information to throw away and what new information to add. The calculation of the update gate is as follows:
 $$
 \Gamma_u^{&lt;t&gt;} = \sigma(W_u [a^{&lt;t-1&gt;}, x^{&lt;t&gt;}] + b_u)
-$$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Reset-Gate">Reset Gate<a class="anchor-link" href="#Reset-Gate">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The Reset Gate is responsible for the short-term memory of the network. This is used to calculate the candidate value of the new cell state. The calculation performed in this gate is very similar to the above:
+$$
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h3 id="Reset-Gate">
+        Reset Gate
+        <a class="anchor-link" href="#Reset-Gate">
+         ¶
+        </a>
+       </h3>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        The Reset Gate is responsible for the short-term memory of the network. This is used to calculate the candidate value of the new cell state. The calculation performed in this gate is very similar to the above:
 $$
 \Gamma_r^{&lt;t&gt;} = \sigma(W_r [a^{&lt;t-1&gt;}, x^{&lt;t&gt;}] + b_r)
-$$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Cell-State-Calculation">Cell State Calculation<a class="anchor-link" href="#Cell-State-Calculation">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Using the above two gates, the candidate cell state is updated as:
+$$
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h3 id="Cell-State-Calculation">
+        Cell State Calculation
+        <a class="anchor-link" href="#Cell-State-Calculation">
+         ¶
+        </a>
+       </h3>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        Using the above two gates, the candidate cell state is updated as:
 $$
 \tilde{c}^{&lt;t&gt;} = \tanh(W_c [\Gamma_r c^{&lt;t-1&gt;}, x^{&lt;t&gt;}] + b_c)
 $$
 The updated cell state is
 $$
 c^{&lt;t&gt;} = \Gamma_u \tilde{c}^{&lt;t&gt;} + (1-\Gamma_u)c^{&lt;t-1&gt;}
-$$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="LSTM">LSTM<a class="anchor-link" href="#LSTM">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Long Short Term Memory networks – usually just called “LSTMs” – are a special kind of RNN, capable of learning long-term dependencies. LSTMs are explicitly designed to avoid the long-term dependency problem. Remembering information for long periods of time is practically their default behavior, not something they struggle to learn!</p>
-<p>LSTMs have the same chain like structure like RNN, but the repeating module has a different structure. Instead of having a single neural network layer, there are four, interacting in a very special way.</p>
-<p><img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Cell-State">Cell State<a class="anchor-link" href="#Cell-State">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The key to LSTMs is the cell state, the horizontal line running through the top of the diagram.</p>
-<p>The cell state is kind of like a conveyor belt. It runs straight down the entire chain, with only some minor linear interactions. It’s very easy for information to just flow along it unchanged.</p>
-<p><img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-C-line.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The LSTM does have the ability to remove or add information to the cell state, carefully regulated by structures called gates.</p>
-<p>Gates are a way to optionally let information through. They are composed out of a sigmoid neural net layer and a pointwise multiplication operation. The sigmoid layer outputs numbers between zero and one, describing how much of each component should be let through. A value of zero means “let nothing through,” while a value of one means “let everything through!” An LSTM has three of these gates, to protect and control the cell state.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Gates">Gates<a class="anchor-link" href="#Gates">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>LSTM has three gates which decide which information to keep and which to discard.. The first part is called Forget gate, the second part is known as the Input gate and the last one is the Output gate.</p>
-<p><img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2021/03/Screenshot-from-2021-03-16-13-41-03-768x342.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Forget-Gate">Forget Gate<a class="anchor-link" href="#Forget-Gate">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The first gate decides what information we’re going to throw away from the cell state. This decision is made by a sigmoid layer called the “forget gate layer.” It looks at $h_{t−1}$ and $x^t$, and outputs a number between 0 and 1 for each number in the cell state $C_{t−1}$. A 1 represents “completely keep this” while a 0 represents “completely get rid of this.” For example, the cell state might include the gender of the present subject, so that the correct pronouns can be used. When we see a new subject, we want to forget the gender of the old subject.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-focus-f.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2021/03/Screenshot-from-2021-03-16-14-46-28.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Input-Gate">Input Gate<a class="anchor-link" href="#Input-Gate">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This gate decides what new information we’re going to store in the cell state. This has two parts. First, a sigmoid layer called the “input gate layer” decides which values we’ll update. Next, a tanh layer creates a vector of new candidate values, $\tilde{C}_t$, that could be added to the state. For example, we’d want to add the gender of the new subject to the cell state, to replace the old one we’re forgetting.</p>
-<p><img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-focus-i.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Output-Gate">Output Gate<a class="anchor-link" href="#Output-Gate">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This cell is responsible for updating the old cell state, $C_{t−1}$, into the new cell state $C_t$. We multiply the old state by $f_t$, forgetting the things we decided to forget earlier. Then we add $i_t*\tilde{C}_t$. This is the new candidate values, scaled by how much we decided to update each state value. For example, this is where we’d actually drop the information about the old subject’s gender and add the new information, as we decided in the previous steps.</p>
-<p><img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-focus-C.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Finally, we need to decide what we’re going to output. This output will be based on our cell state, but will be a filtered version. First, we run a sigmoid layer which decides what parts of the cell state we’re going to output. Then, we put the cell state through tanh (to push the values to be between −1 and 1) and multiply it by the output of the sigmoid gate, so that we only output the parts we decided to.</p>
-<p>For the language model example, since it just saw a subject, it might want to output information relevant to a verb, in case that’s what is coming next. For example, it might output whether the subject is singular or plural, so that we know what form a verb should be conjugated into if that’s what follows next.</p>
-<p><img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-focus-o.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="images/0605.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Variants-of-LSTM">Variants of LSTM<a class="anchor-link" href="#Variants-of-LSTM">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Peephole-Connections">Peephole Connections<a class="anchor-link" href="#Peephole-Connections">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-var-peepholes.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A variant of LSTM is gotten using peephole connections. This means that we let the gate layers look at the cell state. The above diagram adds peepholes to all the gates, but many papers will give some peepholes and not others.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Coupled-Input-and-Forget-Gates">Coupled Input and Forget Gates<a class="anchor-link" href="#Coupled-Input-and-Forget-Gates">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Another variation is to use coupled forget and input gates. Instead of separately deciding what to forget and what we should add new information to, we make those decisions together. We only forget when we’re going to input something in its place. We only input new values to the state when we forget something older.</p>
-<p><img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-var-tied.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="GRU">GRU<a class="anchor-link" href="#GRU">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We studied GRU earlier. GRU is nothing but a special type of LSTM. It combines the forget and input gates into a single “update gate.” It also merges the cell state and hidden state, and makes some other changes.</p>
-<p><img src="http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-var-GRU.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="References">References<a class="anchor-link" href="#References">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href="https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks">CS 230 - Deep Learning</a></li>
-<li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">Understanding LSTM Networks</a></li>
-<li><a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">The Unreasonable Effectiveness of Recurrent Neural Networks</a></li>
-<li><a href="https://www.coursera.org/learn/nlp-sequence-models">Sequence Model (Andrew NG)</a></li>
-<li><a href="https://towardsdatascience.com/backpropagation-in-rnn-explained-bdf853b4e1c2">Backpropagation in RNN Explained</a></li>
-<li><a href="https://www.analyticsvidhya.com/blog/2021/03/introduction-to-long-short-term-memory-lstm">Introduction to Long Short Term Memory (LSTM)</a></li>
-<li><a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21">Illustrated Guide to LSTM’s and GRU’s: A step by step explanation</a></li>
-</ul>
-
-</div>
-</div>
-</div>
+$$
+       </p>
+      </div>
+     </div>
     </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h2 id="LSTM">
+        LSTM
+        <a class="anchor-link" href="#LSTM">
+         ¶
+        </a>
+       </h2>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        Long Short Term Memory networks – usually just called “LSTMs” – are a special kind of RNN, capable of learning long-term dependencies. LSTMs are explicitly designed to avoid the long-term dependency problem. Remembering information for long periods of time is practically their default behavior, not something they struggle to learn!
+       </p>
+       <p>
+        LSTMs have the same chain like structure like RNN, but the repeating module has a different structure. Instead of having a single neural network layer, there are four, interacting in a very special way.
+       </p>
+       <p>
+        <img alt="" src="images/0705.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h3 id="Cell-State">
+        Cell State
+        <a class="anchor-link" href="#Cell-State">
+         ¶
+        </a>
+       </h3>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        The key to LSTMs is the cell state, the horizontal line running through the top of the diagram.
+       </p>
+       <p>
+        The cell state is kind of like a conveyor belt. It runs straight down the entire chain, with only some minor linear interactions. It’s very easy for information to just flow along it unchanged.
+       </p>
+       <p>
+        <img alt="" src="images/0706.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        The LSTM does have the ability to remove or add information to the cell state, carefully regulated by structures called gates.
+       </p>
+       <p>
+        Gates are a way to optionally let information through. They are composed out of a sigmoid neural net layer and a pointwise multiplication operation. The sigmoid layer outputs numbers between zero and one, describing how much of each component should be let through. A value of zero means “let nothing through,” while a value of one means “let everything through!” An LSTM has three of these gates, to protect and control the cell state.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h3 id="Gates">
+        Gates
+        <a class="anchor-link" href="#Gates">
+         ¶
+        </a>
+       </h3>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        LSTM has three gates which decide which information to keep and which to discard.. The first part is called Forget gate, the second part is known as the Input gate and the last one is the Output gate.
+       </p>
+       <p>
+        <img alt="" src="images/0707.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h4 id="Forget-Gate">
+        Forget Gate
+        <a class="anchor-link" href="#Forget-Gate">
+         ¶
+        </a>
+       </h4>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        The first gate decides what information we’re going to throw away from the cell state. This decision is made by a sigmoid layer called the “forget gate layer.” It looks at $h_{t−1}$ and $x^t$, and outputs a number between 0 and 1 for each number in the cell state $C_{t−1}$. A 1 represents “completely keep this” while a 0 represents “completely get rid of this.” For example, the cell state might include the gender of the present subject, so that the correct pronouns can be used. When we see a new subject, we want to forget the gender of the old subject.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        <img alt="" src="images/0708.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        <img alt="" src="images/0709.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h4 id="Input-Gate">
+        Input Gate
+        <a class="anchor-link" href="#Input-Gate">
+         ¶
+        </a>
+       </h4>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        This gate decides what new information we’re going to store in the cell state. This has two parts. First, a sigmoid layer called the “input gate layer” decides which values we’ll update. Next, a tanh layer creates a vector of new candidate values, $\tilde{C}_t$, that could be added to the state. For example, we’d want to add the gender of the new subject to the cell state, to replace the old one we’re forgetting.
+       </p>
+       <p>
+        <img alt="" src="images/0710.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h4 id="Output-Gate">
+        Output Gate
+        <a class="anchor-link" href="#Output-Gate">
+         ¶
+        </a>
+       </h4>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        This cell is responsible for updating the old cell state, $C_{t−1}$, into the new cell state $C_t$. We multiply the old state by $f_t$, forgetting the things we decided to forget earlier. Then we add $i_t*\tilde{C}_t$. This is the new candidate values, scaled by how much we decided to update each state value. For example, this is where we’d actually drop the information about the old subject’s gender and add the new information, as we decided in the previous steps.
+       </p>
+       <p>
+        <img alt="" src="images/0711.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        Finally, we need to decide what we’re going to output. This output will be based on our cell state, but will be a filtered version. First, we run a sigmoid layer which decides what parts of the cell state we’re going to output. Then, we put the cell state through tanh (to push the values to be between −1 and 1) and multiply it by the output of the sigmoid gate, so that we only output the parts we decided to.
+       </p>
+       <p>
+        For the language model example, since it just saw a subject, it might want to output information relevant to a verb, in case that’s what is coming next. For example, it might output whether the subject is singular or plural, so that we know what form a verb should be conjugated into if that’s what follows next.
+       </p>
+       <p>
+        <img alt="" src="images/0712.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        <img alt="" src="images/0605.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h3 id="Variants-of-LSTM">
+        Variants of LSTM
+        <a class="anchor-link" href="#Variants-of-LSTM">
+         ¶
+        </a>
+       </h3>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h4 id="Peephole-Connections">
+        Peephole Connections
+        <a class="anchor-link" href="#Peephole-Connections">
+         ¶
+        </a>
+       </h4>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        <img alt="" src="images/0713.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        A variant of LSTM is gotten using peephole connections. This means that we let the gate layers look at the cell state. The above diagram adds peepholes to all the gates, but many papers will give some peepholes and not others.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h4 id="Coupled-Input-and-Forget-Gates">
+        Coupled Input and Forget Gates
+        <a class="anchor-link" href="#Coupled-Input-and-Forget-Gates">
+         ¶
+        </a>
+       </h4>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        Another variation is to use coupled forget and input gates. Instead of separately deciding what to forget and what we should add new information to, we make those decisions together. We only forget when we’re going to input something in its place. We only input new values to the state when we forget something older.
+       </p>
+       <p>
+        <img alt="" src="images/0714.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h4 id="GRU">
+        GRU
+        <a class="anchor-link" href="#GRU">
+         ¶
+        </a>
+       </h4>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <p>
+        We studied GRU earlier. GRU is nothing but a special type of LSTM. It combines the forget and input gates into a single “update gate.” It also merges the cell state and hidden state, and makes some other changes.
+       </p>
+       <p>
+        <img alt="" src="images/0715.png"/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <h1 id="References">
+        References
+        <a class="anchor-link" href="#References">
+         ¶
+        </a>
+       </h1>
+      </div>
+     </div>
+    </div>
+    <div class="cell border-box-sizing text_cell rendered">
+     <div class="prompt input_prompt">
+     </div>
+     <div class="inner_cell">
+      <div class="text_cell_render border-box-sizing rendered_html">
+       <ul>
+        <li>
+         <a href="https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks">
+          CS 230 - Deep Learning
+         </a>
+        </li>
+        <li>
+         <a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">
+          Understanding LSTM Networks
+         </a>
+        </li>
+        <li>
+         <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">
+          The Unreasonable Effectiveness of Recurrent Neural Networks
+         </a>
+        </li>
+        <li>
+         <a href="https://www.coursera.org/learn/nlp-sequence-models">
+          Sequence Model (Andrew NG)
+         </a>
+        </li>
+        <li>
+         <a href="https://towardsdatascience.com/backpropagation-in-rnn-explained-bdf853b4e1c2">
+          Backpropagation in RNN Explained
+         </a>
+        </li>
+        <li>
+         <a href="https://www.analyticsvidhya.com/blog/2021/03/introduction-to-long-short-term-memory-lstm">
+          Introduction to Long Short Term Memory (LSTM)
+         </a>
+        </li>
+        <li>
+         <a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21">
+          Illustrated Guide to LSTM’s and GRU’s: A step by step explanation
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
   </div>
-</body>
-
-
-
-
-
-
-
+ </body>
 </html>
