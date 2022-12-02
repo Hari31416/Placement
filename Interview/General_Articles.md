@@ -1,3 +1,5 @@
+# General Articles
+
 Here are some articles related to some general topic:
 
 - [What Is Data Analysis? (With Examples) (Coursera)](https://www.coursera.org/articles/what-is-data-analysis-with-examples)
