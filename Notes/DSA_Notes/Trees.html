@@ -13089,7 +13089,39 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Definitions">Definitions<a class="anchor-link" href="#Definitions">&#182;</a></h1>
+<p><h2 id="Contents">Contents<a href="#Contents"></a></h2>
+        <ol>
+        <li><a class="" href="#Tree">Tree</a></li></p>
+<ol><li><a class="" href="#Other-Node-Relationships">Other Node Relationships</a></li>
+<li><a class="" href="#Edges-and-Paths-in-Trees">Edges and Paths in Trees</a></li>
+<li><a class="" href="#Ordered-Trees">Ordered Trees</a></li>
+<li><a class="" href="#Some-More-Properties">Some More Properties</a></li>
+<li><a class="" href="#Depth-of-a-Node">Depth of a Node</a></li>
+<li><a class="" href="#Height-of-a-Node">Height of a Node</a></li>
+<li><a class="" href="#Types-of-Tree-data-structures">Types of Tree data structures</a></li>
+</ol><li><a class="" href="#Binary-Tree">Binary Tree</a></li>
+<ol><li><a class="" href="#Represenation">Represenation</a></li>
+<li><a class="" href="#A-Recursive-Binary-Tree-Definition">A Recursive Binary Tree Definition</a></li>
+<li><a class="" href="#Linked-Structure-for-Binary-Trees">Linked Structure for Binary Trees</a></li>
+<li><a class="" href="#Array-Based-Representation-of-a-Binary-Tree">Array-Based Representation of a Binary Tree</a></li>
+<li><a class="" href="#Types-of-Binary-Tree">Types of Binary Tree</a></li>
+<ol><li><a class="" href="#Full-Binary-Tree">Full Binary Tree</a></li>
+<li><a class="" href="#Complete-Binary-Tree">Complete Binary Tree</a></li>
+<li><a class="" href="#Perfect-Binary-Tree">Perfect Binary Tree</a></li>
+<li><a class="" href="#Balanced-Binary-Tree">Balanced Binary Tree</a></li>
+<li><a class="" href="#Degenerate-Binary-Tree">Degenerate Binary Tree</a></li>
+<li><a class="" href="#Binary-Search-Tree">Binary Search Tree</a></li>
+</ol></ol><li><a class="" href="#Heap">Heap</a></li>
+<ol><li><a class="" href="#Operations-of-Heap">Operations of Heap</a></li>
+<li><a class="" href="#Applications-of-Heaps">Applications of Heaps</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Tree">Tree<a class="anchor-link" href="#Tree">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13424,15 +13456,394 @@ children.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>One advantage of an array-based representation of a binary tree is that a posi-
-tion p can be represented by the single integer $f (p)$, and that position-based meth-
-ods such as root, parent, left, and right can be implemented using simple arithmetic
+<p>One advantage of an array-based representation of a binary tree is that a position p can be represented by the single integer $f (p)$, and that position-based methods such as root, parent, left, and right can be implemented using simple arithmetic
 operations on the number $f (p)$. Based on our formula for the level numbering, the
 left child of p has index $2 f (p) + 1$, the right child of p has index 2 $f (p) + 2$, and
 the parent of p has index $\lfloor( f (p) − 1)/2\rfloor$.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Types-of-Binary-Tree">Types of Binary Tree<a class="anchor-link" href="#Types-of-Binary-Tree">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Full-Binary-Tree">Full Binary Tree<a class="anchor-link" href="#Full-Binary-Tree">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A Binary Tree is a full binary tree if every node has 0 or 2 children. The following are the examples of a full binary tree. We can also say a full binary tree is a binary tree in which all nodes except leaf nodes have two children. It is also known as a proper binary tree.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<pre>               18
+           /       \  
+         15         30  
+        /  \        /  \
+      40    50    100   40
+
+
+             18
+           /    \   
+         15     20    
+        /  \       
+      40    50   
+    /   \
+   30   50
+
+
+               18
+            /     \  
+          40       30  
+                   /  \
+                 100   40</pre>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Complete-Binary-Tree">Complete Binary Tree<a class="anchor-link" href="#Complete-Binary-Tree">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A Binary Tree is a Complete Binary Tree if all the levels are completely filled except possibly the last level and the last level has all keys as left as possible.</p>
+<p>A complete binary tree is just like a full binary tree, but with three major differences:</p>
+<ul>
+<li>Every level must be completely filled</li>
+<li>All the leaf elements must lean towards the left.</li>
+<li>The last leaf element might not have a right sibling i.e. a complete binary tree doesn’t have to be a full binary tree.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<pre>               18
+           /       \  
+         15         30  
+        /  \        /  \
+      40    50    100   40
+
+
+               18
+           /       \  
+         15         30  
+        /  \        /  \
+      40    50    100   40
+     /  \   /
+    8   7  9 </pre>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Perfect-Binary-Tree">Perfect Binary Tree<a class="anchor-link" href="#Perfect-Binary-Tree">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A Binary tree is a Perfect Binary Tree in which all the internal nodes have two children and all leaf nodes are at the same level.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<pre>               18
+           /       \  
+         15         30  
+        /  \        /  \
+      40    50    100   40
+
+
+               18
+           /       \  
+         15         30  </pre>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Balanced-Binary-Tree">Balanced Binary Tree<a class="anchor-link" href="#Balanced-Binary-Tree">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A balanced binary tree, also referred to as a height-balanced binary tree, is defined as a binary tree in which the height of the left and right subtree of any node differ by not more than 1. Furthermore, the height of the tree is O(Log n) where n is the number of nodes.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://cdn.programiz.com/sites/tutorial2program/files/balanced-binary-tree.png" alt=""></p>
+<p><img src="https://cdn.programiz.com/sites/tutorial2program/files/unbalanced-binary-tree.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Degenerate-Binary-Tree">Degenerate Binary Tree<a class="anchor-link" href="#Degenerate-Binary-Tree">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A Tree where every internal node has one child. Such trees are performance-wise same as linked list.</p>
+<p>A degenerate or pathological tree is the tree having a single child either left or right.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<pre>      10
+      /
+    20
+     \
+     30
+      \
+      40    </pre>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Binary-Search-Tree">Binary Search Tree<a class="anchor-link" href="#Binary-Search-Tree">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A binary tree is binary search tree if it satisfies the following property:</p>
+<ol>
+<li>All nodes of left subtree are less than the root node</li>
+<li>All nodes of right subtree are more than the root node</li>
+<li>Both subtrees of each node are also BSTs i.e. they have the above two properties</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://cdn.programiz.com/sites/tutorial2program/files/bst-vs-not-bst.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Heap">Heap<a class="anchor-link" href="#Heap">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A Heap is a special Tree-based data structure in which the tree is a complete binary tree. It has the following properties:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>It’s a complete tree (All levels are completely filled except possibly the last level and the last level has all keys as left as possible). This property of Binary Heap makes them suitable to be stored in an array.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>A Binary Heap is either Min Heap or Max Heap. In a Min Binary Heap, the key at root must be minimum among all keys present in Binary Heap. The same property must be recursively true for all nodes in Binary Tree. Max Binary Heap is similar to MinHeap.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<pre>            10                      10
+         /      \               /       \  
+       20        100          15         30  
+      /                      /  \        /  \
+    30                     40    50    100   40
+</pre>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Operations-of-Heap">Operations of Heap<a class="anchor-link" href="#Operations-of-Heap">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul><li><strong>Heapify:</strong> a process of creating a heap from an array.</li><li><strong>Insertion:</strong> process to insert an element in existing heap time complexity O(log N).</li><li><strong>Deletion:</strong> deleting the top element of the heap or the highest priority element, and then organizing the heap and returning the element with time complexity O(log N).</li><li><strong>Peek:</strong> to check or find the most prior element in the heap, (max or min element for max and min heap).</li></ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Applications-of-Heaps">Applications of Heaps<a class="anchor-link" href="#Applications-of-Heaps">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Heap Sort uses Binary Heap to sort an array in O(nLogn) time.</li>
+<li>Priority queues can be efficiently implemented using Binary Heap because it supports insert(), delete() and extractmax(), decreaseKey() operations in O(logn) time.</li>
+<li>The priority queues are especially used in Graph Algorithms like Dijkstra’s Shortest Path and Prim’s Minimum Spanning Tree.</li>
+<li>Many problems can be efficiently solved using Heaps. For example<ul>
+<li>K’th Largest Element in an array.</li>
+<li>Sort an almost sorted array</li>
+<li>Merge K Sorted Arrays.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># A Python program to demonstrate common binary heap operations</span>
+  
+<span class="c1"># Import the heap functions from python library</span>
+<span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">heappush</span><span class="p">,</span> <span class="n">heappop</span><span class="p">,</span> <span class="n">heapify</span> 
+  
+<span class="c1"># heappop - pop and return the smallest element from heap</span>
+<span class="c1"># heappush - push the value item onto the heap, maintaining</span>
+<span class="c1">#             heap invarient</span>
+<span class="c1"># heapify - transform list into heap, in place, in linear time</span>
+  
+<span class="c1"># A class for Min Heap</span>
+<span class="k">class</span> <span class="nc">MinHeap</span><span class="p">:</span>
+      
+    <span class="c1"># Constructor to initialize a heap</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">heap</span> <span class="o">=</span> <span class="p">[]</span> 
+  
+    <span class="k">def</span> <span class="nf">parent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+      
+    <span class="c1"># Inserts a new key &#39;k&#39;</span>
+    <span class="k">def</span> <span class="nf">insertKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+        <span class="n">heappush</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">heap</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>           
+  
+    <span class="c1"># Decrease value of key at index &#39;i&#39; to new_val</span>
+    <span class="c1"># It is assumed that new_val is smaller than heap[i]</span>
+    <span class="k">def</span> <span class="nf">decreaseKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">new_val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">heap</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="o">=</span> <span class="n">new_val</span> 
+        <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">heap</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">heap</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
+            <span class="c1"># Swap heap[i] with heap[parent(i)]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">heap</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">heap</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">heap</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="p">(</span><span class="n">i</span><span class="p">)],</span> <span class="bp">self</span><span class="o">.</span><span class="n">heap</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+              
+    <span class="c1"># Method to remove minium element from min heap</span>
+    <span class="k">def</span> <span class="nf">extractMin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">heappop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">heap</span><span class="p">)</span>
+  
+    <span class="c1"># This functon deletes key at index i. It first reduces</span>
+    <span class="c1"># value to minus infinite and then calls extractMin()</span>
+    <span class="k">def</span> <span class="nf">deleteKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">decreaseKey</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;-inf&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">extractMin</span><span class="p">()</span>
+  
+    <span class="c1"># Get the minimum element from the heap</span>
+    <span class="k">def</span> <span class="nf">getMin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">heap</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  
+<span class="c1"># Driver pgoratm to test above function</span>
+<span class="n">heapObj</span> <span class="o">=</span> <span class="n">MinHeap</span><span class="p">()</span>
+<span class="n">heapObj</span><span class="o">.</span><span class="n">insertKey</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">heapObj</span><span class="o">.</span><span class="n">insertKey</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">heapObj</span><span class="o">.</span><span class="n">deleteKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">heapObj</span><span class="o">.</span><span class="n">insertKey</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">heapObj</span><span class="o">.</span><span class="n">insertKey</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">heapObj</span><span class="o">.</span><span class="n">insertKey</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">heapObj</span><span class="o">.</span><span class="n">insertKey</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+  
+<span class="nb">print</span><span class="p">(</span><span class="n">heapObj</span><span class="o">.</span><span class="n">extractMin</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heapObj</span><span class="o">.</span><span class="n">getMin</span><span class="p">())</span>
+<span class="n">heapObj</span><span class="o">.</span><span class="n">decreaseKey</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heapObj</span><span class="o">.</span><span class="n">getMin</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+4
+1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
