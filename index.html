@@ -1,583 +1,1061 @@
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://bucketforbookgallery.s3.ap-south-1.amazonaws.com/images/placement_icon.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        background-color: rgb(41, 41, 46);
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="https://bucketforbookgallery.s3.ap-south-1.amazonaws.com/images/placement_icon.png" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
-  <style>
-    body {
-      background-color: rgb(41, 41, 46);
-    }
+      .links {
+        text-decoration: none;
+        color: rgb(135, 192, 241);
+      }
 
-    .links {
-      text-decoration: none;
-      color: rgb(135, 192, 241);
-    }
+      .links-nav {
+        text-decoration: none;
+        color: rgb(26, 170, 214);
+        font-size: 1.5em;
+      }
 
-    .links-nav {
-      text-decoration: none;
-      color: rgb(26, 170, 214);
-      font-size: 1.5em;
-    }
+      #up-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+      }
+    </style>
+    <title>Placement</title>
+  </head>
 
-    #up-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-    }
-  </style>
-  <title>Placement</title>
-</head>
-
-<body class="text-light">
-  <div class="container py-2 text-center">
-    <h1 class="">Placement</h1>
-    <p class="lead">
-      This page contains the link for some of my Jupyter Notebook related to some articles, notes and problem notebooks
-      related to placement and other more general fields in HTML format for read only. <br>
-      You can launch a simple Python REPL by clicking <a class="links"
-        href="https://hari31416.github.io/Python/Codes/Projects/repl/repl_lite.html">here</a>.
-    </p>
-  </div>
-  <hr />
-  <div id="nav" class="container">
-    <div class="row text-center">
-      <ul style="list-style-type: none;">
-        <li>
-          <a href="#notes" class="links-nav">Notes</a>
-        </li>
-        <li>
-          <a href="#mldl" class="links-nav">ML and DL Notes</a>
-        </li>
-        <li><a href="#interview-cv" class="links-nav">Interview and CV Related Stuffs</a>
-        </li>
-        <li><a href="#project" class="links-nav">Projects</a>
-        </li>
-        <li><a href="#misc" class="links-nav">Miscellaneous</a>
-        </li>
-        <li><a href="#problem" class="links-nav">Problem Notbooks</a>
-        </li>
-      </ul>
-
+  <body class="text-light">
+    <div class="container py-2 text-center">
+      <h1 class="">Placement</h1>
+      <p class="lead">
+        This page contains the link for some of my Jupyter Notebook related to
+        some articles, notes and problem notebooks related to placement and
+        other more general fields in HTML format for read only. <br />
+        You can launch a simple Python REPL by clicking
+        <a
+          class="links"
+          href="https://hari31416.github.io/Python/Codes/Projects/repl/repl_lite.html"
+          >here</a
+        >.
+      </p>
     </div>
-
-  </div>
-  <hr />
-  <div class="container pb-5">
-    <div class="row">
-      <div class="col-9"></div>
-      <div class="col-2"><a id="up-btn" href="#nav"><button class="btn btn-lg btn-success">UP</button></a>
+    <hr />
+    <div id="nav" class="container">
+      <div class="row text-center">
+        <ul style="list-style-type: none">
+          <li>
+            <a href="#notes" class="links-nav">Notes</a>
+          </li>
+          <li>
+            <a href="#mldl" class="links-nav">ML and DL Notes</a>
+          </li>
+          <li>
+            <a href="#interview-cv" class="links-nav"
+              >Interview and CV Related Stuffs</a
+            >
+          </li>
+          <li><a href="#project" class="links-nav">Projects</a></li>
+          <li><a href="#misc" class="links-nav">Miscellaneous</a></li>
+          <li><a href="#problem" class="links-nav">Problem Notbooks</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-  <div class='container'>
-    <div class="col-lg-8 offset-lg-2">
-      <div class="index pt-2">
-        <!-- NOTES -->
-        <div>
-          <h2 id="notes">Notes</h2>
-          <h3>DSA</h3>
-          <ul>
-            <li>
-              <a href="Notes/DSA_Notes/Recursion.html" target="blank" class="links">Recursion</a>
-            </li>
-            <li>
-              <a href="Notes/DSA_Notes/LinkedList.html" target="blank" class="links">LinkedList</a>
-            </li>
-            <li>
-              <a href="Notes/DSA_Notes/Doubly_Linked_List.html" target="blank" class="links">Doubly Linked List</a>
-            </li>
-            <li>
-              <a href="Notes/DSA_Notes/Trees.html" target="blank" class="links">Trees</a>
-            </li>
-            <li>
-              <a href="Notes/DSA_Notes/Statck_and_Queue.html" target="blank" class="links">Stack and Queue</a>
-            </li>
-            <li>
-              <a href="Notes/DSA_Notes/Bitwise_operators.html" target="blank" class="links">Bitwise Operators</a>
-            </li>
-          </ul>
-          <h3>Python</h3>
-          <ul>
-            <li>
-              <a href="Notes/Python/Terminology.html" target="blank" class="links">Terminology</a>
-            </li>
-            <li>
-              <a href="Notes/Python/Scope_and_Namespace.html" target="blank" class="links">Scope and Namespace</a>
-            </li>
-            <li>
-              <a href="Notes/Python/Variables_and_Pointers.html" target="blank" class="links">Variables and
-                Pointers</a>
-            </li>
-            <li>
-              <a href="Notes/Misc/Programming_Language_Terms.html" target="blank" class="links">Language Terms</a>
-            </li>
-            <li>
-              <a href="Notes/Misc/Programming_Paradigms.html" target="blank" class="links">Programming Paradigms</a>
-            </li>
-            <li>
-              <a href="Notes/Python/OOP.html" target="blank" class="links">OOP</a>
-            </li>
-          </ul>
-          <h3>JavaScript</h3>
-          <ul>
-            <li>
-              <a href="Notes/JavaScript/Some_Methods.html" target="blank" class="links">Some Methods</a>
-            </li>
-            <li>
-              <a href="Notes/JavaScript/Terminology.html" target="blank" class="links">Terminology</a>
-            </li>
-          </ul>
-          <h3>MATLAB</h3>
-          <ul>
-            <li>
-              <a href="Notes/MATLAB/Arrays.html" target="blank" class="links">Arrays</a>
-            </li>
-            <li>
-              <a href="Notes/MATLAB/Code_Flow.html" target="blank" class="links">Code Flow</a>
-            </li>
-          </ul>
-          <h3>Latex</h3>
-          <ul>
-            <li>
-              <a href="Notes/Latex/Latex.html" target="blank" class="links">Basics of Latex</a>
-            </li>
-          </ul>
-          <h3>SQL</h3>
-          <ul>
-            <li>
-              <a href="Notes/SQL/DBMS.html" target="blank" class="links">Database and DBMS</a>
-            </li>
-            <li>
-              <a href="Notes/SQL/Basics.html" target="blank" class="links">Basics</a>
-            </li>
-            <li>
-              <a href="Notes/SQL/Intermediate_SQL.html" target="blank" class="links">Intermediate SQL</a>
-            </li>
-            <li>
-              <a href="Notes/SQL/Joining_SQL_Tables.html" target="blank" class="links">Joining SQL Tables</a>
-            </li>
-            <li>
-              <a href="Notes/SQL/MySQL_Functions.html" target="blank" class="links">MySQL Functions</a>
-            </li>
-            <li>
-              <a href="Notes/SQL/More.html" target="blank" class="links">Some More Stuffs</a>
-            </li>
-            <li>
-              <a href="Notes/SQL/ERD.html" target="blank" class="links">ERD and UML</a>
-            </li>
-          </ul>
-          <h3>MongoDB</h3>
-          <ul>
-            <li>
-              <a href="Notes/MongoDB/Basics.html" target="blank" class="links">Basics of MongoDB and Databases</a>
-            </li>
-            <li>
-              <a href="Notes/MongoDB/API.html" target="blank" class="links">API of MongoDB</a>
-            </li>
-          </ul>
-          <h3>Finance</h3>
-          <ul><li>
-            <a href="Notes/Finance/CAPM.html" target="blank" class="links">CAPM</a>
-          </li><li>
-            <a href="Notes/Finance/Module_1.html" target="blank" class="links">Module 1</a>
-          </li></ul>
-          <h3>React</h3>
-          <ul>
-            <li>
-              <a href="Notes/React/W1.html" target="blank" class="links">Notes 1</a>
-            </li>
-          </ul>
-          <h3>Statistics</h3>
-          <ul>
-            <li>
-              <a href="Notes/Statistics/Bayse_Theorem.html" target="blank" class="links">Bayse Theorem</a>
-            </li>
-            <li>
-              <a href="Notes/Statistics/Probability_Distributions.html" target="blank" class="links">Probability
-                Distributions</a>
-            </li>
-            <li>
-              <a href="Notes/Statistics/Statistical_Tests.html" target="blank" class="links">Statistical Tests</a>
-            </li>
-            <li>
-              <a href="Notes/Statistics/Statistics_Measures_and_Sampling.html" target="blank" class="links">Statistics
-                Measures
-                and Sampling</a>
-            </li>
-          </ul>
-          <h3>Tableau</h3>
-          <ul>
-            <li>
-              <a href="Notes/Tableau/Basics.html" target="blank" class="links">Basics</a>
-            </li>
-            <li>
-              <a href="Notes/Tableau/Calculations.html" target="blank" class="links">Calculations</a>
-            </li>
-          </ul>
-          <h3>Libraries</h3>
-          <ul>
-            <li>
-              <a href="Notes/Libraries/statsmodel.html" target="blank" class="links">statsmodel</a>
-            </li>
-          </ul>
-          <h5>TensorFlow</h5>
-          <ul>
-            <li>
-              <a href="Notes/Libraries/TensorFlow/Tensor.html" target="blank" class="links">Tensor</a>
-            </li>
-            <li>
-              <a href="Notes/Libraries/TensorFlow/TensorFlow_API.html" target="blank" class="links">TensorFlow API</a>
-            </li>
-          </ul>
-        </div>
-        <hr>
-        <!-- ML AND DL -->
-        <div>
-          <h2 id="mldl">ML and DL</h2>
-
-          <h3>Machine Learning</h3>
-          <ul>
-            <li>
-              <a href="Notes/ML/Linear_Regression.html" target="blank" class="links">Linear Regression</a>
-            </li>
-            <li>
-              <a href="Notes/ML/Logistic_Regression.html" target="blank" class="links">Logistic Regression</a>
-            </li>
-            <li>
-              <a href="Notes/ML/Stochastic_Gradient_Descent.html" target="blank" class="links">Stochastic Gradient
-                Descent</a>
-            </li>
-            <li>
-              <a href="Notes/ML/Support_Vector_Machine.html" target="blank" class="links">Support Vector
-                Machine</a>
-            </li>
-            <li>
-              <a href="Notes/ML/Nearest_Neighbors.html" target="blank" class="links">Nearest Neighbors</a>
-            </li>
-            <li>
-              <a href="Notes/ML/Feature_Selection.html" target="blank" class="links">Feature Selection</a>
-            </li>
-            <li>
-              <a href="Notes/ML/Decision_Trees.html" target="blank" class="links">Decision Trees</a>
-            </li>
-            <li>
-              <a href="Notes/ML/Ensemble_Learning.html" target="blank" class="links">Ensemble Learning</a>
-            </li>
-            <li>
-              <a href="Notes/ML/Multiclass_Multioutput_Algorithm.html" target="blank" class="links">Multiclass
-                Multioutput Algorithm</a>
-            </li>
-            <li>
-              <a href="Notes/ML/Clustering.html" target="blank" class="links">Clustering</a>
-            </li>
-          </ul>
-          <h3>Deep Learning</h3>
-          <ul>
-            <li>
-              <a href="Notes/DL/Neural_Networks.html" target="blank" class="links">Neural Networks</a>
-            </li>
-            <li>
-              <a href="Notes/DL/Creating_NN_From_Scratch.html" target="blank" class="links">Creating NN From Scratch</a>
-            </li>
-            <li>
-              <a href="Notes/DL/Different_Initializations.html" target="blank" class="links">Different
-                Initializations</a>
-            </li>
-            <li>
-              <a href="Notes/DL/Optimization_Methods.html" target="blank" class="links">Optimization Methods</a>
-            </li>
-            <li>
-              <a href="Notes/DL/CNN.html" target="blank" class="links">CNN</a>
-            </li>
-            <li>
-              <a href="Notes/DL/Sequence_Models.html" target="blank" class="links">Sequence Models</a>
-            </li>
-          </ul>
-        </div>
-        <hr>
-        <!-- INTERVIEW AND CV -->
-        <div>
-          <h2 id="interview-cv">Interview and CV Related Stuffs</h2>
-          <h3>General</h3>
-          <ul>
-            <li>
-              <a class="links" target="_blank" href="CV_Related/Analytics.html">
-                Analytics Jobs
-              </a>
-            </li>
-            <li>
-              <a class="links" target="_blank" href="CV_Related/IT.html">
-                IT Jobs
-              </a>
-            </li>
-            <li>
-              <a class="links" target="_blank" href="CV_Related/Keywords.html">
-                Keywords
-              </a>
-            </li>
-          </ul>
-          <h3>CV Related Stuffs</h3>
-          <ul>
-            <li>
-              <a class="links" target="_blank" href="CV_Related/Certifications.html">
-                Certifications
-              </a>
-            </li>
-            <li>
-              <a class="links" target="_blank" href="CV_Related/Skill.html">
-                Skill
-              </a>
-            </li>
-            <li>
-              <a class="links" target="_blank" href="CV_Related/Projects.html">
-                Projects
-              </a>
-            </li>
-          </ul>
-          <h3>Some External Articles</h3>
-          <ul>
-            <li>
-              <a class="links" target="_blank" href="Interview/Interview_Articles.html">
-                Interview Articles
-              </a>
-            </li>
-            <li>
-              <a class="links" target="_blank" href="Interview/General_Articles.html">
-                General Articles
-              </a>
-            </li>
-            <li>
-              <a class="links" target="_blank" href="Interview/Articles_Related_To_ML_DL.html">
-                Articles Related to ML and DL
-              </a>
-            </li>
-            <li>
-              <a class="links" target="_blank" href="Interview/Quant_and_Case_Study.html">
-                Articles Related to Quant, Puzzles and Case Study
-              </a>
-            </li>
-          </ul>
-          <h3>Some Notebooks of Mine</h3>
-          <ul>
-            <li>
-              <a class="links" target="_blank" href="Interview/Some_HR_Questions.html">
-                HR Questions
-              </a>
-            </li>
-          </ul>
-        </div>
-        <hr>
-        <!-- PROJECTS -->
-        <div>
-          <h2 id="project">Projects</h2>
-          <h3>General</h3>
-          <ul>
-            <li>
-              <a class="links" target="_blank" href="Projects/What_To_Look_For.html">
-                What to Look For?
-              </a>
-            </li>
-            <li>
-              <a class="links" target="_blank" href="Projects/Overview_ML.html">
-                Overview for ML Projects
-              </a>
-            </li>
-            <li>
-              <a class="links" target="_blank" href="Projects/Overview_Web.html">
-                Overview for Web Projects
-              </a>
-            </li>
-          </ul>
-          <h3>Housing Price</h3>
-          <ul>
-            <li>
-              <a class="links" target="_blank" href="Projects/House_Price/Overview.html">
-                <b>Overview</b>
-              </a>
-            </li>
-            <li>
-              <a href="Projects/House_Price/Data_Cleaning.html" target="blank" class="links">Data Cleaning</a>
-            </li>
-            <li>
-              <a href="Projects/House_Price/EDA_Feature_Engineering.html" target="blank" class="links">EDA Feature
-                Engineering</a>
-            </li>
-            <li>
-              <a href="Projects/House_Price/Preprocessing.html" target="blank" class="links">Preprocessing</a>
-            </li>
-            <li>
-              <a href="Projects/House_Price/Modeling.html" target="blank" class="links">Modeling</a>
-            </li>
-          </ul>
-          <h3>Digit Recognizer</h3>
-          <ul>
-            <li>
-              <a class="links" target="_blank" href="Projects/Digit_Recognizer/Overview.html">
-                <b>Overview</b>
-              </a>
-            </li>
-            <li>
-              <a href="Projects/Digit_Recognizer/EDA_and_ML_Models.html" target="blank" class="links">EDA and ML
-                Models</a>
-            </li>
-            <li>
-              <a href="Projects/Digit_Recognizer/DL_Models.html" target="blank" class="links">DL Models</a>
-            </li>
-          </ul>
-          <h3>Disaster Tweets</h3>
-          <ul>
-            <li>
-              <a class="links" target="_blank" href="Projects/Disaster_Tweets/Overview.html">
-                <b>Overview</b>
-              </a>
-            </li>
-            <li>
-              <a href="Projects/Disaster_Tweets/Preprocessing.html" target="blank" class="links">Preprocessing</a>
-            </li>
-            <li>
-              <a href="Projects/Disaster_Tweets/modeling.html" target="blank" class="links">Models</a>
-            </li>
-          </ul>
-          <h3>TensorFlow Speech Recognition</h3>
-          <ul>
-            <li>
-              <a class="links" target="_blank" href="Projects/TensorFlow_Speech_Recognition/Overview.html">
-                <b>Overview</b>
-              </a>
-            </li>
-            <li>
-              <a href="Projects/TensorFlow_Speech_Recognition/Preprocessing_Models.html" target="blank"
-                class="links">Preprocessing and Models</a>
-            </li>
-          </ul>
-          <h3>Food Vision</h3>
-          <ul>
-            <li>
-              <a class="links" target="_blank" href="Projects/Food_Vision/Overview.html">
-                <b>Overview</b>
-              </a>
-            </li>
-            <li>
-              <a href="Projects/Food_Vision/Food_Visiom.html" target="blank" class="links">Food Vision</a>
-            </li>
-          </ul>
-          <h3>Book Gallery</h3>
-          <ul>
-            <li>
-              <a class="links" target="_blank" href="Projects/Book_Gallery/Overview.html">
-                <b>Overview</b>
-              </a>
-            </li>
-          </ul>
-          <h3>MLS</h3>
-          <ul>
-            <li>
-              <a href="Projects/MLS/Notes.html" target="blank" class="links">Notes</a>
-            </li>
-          </ul>
-          <h3>Mini Project</h3>
-          <ul>
-            <li>
-              <a href="Projects/Mini_Project/Overview.html" target="blank" class="links">Overview</a>
-            </li>
-          </ul>
-        </div>
-        <!-- MISCELLANEOUS -->
-        <hr>
-        <div>
-          <h2 id="misc">Miscellaneous</h2>
-          <ul>
-            <li>
-              <a href="Notes/Misc/Anamoly_Detection.html" target="blank" class="links">Anamoly Detection</a>
-            </li>
-            <li>
-              <a href="Notes/Misc/Bias_Variance.html" target="blank" class="links">Bias Variance</a>
-            </li>
-            <li>
-              <a href="Notes/Misc/Loss_Functions_and_Errors.html" target="blank" class="links">Loss Functions and
-                Errors</a>
-            </li>
-            <li>
-              <a href="Notes/Misc/CSS_Selection_Rules.html" target="blank" class="links">CSS Selection Rules</a>
-            </li>
-            <li>
-              <a href="Notes/Misc/Course_Overviews.html" target="blank" class="links">Course Overviews</a>
-            </li>
-            <li>
-              <a href="Interview/Some_Metrics.html" target="blank" class="links">Some Metrics</a>
-            </li>
-            <li>
-              <a href="Notes/Misc/Finance_Terms.html" target="blank" class="links">Some Finance Terms</a>
-            </li>
-            <li>
-              <a href="Notes/Misc/Sectors.html" target="blank" class="links">Sectors</a>
-            </li>
-            <li>
-              <a href="Notes/Misc/Big_Data_Notes.html" target="blank" class="links">Articles Related to Big Data</a>
-            </li>
-          </ul>
-        </div>
-        <!-- PROBLEMS -->
-        <hr>
-        <div>
-          <h2 id="problem">Problem Notbooks</h2>
-          <h4><a class="links" href="Problems/All_Problems.html">All Problems</a></h4>
-          <h3>LeetCode</h3>
-          <ul>
-            <li>
-              <a href="Problems/LeetCode/Easy_1.html" target="blank" class="links">Easy 1</a>
-            </li>
-            <li>
-              <a href="Problems/LeetCode/Easy_2.html" target="blank" class="links">Easy 2</a>
-            </li>
-            <li>
-              <a href="Problems/LeetCode/Easy_3.html" target="blank" class="links">Easy 3</a>
-            </li>
-            <li>
-              <a href="Problems/LeetCode/Easy_4.html" target="blank" class="links">Easy 4</a>
-            </li>
-            <li>
-              <a href="Problems/LeetCode/Easy_5.html" target="blank" class="links">Easy 5</a>
-            </li>
-            <li>
-              <a href="Problems/LeetCode/Easy_6.html" target="blank" class="links">Easy 6</a>
-            </li>
-            <li>
-              <a href="Problems/LeetCode/Medium_1.html" target="blank" class="links">Medium 1</a>
-            </li>
-            <li>
-              <a href="Problems/LeetCode/Medium_2.html" target="blank" class="links">Medium 2</a>
-            </li>
-            <li>
-              <a href="Problems/LeetCode/Medium_3.html" target="blank" class="links">Medium 3</a>
-            </li>
-          </ul>
-          <h3>GeeksforGeeks</h3>
-          <ul>
-            <li>
-              <a href="Problems/GeeksforGeeks/Easy_1.html" target="blank" class="links">Easy 1</a>
-            </li>
-            <li>
-              <a href="Problems/GeeksforGeeks/Easy_2.html" target="blank" class="links">Easy 2</a>
-            </li>
-            <li>
-              <a href="Problems/GeeksforGeeks/Easy_3.html" target="blank" class="links">Easy 3</a>
-            </li>
-            <li>
-              <a href="Problems/GeeksforGeeks/Easy_4.html" target="blank" class="links">Easy 4</a>
-            </li>
-          </ul>
+    <hr />
+    <div class="container pb-5">
+      <div class="row">
+        <div class="col-9"></div>
+        <div class="col-2">
+          <a id="up-btn" href="#nav"
+            ><button class="btn btn-lg btn-success">UP</button></a
+          >
         </div>
       </div>
     </div>
-  </div>
-</body>
+    <div class="container">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="index pt-2">
+          <!-- NOTES -->
+          <div>
+            <h2 id="notes">Notes</h2>
+            <h3>DSA</h3>
+            <ul>
+              <li>
+                <a
+                  href="Notes/DSA_Notes/Recursion.html"
+                  target="blank"
+                  class="links"
+                  >Recursion</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/DSA_Notes/LinkedList.html"
+                  target="blank"
+                  class="links"
+                  >LinkedList</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/DSA_Notes/Doubly_Linked_List.html"
+                  target="blank"
+                  class="links"
+                  >Doubly Linked List</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/DSA_Notes/Trees.html"
+                  target="blank"
+                  class="links"
+                  >Trees</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/DSA_Notes/Statck_and_Queue.html"
+                  target="blank"
+                  class="links"
+                  >Stack and Queue</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/DSA_Notes/Bitwise_operators.html"
+                  target="blank"
+                  class="links"
+                  >Bitwise Operators</a
+                >
+              </li>
+            </ul>
+            <h3>Python</h3>
+            <ul>
+              <li>
+                <a
+                  href="Notes/Python/Terminology.html"
+                  target="blank"
+                  class="links"
+                  >Terminology</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Python/Scope_and_Namespace.html"
+                  target="blank"
+                  class="links"
+                  >Scope and Namespace</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Python/Variables_and_Pointers.html"
+                  target="blank"
+                  class="links"
+                  >Variables and Pointers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Misc/Programming_Language_Terms.html"
+                  target="blank"
+                  class="links"
+                  >Language Terms</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Misc/Programming_Paradigms.html"
+                  target="blank"
+                  class="links"
+                  >Programming Paradigms</a
+                >
+              </li>
+              <li>
+                <a href="Notes/Python/OOP.html" target="blank" class="links"
+                  >OOP</a
+                >
+              </li>
+            </ul>
+            <h3>JavaScript</h3>
+            <ul>
+              <li>
+                <a
+                  href="Notes/JavaScript/Some_Methods.html"
+                  target="blank"
+                  class="links"
+                  >Some Methods</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/JavaScript/Terminology.html"
+                  target="blank"
+                  class="links"
+                  >Terminology</a
+                >
+              </li>
+            </ul>
+            <h3>MATLAB</h3>
+            <ul>
+              <li>
+                <a href="Notes/MATLAB/Arrays.html" target="blank" class="links"
+                  >Arrays</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/MATLAB/Code_Flow.html"
+                  target="blank"
+                  class="links"
+                  >Code Flow</a
+                >
+              </li>
+            </ul>
+            <h3>Latex</h3>
+            <ul>
+              <li>
+                <a href="Notes/Latex/Latex.html" target="blank" class="links"
+                  >Basics of Latex</a
+                >
+              </li>
+            </ul>
+            <h3>SQL</h3>
+            <ul>
+              <li>
+                <a href="Notes/SQL/DBMS.html" target="blank" class="links"
+                  >Database and DBMS</a
+                >
+              </li>
+              <li>
+                <a href="Notes/SQL/Basics.html" target="blank" class="links"
+                  >Basics</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/SQL/Intermediate_SQL.html"
+                  target="blank"
+                  class="links"
+                  >Intermediate SQL</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/SQL/Joining_SQL_Tables.html"
+                  target="blank"
+                  class="links"
+                  >Joining SQL Tables</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/SQL/MySQL_Functions.html"
+                  target="blank"
+                  class="links"
+                  >MySQL Functions</a
+                >
+              </li>
+              <li>
+                <a href="Notes/SQL/More.html" target="blank" class="links"
+                  >Some More Stuffs</a
+                >
+              </li>
+              <li>
+                <a href="Notes/SQL/ERD.html" target="blank" class="links"
+                  >ERD and UML</a
+                >
+              </li>
+            </ul>
+            <h3>MongoDB</h3>
+            <ul>
+              <li>
+                <a href="Notes/MongoDB/Basics.html" target="blank" class="links"
+                  >Basics of MongoDB and Databases</a
+                >
+              </li>
+              <li>
+                <a href="Notes/MongoDB/API.html" target="blank" class="links"
+                  >API of MongoDB</a
+                >
+              </li>
+            </ul>
+            <h3>Finance</h3>
+            <ul>
+              <li>
+                <a href="Notes/Finance/CAPM.html" target="blank" class="links"
+                  >CAPM</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Finance/Module_1.html"
+                  target="blank"
+                  class="links"
+                  >Module 1</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Finance/Module_2.html"
+                  target="blank"
+                  class="links"
+                  >Module 2</a
+                >
+              </li>
+            </ul>
+            <h3>React</h3>
+            <ul>
+              <li>
+                <a href="Notes/React/W1.html" target="blank" class="links"
+                  >Week 1</a
+                >
+              </li>
+            </ul>
+            <h3>Statistics</h3>
+            <ul>
+              <li>
+                <a
+                  href="Notes/Statistics/Bayse_Theorem.html"
+                  target="blank"
+                  class="links"
+                  >Bayse Theorem</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Statistics/Probability_Distributions.html"
+                  target="blank"
+                  class="links"
+                  >Probability Distributions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Statistics/Statistical_Tests.html"
+                  target="blank"
+                  class="links"
+                  >Statistical Tests</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Statistics/Statistics_Measures_and_Sampling.html"
+                  target="blank"
+                  class="links"
+                  >Statistics Measures and Sampling</a
+                >
+              </li>
+            </ul>
+            <h3>Tableau</h3>
+            <ul>
+              <li>
+                <a href="Notes/Tableau/Basics.html" target="blank" class="links"
+                  >Basics</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Tableau/Calculations.html"
+                  target="blank"
+                  class="links"
+                  >Calculations</a
+                >
+              </li>
+            </ul>
+            <h3>Libraries</h3>
+            <ul>
+              <li>
+                <a
+                  href="Notes/Libraries/statsmodel.html"
+                  target="blank"
+                  class="links"
+                  >statsmodel</a
+                >
+              </li>
+            </ul>
+            <h5>TensorFlow</h5>
+            <ul>
+              <li>
+                <a
+                  href="Notes/Libraries/TensorFlow/Tensor.html"
+                  target="blank"
+                  class="links"
+                  >Tensor</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Libraries/TensorFlow/TensorFlow_API.html"
+                  target="blank"
+                  class="links"
+                  >TensorFlow API</a
+                >
+              </li>
+            </ul>
+          </div>
+          <hr />
+          <!-- ML AND DL -->
+          <div>
+            <h2 id="mldl">ML and DL</h2>
 
+            <h3>Machine Learning</h3>
+            <ul>
+              <li>
+                <a
+                  href="Notes/ML/Linear_Regression.html"
+                  target="blank"
+                  class="links"
+                  >Linear Regression</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/ML/Logistic_Regression.html"
+                  target="blank"
+                  class="links"
+                  >Logistic Regression</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/ML/Stochastic_Gradient_Descent.html"
+                  target="blank"
+                  class="links"
+                  >Stochastic Gradient Descent</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/ML/Support_Vector_Machine.html"
+                  target="blank"
+                  class="links"
+                  >Support Vector Machine</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/ML/Nearest_Neighbors.html"
+                  target="blank"
+                  class="links"
+                  >Nearest Neighbors</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/ML/Feature_Selection.html"
+                  target="blank"
+                  class="links"
+                  >Feature Selection</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/ML/Decision_Trees.html"
+                  target="blank"
+                  class="links"
+                  >Decision Trees</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/ML/Ensemble_Learning.html"
+                  target="blank"
+                  class="links"
+                  >Ensemble Learning</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/ML/Multiclass_Multioutput_Algorithm.html"
+                  target="blank"
+                  class="links"
+                  >Multiclass Multioutput Algorithm</a
+                >
+              </li>
+              <li>
+                <a href="Notes/ML/Clustering.html" target="blank" class="links"
+                  >Clustering</a
+                >
+              </li>
+            </ul>
+            <h3>Deep Learning</h3>
+            <ul>
+              <li>
+                <a
+                  href="Notes/DL/Neural_Networks.html"
+                  target="blank"
+                  class="links"
+                  >Neural Networks</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/DL/Creating_NN_From_Scratch.html"
+                  target="blank"
+                  class="links"
+                  >Creating NN From Scratch</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/DL/Different_Initializations.html"
+                  target="blank"
+                  class="links"
+                  >Different Initializations</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/DL/Optimization_Methods.html"
+                  target="blank"
+                  class="links"
+                  >Optimization Methods</a
+                >
+              </li>
+              <li>
+                <a href="Notes/DL/CNN.html" target="blank" class="links">CNN</a>
+              </li>
+              <li>
+                <a
+                  href="Notes/DL/Sequence_Models.html"
+                  target="blank"
+                  class="links"
+                  >Sequence Models</a
+                >
+              </li>
+            </ul>
+          </div>
+          <hr />
+          <!-- INTERVIEW AND CV -->
+          <div>
+            <h2 id="interview-cv">Interview and CV Related Stuffs</h2>
+            <h3>General</h3>
+            <ul>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="CV_Related/Analytics.html"
+                >
+                  Analytics Jobs
+                </a>
+              </li>
+              <li>
+                <a class="links" target="_blank" href="CV_Related/IT.html">
+                  IT Jobs
+                </a>
+              </li>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="CV_Related/Keywords.html"
+                >
+                  Keywords
+                </a>
+              </li>
+            </ul>
+            <h3>CV Related Stuffs</h3>
+            <ul>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="CV_Related/Certifications.html"
+                >
+                  Certifications
+                </a>
+              </li>
+              <li>
+                <a class="links" target="_blank" href="CV_Related/Skill.html">
+                  Skill
+                </a>
+              </li>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="CV_Related/Projects.html"
+                >
+                  Projects
+                </a>
+              </li>
+            </ul>
+            <h3>Some External Articles</h3>
+            <ul>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="Interview/Interview_Articles.html"
+                >
+                  Interview Articles
+                </a>
+              </li>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="Interview/General_Articles.html"
+                >
+                  General Articles
+                </a>
+              </li>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="Interview/Articles_Related_To_ML_DL.html"
+                >
+                  Articles Related to ML and DL
+                </a>
+              </li>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="Interview/Quant_and_Case_Study.html"
+                >
+                  Articles Related to Quant, Puzzles and Case Study
+                </a>
+              </li>
+            </ul>
+            <h3>Some Notebooks of Mine</h3>
+            <ul>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="Interview/Some_HR_Questions.html"
+                >
+                  HR Questions
+                </a>
+              </li>
+            </ul>
+          </div>
+          <hr />
+          <!-- PROJECTS -->
+          <div>
+            <h2 id="project">Projects</h2>
+            <h3>General</h3>
+            <ul>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="Projects/What_To_Look_For.html"
+                >
+                  What to Look For?
+                </a>
+              </li>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="Projects/Overview_ML.html"
+                >
+                  Overview for ML Projects
+                </a>
+              </li>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="Projects/Overview_Web.html"
+                >
+                  Overview for Web Projects
+                </a>
+              </li>
+            </ul>
+            <h3>Housing Price</h3>
+            <ul>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="Projects/House_Price/Overview.html"
+                >
+                  <b>Overview</b>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="Projects/House_Price/Data_Cleaning.html"
+                  target="blank"
+                  class="links"
+                  >Data Cleaning</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Projects/House_Price/EDA_Feature_Engineering.html"
+                  target="blank"
+                  class="links"
+                  >EDA Feature Engineering</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Projects/House_Price/Preprocessing.html"
+                  target="blank"
+                  class="links"
+                  >Preprocessing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Projects/House_Price/Modeling.html"
+                  target="blank"
+                  class="links"
+                  >Modeling</a
+                >
+              </li>
+            </ul>
+            <h3>Digit Recognizer</h3>
+            <ul>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="Projects/Digit_Recognizer/Overview.html"
+                >
+                  <b>Overview</b>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="Projects/Digit_Recognizer/EDA_and_ML_Models.html"
+                  target="blank"
+                  class="links"
+                  >EDA and ML Models</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Projects/Digit_Recognizer/DL_Models.html"
+                  target="blank"
+                  class="links"
+                  >DL Models</a
+                >
+              </li>
+            </ul>
+            <h3>Disaster Tweets</h3>
+            <ul>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="Projects/Disaster_Tweets/Overview.html"
+                >
+                  <b>Overview</b>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="Projects/Disaster_Tweets/Preprocessing.html"
+                  target="blank"
+                  class="links"
+                  >Preprocessing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Projects/Disaster_Tweets/modeling.html"
+                  target="blank"
+                  class="links"
+                  >Models</a
+                >
+              </li>
+            </ul>
+            <h3>TensorFlow Speech Recognition</h3>
+            <ul>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="Projects/TensorFlow_Speech_Recognition/Overview.html"
+                >
+                  <b>Overview</b>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="Projects/TensorFlow_Speech_Recognition/Preprocessing_Models.html"
+                  target="blank"
+                  class="links"
+                  >Preprocessing and Models</a
+                >
+              </li>
+            </ul>
+            <h3>Food Vision</h3>
+            <ul>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="Projects/Food_Vision/Overview.html"
+                >
+                  <b>Overview</b>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="Projects/Food_Vision/Food_Visiom.html"
+                  target="blank"
+                  class="links"
+                  >Food Vision</a
+                >
+              </li>
+            </ul>
+            <h3>Book Gallery</h3>
+            <ul>
+              <li>
+                <a
+                  class="links"
+                  target="_blank"
+                  href="Projects/Book_Gallery/Overview.html"
+                >
+                  <b>Overview</b>
+                </a>
+              </li>
+            </ul>
+            <h3>MLS</h3>
+            <ul>
+              <li>
+                <a href="Projects/MLS/Notes.html" target="blank" class="links"
+                  >Notes</a
+                >
+              </li>
+            </ul>
+            <h3>Mini Project</h3>
+            <ul>
+              <li>
+                <a
+                  href="Projects/Mini_Project/Overview.html"
+                  target="blank"
+                  class="links"
+                  >Overview</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- MISCELLANEOUS -->
+          <hr />
+          <div>
+            <h2 id="misc">Miscellaneous</h2>
+            <ul>
+              <li>
+                <a
+                  href="Notes/Misc/Anamoly_Detection.html"
+                  target="blank"
+                  class="links"
+                  >Anamoly Detection</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Misc/Bias_Variance.html"
+                  target="blank"
+                  class="links"
+                  >Bias Variance</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Misc/Loss_Functions_and_Errors.html"
+                  target="blank"
+                  class="links"
+                  >Loss Functions and Errors</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Misc/CSS_Selection_Rules.html"
+                  target="blank"
+                  class="links"
+                  >CSS Selection Rules</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Misc/Course_Overviews.html"
+                  target="blank"
+                  class="links"
+                  >Course Overviews</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Interview/Some_Metrics.html"
+                  target="blank"
+                  class="links"
+                  >Some Metrics</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Misc/Finance_Terms.html"
+                  target="blank"
+                  class="links"
+                  >Some Finance Terms</a
+                >
+              </li>
+              <li>
+                <a href="Notes/Misc/Sectors.html" target="blank" class="links"
+                  >Sectors</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Notes/Misc/Big_Data_Notes.html"
+                  target="blank"
+                  class="links"
+                  >Articles Related to Big Data</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- PROBLEMS -->
+          <hr />
+          <div>
+            <h2 id="problem">Problem Notbooks</h2>
+            <h4>
+              <a class="links" href="Problems/All_Problems.html"
+                >All Problems</a
+              >
+            </h4>
+            <h3>LeetCode</h3>
+            <ul>
+              <li>
+                <a
+                  href="Problems/LeetCode/Easy_1.html"
+                  target="blank"
+                  class="links"
+                  >Easy 1</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Problems/LeetCode/Easy_2.html"
+                  target="blank"
+                  class="links"
+                  >Easy 2</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Problems/LeetCode/Easy_3.html"
+                  target="blank"
+                  class="links"
+                  >Easy 3</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Problems/LeetCode/Easy_4.html"
+                  target="blank"
+                  class="links"
+                  >Easy 4</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Problems/LeetCode/Easy_5.html"
+                  target="blank"
+                  class="links"
+                  >Easy 5</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Problems/LeetCode/Easy_6.html"
+                  target="blank"
+                  class="links"
+                  >Easy 6</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Problems/LeetCode/Medium_1.html"
+                  target="blank"
+                  class="links"
+                  >Medium 1</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Problems/LeetCode/Medium_2.html"
+                  target="blank"
+                  class="links"
+                  >Medium 2</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Problems/LeetCode/Medium_3.html"
+                  target="blank"
+                  class="links"
+                  >Medium 3</a
+                >
+              </li>
+            </ul>
+            <h3>GeeksforGeeks</h3>
+            <ul>
+              <li>
+                <a
+                  href="Problems/GeeksforGeeks/Easy_1.html"
+                  target="blank"
+                  class="links"
+                  >Easy 1</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Problems/GeeksforGeeks/Easy_2.html"
+                  target="blank"
+                  class="links"
+                  >Easy 2</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Problems/GeeksforGeeks/Easy_3.html"
+                  target="blank"
+                  class="links"
+                  >Easy 3</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Problems/GeeksforGeeks/Easy_4.html"
+                  target="blank"
+                  class="links"
+                  >Easy 4</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
