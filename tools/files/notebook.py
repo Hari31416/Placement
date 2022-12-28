@@ -10,6 +10,8 @@ import tqdm
 def vprint(text, verbose=1, **kwargs):
     if verbose:
         print(text, **kwargs)
+
+
 class Notebook:
     """
     Tools for Jupyter Notebooks. Available methods are:
@@ -141,7 +143,7 @@ class Notebook:
         vprint("Creating the Contents.", verbose=verbose)
         start = "<ol>"
         end = "</ol>"
-        string = f"""<h2 id="Contents">Contents<a href="#Contents"></a></h2>
+        string = f"""<h1 id="Contents">Contents<a href="#Contents"></a></h1>
         {start}
         """
         current_header = "h1"
