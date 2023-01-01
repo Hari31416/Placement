@@ -142,3 +142,30 @@ def create_weight(num_stock, weight_type="equal"):
 
     else:
         raise ValueError("Weight type not supported")
+
+
+def bigger_frequency(freq1, freq2):
+    """
+    Check if `freq1` is a bigger frequency than `freq2`
+
+    Parameters
+    ----------
+    freq1 : str
+        Frequency 1
+    freq2 : str
+        Frequency 2
+
+    Returns
+    -------
+    bool
+        True if `freq1` is bigger than `freq2`
+    """
+
+    freq_map = {
+        "D": 1,
+        "W": 2,
+        "M": 3,
+        "Q": 4,
+        "Y": 5,
+    }
+    return freq_map[freq1] > freq_map[freq2]

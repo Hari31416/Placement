@@ -75,7 +75,7 @@ class Model:
         print("Adding portfolio...")
         self.portfolio.summary(frequency=self.frequency, weights=weights)
 
-    def update_portfolio(self, portfolio: Portfolio, weights=None):
+    def update_portfolio(self, portfolio: Portfolio, weights="equal"):
         """
         Updates the portfolio to the new portfolio
 
@@ -84,7 +84,7 @@ class Model:
         portfolio : Portfolio
             New portfolio
         weights : list, optional
-            List of weights of the stocks, by default None
+            List of weights of the stocks, by default "equal"
 
         Returns
         -------
@@ -268,6 +268,9 @@ class Model:
         """
         return self.__risk_free_rate + beta * (rm - self.__risk_free_rate) + alpha
 
+    def _fff_expected_return(self, params, means):
+        return np.dot(params, means) * 100
+
     def expected_return_of_stock(self, stock, model="capm"):
         """
         Calculate the expected return of a single stock
@@ -284,23 +287,42 @@ class Model:
         float
         """
         try:
-            beta = stock.beta
+            _ = stock.beta
         except AttributeError:
             raise ValueError(
                 "Stock does not have beta value. Please call self.portfolio.summary() to calculate it."
             )
+        try:
+            _ = stock.params
+        except AttributeError:
+            print(
+                "Warning. FFF params have not been calculated. Using ff3 or ff5 model will result in error."
+            )
+
         if model == "capm":
             _exp_return = self._capm_expected_return(stock.beta, self.market_return)
-            stock.expected_return = _exp_return
+
         elif model == "sim":
             _exp_return = self._sim_expected_return(
                 stock.alpha, stock.beta, self.market_return
             )
-            stock.expected_return = _exp_return
+
+        elif model == "fff5":
+            params = stock.params
+            mean_values = self.portfolio.mean_values
+            _exp_return = self._fff_expected_return(params=params, means=mean_values)
+
+        elif model == "fff3":
+            mask = [0, 1, 2, 3, -1]
+            params = stock.params.iloc[mask]
+            mean_values = self.portfolio.mean_values.iloc[mask]
+            _exp_return = self._fff_expected_return(params=params, means=mean_values)
+
         else:
             raise ValueError(
-                "Model not supported. Supported models are 'capm' and 'sim'"
+                "Model not supported. Supported models are 'capm', 'sim', 'fff3' and 'fff5'."
             )
+        stock.expected_return = _exp_return
         return _exp_return
 
     def portfolio_expected_value(self, weights, expected_returns):

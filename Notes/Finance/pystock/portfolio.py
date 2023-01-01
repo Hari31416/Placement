@@ -3,6 +3,8 @@ import datetime
 from tabulate import tabulate
 from pystock.utils import *
 from pystock.exceptions import *
+from pystock.FFF import FamaFrenchFactors
+import statsmodels.api as sm
 
 FREQUENCY = {
     "D": "Daily",
@@ -24,6 +26,7 @@ class Stock:
         self.directory = directory
         self.loaded = False
         self.return_ = {}
+        self.fff = FamaFrenchFactors()
 
     def __str__(self) -> str:
         return f"Stock name: {self.name}"
@@ -39,7 +42,7 @@ class Stock:
             return self.name == o.name
         return False
 
-    def freq_return(self, frequency="D", mean=True, column="Close"):
+    def freq_return(self, frequency="M", mean=True, column="Close"):
         """
         Calculates the return of the stock for a given frequency
 
@@ -93,7 +96,7 @@ class Stock:
         start_date=None,
         end_date=None,
         columns=None,
-        frequency="D",
+        frequency="M",
         rename_cols=None,
     ):
         """
@@ -174,6 +177,98 @@ class Stock:
         self.frequency = frequency
         self.data = self.data.asfreq(frequency, "ffill").dropna()
 
+    def load_fff(self, frequency="M", factors=5, directory="."):
+        """
+        Loads the fama french factors
+        """
+        df = self.fff.load(factors=factors, frequency=frequency, directory=directory)
+        return df
+
+    def download_fff(
+        self, frequency="D", factors=3, directory=".", overwrite=False, load=True
+    ):
+        """
+        Downloads the fama french factors
+        """
+        file_dir = self.fff.download(
+            factors=factors,
+            frequency=frequency,
+            directory=directory,
+            overwrite=overwrite,
+        )
+        if load:
+            return self.load_fff(
+                frequency=frequency, factors=factors, directory=directory
+            )
+        return file_dir
+
+    def __equate_frequencies(self):
+        """
+        Equates the frequencies of the stock and fama french factors
+        """
+        if self.frequency != self.fff.frequency:
+            print(
+                "Frequency of stock stock and fama french factors are not equal. Equating frequencies... to",
+                self.frequency,
+                "and",
+                self.fff.frequency,
+                "respectively.",
+            )
+            if bigger_frequency(self.frequency, self.fff.frequency):
+                self.fff.change_frequency(self.frequency)
+            elif bigger_frequency(self.fff.frequency, self.frequency):
+                self.change_frequency(self.fff.frequency)
+
+    def __fit_ols(self, X, y):
+        X = sm.add_constant(X)
+        model = sm.OLS(y, X)
+        results = model.fit()
+        return results
+
+    def calculate_fff(self, column="Close", verbose=1):
+        """
+        Calculates the fama french factors
+
+        Parameters
+        ----------
+        column : str, optional
+            Column to calculate the fama french factors on, by default "Close"
+        verbose : int, optional
+            Verbosity, by default 1
+
+        Raises
+        ------
+        NotLoadedError
+            If the stock data or fama french factors are not loaded
+
+        Returns
+        -------
+        pd.Series
+            Fama french factors
+        """
+        if not self.fff.loaded:
+            raise NotLoadedError(
+                "Fama french factors not loaded. Call load_fff() if data downloaded or download_fff() to download."
+            )
+        if not self.loaded:
+            raise NotLoadedError("Stock data not loaded. Call load_data() to load.")
+
+        self.__equate_frequencies()
+
+        stock_returns = self.data[column].pct_change().dropna()
+        df = merge_dfs([stock_returns, self.fff.data], join="inner")
+
+        y = df[stock_returns.name] - df["RF"]
+        X = df.drop(columns=[stock_returns.name, "RF"], axis=1)
+
+        results = self.__fit_ols(X, y)
+        if verbose:
+            print("Fama French Factors Calculated")
+            print(results.summary())
+        params = results.params
+        self.params = params
+        return params
+
 
 class Portfolio:
     """
@@ -194,8 +289,10 @@ class Portfolio:
         self.benchmark_name = benchmark_name
         self.stock_names = stock_names
         self.benchmark = Stock(self.benchmark_name, self.benchmark_dir)
-        self._create_stock_objects_()
+        self.__create_stock_objects()
         self.weights = self.set_weights(weights)
+        self.stock_params = {}
+        self.mean_values = None
 
     def __str__(self) -> str:
         if not self.stocks:
@@ -240,6 +337,9 @@ class Portfolio:
         Number of stocks in the portfolio. Includes the benchmark.
         """
         return len(self.stocks) + 1
+
+    def __repr__(self) -> str:
+        return f"Portfolio({self.benchmark_name},{self.stock_names})"
 
     def _return_of_stocks(self, column="Close", frequency="M"):
         """
@@ -300,9 +400,13 @@ class Portfolio:
         elif isinstance(weights, list):
             return np.array(weights)
         elif isinstance(weights, np.ndarray):
+            if len(weights) != len(self.stocks):
+                raise ValueError(
+                    "Number of weights and number of stocks are not the same"
+                )
             return weights
 
-    def _create_stock_objects_(self):
+    def __create_stock_objects(self):
         """
         Creates stock objects
 
@@ -322,7 +426,8 @@ class Portfolio:
             self.stock_dirs = []
             self.stock_names = []
             self.stocks = []
-            self.wights = []
+            self.weights = []
+            return
 
         if self.stock_names and len(self.stock_dirs) != len(self.stock_names):
             raise ValueError(
@@ -357,7 +462,7 @@ class Portfolio:
         end_date : str, optional
             End date, by default None
         columns : list, optional
-            Columns to keep, by default None
+            Columns to keep, by default None which means keep all columns
         frequency : str, optional
             Frequency of the data, by default "D"
         rename_cols : list, optional
@@ -427,8 +532,8 @@ class Portfolio:
                 columns = self.benchmark.columns
             if not rename_cols:
                 rename_cols = self.benchmark.columns
-            if not freq:
-                freq = self.benchmark.frequency
+            if not frequency:
+                frequency = self.benchmark.frequency
         self.benchmark = Stock(self.benchmark_name, self.benchmark_dir)
         if load:
             self.benchmark.load_data(
@@ -534,9 +639,17 @@ class Portfolio:
                 rename_cols=rename_cols,
             )
 
+    def __create_stock_object(self, stock_dir, stock_name):
+        """
+        Creates a stock object
+        """
+        stock = Stock(stock_name, stock_dir)
+        return stock
+
     def add_stocks(
         self,
-        stock_dirs,
+        stocks=[],
+        stock_dirs=None,
         stock_names=None,
         load_data=True,
         start_date=None,
@@ -575,39 +688,50 @@ class Portfolio:
         stocks : list
             List of stocks
         """
-        if not stock_names:
-            stock_names = [
-                f"df{i+1}"
-                for i in range(len(self.stocks), len(self.stocks) + len(stock_dirs))
-            ]
-        if len(stock_dirs) != len(stock_names):
+        if not stocks and not stock_dirs:
+            raise ValueError("You have not specified any stocks to add")
+
+        if stocks and stock_dirs:
             raise ValueError(
-                "Number of stock directories and stock names are not the same.\nPass None to stock_names if you don't want to specify stock names."
+                "You have specified both stocks and stock_dirs. Please specify only one"
             )
 
-        for stock_dir, stock_name in zip(stock_dirs, stock_names):
-            stock = Stock(stock_name, stock_dir)
-            if stock in self.stocks:
-                print(f"Stock {stock_name} already exists")
-                if overwrite:
-                    print("Overwriting...")
-                    self.remove_stocks([stock_name])
-                else:
-                    print("You have not specified overwrite=True. Skipping...")
-                    continue
-            self.stocks.append(stock)
-            if load_data:
-                stock.load_data(
-                    start_date=start_date,
-                    end_date=end_date,
-                    columns=columns,
-                    frequency=frequency,
-                    rename_cols=rename_cols,
+        if stock_dirs:
+            if not stock_names:
+                stock_names = [
+                    f"df{i+1}"
+                    for i in range(len(self.stocks), len(self.stocks) + len(stock_dirs))
+                ]
+            if len(stock_dirs) != len(stock_names):
+                raise ValueError(
+                    "Number of stock directories and stock names are not the same.\nPass None to stock_names if you don't want to specify stock names."
                 )
-        self.stock_names.extend(stock_names)
-        self.stock_dirs.extend(stock_dirs)
+            stocks = []
+            for stock_dir, stock_name in zip(stock_dirs, stock_names):
+                stock = self.__create_stock_object(stock_dir, stock_name)
+                stocks.append(stock)
+        if stocks:
+            for stock in stocks:
+                if stock in self.stocks:
+                    print(f"Stock {stock.name} already exists")
+                    if overwrite:
+                        print("Overwriting...")
+                        self.remove_stocks([stock.name])
+                    else:
+                        print("You have not specified overwrite=True. Skipping...")
+                        continue
+                self.stocks.append(stock)
+                self.stock_names.append(stock.name)
+                self.stock_dirs.append(stock.directory)
+                if load_data:
+                    stock.load_data(
+                        start_date=start_date,
+                        end_date=end_date,
+                        columns=columns,
+                        frequency=frequency,
+                        rename_cols=rename_cols,
+                    )
         self.weights = self.set_weights()
-        return self.stocks
 
     def remove_stocks(self, names):
         """
@@ -877,7 +1001,10 @@ class Portfolio:
         pd.DataFrame
             Stock returns
         """
-        stock = self[name]
+        try:
+            stock = self[name]
+        except ValueError:
+            raise StockException(f"Stock {name} not in the Portfolio")
         if column not in stock.data.columns:
             raise StockException(f"Column {column} not found in {name}")
 
@@ -991,3 +1118,66 @@ class Portfolio:
         print(tabulate(self.cov_matrix, headers="keys", tablefmt="psql"))
         print(f"Portfolio Return: {portfolio_return}")
         print(f"Portfolio Volatility: {portfoio_volatility}")
+
+    def calculate_fff_params_one(
+        self, stock, factors=5, directory=".", frequency="M", column="Close", verbose=0
+    ):
+        """
+        calculate the Fama-French factors for regression
+
+        Parameters
+        ----------
+        stock : str
+            Name of the stock
+        factors : int, optional
+            Number of factors, by default 5
+        directory : str, optional
+            Directory to save the data, by default "."
+        frequency : str, optional
+            Frequency of the data, by default "M"
+        column : str, optional
+            Column to use, by default "Close"
+        """
+        if isinstance(stock, str):
+            stock = self[stock]
+        if verbose:
+            print(f"Calculating Fama-French factors for {stock.name}")
+        _ = stock.load_fff(factors=factors, directory=directory, frequency=frequency)
+        params = stock.calculate_fff(column=column, verbose=verbose)
+        params["rf"] = 1.0
+        self.stock_params[stock.name] = params
+        if verbose:
+            print("Done. Here are the parameters")
+            print(tabulate(params, headers="keys", tablefmt="psql"))
+        if not isinstance(self.mean_values, pd.Series):
+            self.mean_values = stock.fff.calculate_mean_values()
+        return params
+
+    def calculate_fff_params(
+        self, factors=5, directory=".", frequency="M", column="Close", verbose=0
+    ):
+        """
+        calculate the Fama-French factors for regression
+
+        Parameters
+        ----------
+        factors : int, optional
+            Number of factors, by default 5
+        directory : str, optional
+            Directory to save the data, by default "."
+        frequency : str, optional
+            Frequency of the data, by default "M"
+        column : str, optional
+            Column to use, by default "Close"
+        """
+        for stock in self.stocks:
+            _ = self.calculate_fff_params_one(
+                stock=stock,
+                factors=factors,
+                directory=directory,
+                frequency=frequency,
+                column=column,
+                verbose=verbose,
+            )
+        print("Done. Here are the parameters")
+        print(tabulate(self.stock_params, headers="keys", tablefmt="psql"))
