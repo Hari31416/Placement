@@ -1,0 +1,7 @@
+PWD /media/hari31416/Hari_SSD/Users/harik/Desktop/Placement/CV_Related/CV_Formats/test
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT /media/hari31416/Hari_SSD/Users/harik/Desktop/Placement/CV_Related/CV_Formats/test/CV_4.tex
+OUTPUT CV_4.log
