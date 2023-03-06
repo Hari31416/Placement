@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.23)  6 MAR 2023 19:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.23)  4 MAR 2023 18:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/media/hari31416/Hari_SSD/Users/harik/Desktop/Placement/Off_Campus/CVs/master_cv_1/cv_1.tex
-(/media/hari31416/Hari_SSD/Users/harik/Desktop/Placement/Off_Campus/CVs/master_cv_1/cv_1.tex
+**/media/hari31416/Hari_SSD/Users/harik/Desktop/Placement/Off_Campus/CVs/cv_6/cv_6.tex
+(/media/hari31416/Hari_SSD/Users/harik/Desktop/Placement/Off_Campus/CVs/cv_6/cv_6.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -240,8 +240,8 @@ Package babel Info: Hyphen rules for 'newzealand' set to \l@english
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count275
 \l__pdf_internal_box=\box57
-) (./cv_1.aux)
-\openout1 = `cv_1.aux'.
+) (./cv_6.aux)
+\openout1 = `cv_6.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
@@ -288,9 +288,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
 LaTeX Info: Redefining \nameref on input line 6.
- (./cv_1.out) (./cv_1.out)
+ (./cv_6.out) (./cv_6.out)
 \@outlinefile=\write3
-\openout3 = `cv_1.out'.
+\openout3 = `cv_6.out'.
 
  (./sections/contact.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -332,7 +332,12 @@ Underfull \hbox (badness 10000) in alignment at lines 10--10
 [][][] 
  []
 
-) (./sections/projects.tex
+
+Underfull \hbox (badness 10000) in alignment at lines 11--11
+[][][] 
+ []
+
+) (./sections/education.tex) (./sections/projects.tex) (./sections/certifications.tex)
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
 (fancyhdr)                Make it at least 4.08003pt, for example:
@@ -340,29 +345,23 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./sections/education.tex) (./sections/certifications.tex)
-
-Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 4.08003pt, for example:
-(fancyhdr)                \setlength{\footskip}{4.08003pt}.
-
-[2] (./cv_1.aux)
-Package rerunfilecheck Info: File `cv_1.out' has not changed.
-(rerunfilecheck)             Checksum: D6BE9E4A2D307C41421A9C351613E2C5;526.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./cv_6.aux)
+Package rerunfilecheck Info: File `cv_6.out' has not changed.
+(rerunfilecheck)             Checksum: 8CDAAEF3FE6C30C1EBB6732FE4B61177;526.
  ) 
 Here is how much of TeX's memory you used:
- 10258 strings out of 480171
- 162146 string characters out of 5894489
- 496344 words of memory out of 5000000
+ 10257 strings out of 480171
+ 162119 string characters out of 5894489
+ 492344 words of memory out of 5000000
  28063 multiletter control sequences out of 15000+600000
  475141 words of font info for 51 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 75i,11n,77p,853b,621s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,11n,77p,567b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/hari31416/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on cv_1.pdf (2 pages, 114764 bytes).
+Output written on cv_6.pdf (1 page, 105981 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
+ 88 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
+ 7 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
