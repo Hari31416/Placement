@@ -1,6 +1,12 @@
 \documentclass[a4paper,11pt]{article}
 
 \usepackage{resume} % see the resume.sty file for more details
+\usepackage[%
+    left=0.2in,%
+    right=0.1in,%
+    top=0.2in,%
+    bottom=0.1in,%
+]{geometry}% sets the margins of the document
 %__________________RESUME____________________
 % You can rearrange sections in any order you may prefer
 \begin{document}
@@ -9,9 +15,9 @@
 \input{sections/contact.tex}
 %---------------------------------------------
 
-% -----------SUMMARY--------------------------
-\input{sections/summary.tex}
-%---------------------------------------------
+% % -----------SUMMARY--------------------------
+% \input{sections/summary.tex}
+% %---------------------------------------------
 
 %--------------SKILLS-------------------------
 \input{sections/skills.tex}

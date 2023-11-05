@@ -70,8 +70,8 @@
 % after-code is the code to be executed after
 
 \titleformat{\section}
-  {\scshape\large}{}
-    {0em}{\color{blue}}[\color{black}\titlerule\vspace{0pt}]
+{\scshape\large}{}
+{0em}{\color{blue}}[\color{black}\titlerule\vspace{0pt}]
 %-------------------------------------
 
 
@@ -94,15 +94,15 @@
 
 % commands to start and end itemization of resumeItem, rightmargin set to 0.11in to avoid the overflow of resumetItem beyond whatever resumeItemHeading is being used
 \newcommand{\resumeItemListStart}{\begin{itemize}[rightmargin=0.11in]}
-\newcommand{\resumeItemListEnd}{\end{itemize}}
+    \newcommand{\resumeItemListEnd}{\end{itemize}}
 
 % resumeSectionType renders a bolded type to be used under a section, used as skill type here, middle element is used to keep ":"s in the same vertical line
 \newcommand{\resumeSectionType}[3]{
   \item\begin{tabular*}{0.96\textwidth}[t]{
     p{0.15\linewidth}p{0.02\linewidth}p{0.81\linewidth}
-  }
+    }
     \textbf{#1} & #2 & #3
-  \end{tabular*}\vspace{-2pt}
+  \end{tabular*}\vspace{-5pt}
 }
 
 % resumeTrioHeading renders three elements in three columns with second element being italicized and first element bolded, can be used for projects with three elements
@@ -110,7 +110,7 @@
   \item\small{
     \begin{tabular*}{0.96\textwidth}[t]{
       l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r
-    }
+      }
       \textbf{#1} & \textit{#2} & #3
     \end{tabular*}
   }
@@ -136,6 +136,6 @@
 % commands to start and end itemization of resumeQuadHeading, lefmargin for left indent of 0.15in for resumeItems
 \newcommand{\resumeHeadingListStart}{
   \begin{itemize}[leftmargin=0.15in, label={}]
-}
-\newcommand{\resumeHeadingListEnd}{\end{itemize}}
+    }
+    \newcommand{\resumeHeadingListEnd}{\end{itemize}}
 %-------------------------------------------
