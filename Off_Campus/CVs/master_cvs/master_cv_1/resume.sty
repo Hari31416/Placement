@@ -70,8 +70,8 @@
 % after-code is the code to be executed after
 
 \titleformat{\section}
-  {\scshape\large}{}
-    {0em}{\color{blue}}[\color{black}\titlerule\vspace{0pt}]
+{\scshape\large}{}
+{0em}{\color{blue}}[\color{black}\titlerule\vspace{-7pt}]
 %-------------------------------------
 
 
@@ -89,20 +89,27 @@
 
 % resumeItem renders a bullet point
 \newcommand{\resumeItem}[1]{
-  \item\small{#1}
+  \item\small{#1}\vspace{-1pt}
 }
+\definecolor{linkBlue}{rgb}{0.13, 0.15, 0.99}
+% link renders a hyperlink
+\newcommand{\link}[1]{{\color{linkBlue}{\uline{#1}}}}
 
+% resumeItemCondensed renders a bullet point with less vertical space
+\newcommand{\resumeItemCondensed}[1]{
+  \item\small{#1}\vspace{-5pt}
+}
 % commands to start and end itemization of resumeItem, rightmargin set to 0.11in to avoid the overflow of resumetItem beyond whatever resumeItemHeading is being used
 \newcommand{\resumeItemListStart}{\begin{itemize}[rightmargin=0.11in]}
-\newcommand{\resumeItemListEnd}{\end{itemize}}
+    \newcommand{\resumeItemListEnd}{\end{itemize}}
 
 % resumeSectionType renders a bolded type to be used under a section, used as skill type here, middle element is used to keep ":"s in the same vertical line
 \newcommand{\resumeSectionType}[3]{
   \item\begin{tabular*}{0.96\textwidth}[t]{
     p{0.15\linewidth}p{0.02\linewidth}p{0.81\linewidth}
-  }
+    }
     \textbf{#1} & #2 & #3
-  \end{tabular*}\vspace{-2pt}
+  \end{tabular*}\vspace{-7pt}
 }
 
 % resumeTrioHeading renders three elements in three columns with second element being italicized and first element bolded, can be used for projects with three elements
@@ -110,7 +117,7 @@
   \item\small{
     \begin{tabular*}{0.96\textwidth}[t]{
       l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r
-    }
+      }
       \textbf{#1} & \textit{#2} & #3
     \end{tabular*}
   }
@@ -122,7 +129,7 @@
   \begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}
     \textbf{#1} & #2 \\
     \textit{\small#3} & \textit{\small #4} \\
-  \end{tabular*}
+  \end{tabular*}\vspace{-5pt}
 }
 
 % resumeQuadHeadingChild renders the second row of resumeQuadHeading, can be used for experience if different roles in the same company need to added
@@ -136,6 +143,6 @@
 % commands to start and end itemization of resumeQuadHeading, lefmargin for left indent of 0.15in for resumeItems
 \newcommand{\resumeHeadingListStart}{
   \begin{itemize}[leftmargin=0.15in, label={}]
-}
-\newcommand{\resumeHeadingListEnd}{\end{itemize}}
+    }
+    \newcommand{\resumeHeadingListEnd}{\end{itemize}}
 %-------------------------------------------
